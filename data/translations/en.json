@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "langCode": "en",
+    "langName": "English",
+    "dir": "ltr"
+  },
+  "nav": {
+    "home": "Home",
+    "clothing": "Clothing",
+    "fragrance": "Fragrance",
+    "about": "About"
+  },
+  "hero": {
+    "subtitle": "Elegance Redefined",
+    "title": "Discover Luxury",
+    "desc": "Curated high-end fashion and premium fragrances for your unique style",
+    "ctaClothing": "Explore Clothing",
+    "ctaFragrance": "Discover Fragrance",
+    "scroll": "Scroll Down"
+  },
+  "categories": {
+    "subtitle": "Collections",
+    "title": "Curated Selections",
+    "clothing": "Fashion Collection",
+    "clothingDesc": "Exquisite tailoring, elegant design",
+    "fragrance": "Fragrance Collection",
+    "fragranceDesc": "Premium ingredients, lasting impressions",
+    "explore": "Explore More →"
+  },
+  "products": {
+    "featured": "Featured",
+    "clothingTitle": "Featured Clothing",
+    "fragranceTitle": "Signature Fragrances",
+    "viewAllClothing": "View All Clothing",
+    "viewAllFragrance": "View All Fragrances",
+    "quickView": "Quick View",
+    "addToCart": "Add to Cart",
+    "sizes": "Sizes",
+    "colors": "Colors",
+    "notes": "Notes",
+    "size": "Size"
+  },
+  "about": {
+    "subtitle": "Our Story",
+    "title": "About TapingTrading",
+    "text1": "TapingTrading is dedicated to curating the finest high-end fashion and premium fragrance products from around the world. We believe that true luxury lies not only in the products themselves but in the unique experiences and emotional connections they create.",
+    "text2": "Every product is carefully selected to ensure exceptional quality and distinctive design. Whether it's an elegant silk blouse or a refined French fragrance, we strive to offer you a unique selection that sets you apart.",
+    "years": "Years of Global Sourcing",
+    "brands": "Curated Brand Partnerships",
+    "customers": "Loyal Customers"
+  },
+  "newsletter": {
+    "title": "Subscribe to Our Newsletter",
+    "desc": "Get the latest product updates, exclusive offers, and fashion insights",
+    "placeholder": "Enter your email address",
+    "button": "Subscribe"
+  },
+  "footer": {
+    "desc": "Curating luxury fashion and fragrances from around the world.",
+    "quickLinks": "Quick Links",
+    "service": "Customer Service",
+    "contact": "Contact Us",
+    "shipping": "Shipping Info",
+    "returns": "Returns & Exchanges",
+    "privacy": "Privacy Policy",
+    "contactUs": "Contact Us",
+    "globalSourcing": "Global sourcing, quality assured",
+    "copyright": "All rights reserved."
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "checkout": "Checkout",
+    "addedToCart": "added to cart",
+    "removed": "Removed from cart",
+    "loading": "Loading"
+  },
+  "search": {
+    "placeholder": "Search products...",
+    "noResults": "No products found"
+  },
+  "notifications": {
+    "subscribeSuccess": "Thank you for subscribing!",
+    "invalidEmail": "Please enter a valid email address.",
+    "cartAdded": "added to cart"
+  },
+  "modal": {
+    "close": "Close"
+  }
+}
