@@ -533,16 +533,52 @@
             }
         }
         
-        // Render products
+// Render products
         function renderProducts() {
             console.log('renderProducts called, count:', filteredProducts.length);
-            const grid = document.getElementById('productsGrid');
-            const toShow = filteredProducts.slice(0, displayCount);
-            
-            if (toShow.length === 0) {
-                grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#666;padding:60px 0;">未找到相关产品</p>';
-                return;
+            try {
+                const grid = document.getElementById('productsGrid');
+                const toShow = filteredProducts.slice(0, displayCount);
+                
+                if (toShow.length === 0) {
+                    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#666;padding:60px 0;">未找到相关产品</p>';
+                    return;
+                }
+                
+                grid.innerHTML = toShow.map((p, idx) => {
+                    let img = p.images && p.images[0] ? p.images[0] : '';
+                    const name = p.name || p.nameEn || 'Unknown Product';
+                    const price = p.price || 0;
+                    const hasImg = img && img.length > 0;
+                    const catDisplay = {
+                        fragrance: '香水',
+                        bags: '包包',
+                        clothing: '服装',
+                        glasses: '眼镜',
+                        jewelry: '首饰',
+                        shoes: '鞋子',
+                        watches: '腕表',
+                        accessories: '配饰',
+                        other: '其他'
+                    }[p.categoryKey] || p.categoryKey;
+                    
+                    return `<div class="product-card">
+                        <div class="product-img-wrap">
+                            <img class="product-img" src="${hasImg ? img : ''}" alt="${name}" style="display:${hasImg?'block':'none'}">
+                            ${!hasImg ? '<div class="no-img">暂无图片</div>' : ''}
+                        </div>
+                        <div class="product-info">
+                            <div class="product-cat">${catDisplay}</div>
+                            <div class="product-name">${name}</div>
+                            <div class="product-price">${price.toFixed(2)}</div>
+                        </div>
+                    </div>`;
+                }).join('');
+            } catch(e) {
+                console.error('Render error:', e);
+                document.getElementById('productsGrid').innerHTML = '<p>渲染错误</p>';
             }
+        }
             
             // Debug: check first image URL
             console.log('First product image:', toShow[0].images ? toShow[0].images[0] : 'no images');
