@@ -243,8 +243,8 @@
             margin: 0 auto;
             padding: 20px;
             min-height: 300px;
-            background: #222;
-            color: red;
+            background: #111 !important;
+            color: #fff !important;
         }
         
         .product-card {
@@ -557,12 +557,6 @@
                 html += '</div>';
             }
             grid.innerHTML = html;
-            
-            // Force show
-            grid.style.display = 'block';
-            grid.style.visibility = 'visible';
-            grid.style.opacity = '1';
-            grid.style.border = '5px solid blue';
             
             console.log('Grid innerHTML length:', html.length);
         }
