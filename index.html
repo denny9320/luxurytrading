@@ -556,8 +556,18 @@
             
             grid.innerHTML = html;
             
-            // 更新显示数量
-            var loadMoreBtn = document.getElementById('loadMoreBtn');
+// 点击事件
+        var allCards = grid.getElementsByClassName('product-card');
+        for (var i = 0; i < allCards.length; i++) {
+            allCards[i].onclick = (function(id) {
+                return function() {
+                    showProductDetail(id);
+                };
+            })(toShow[i].id);
+        }
+        
+        // 更多按钮
+        var loadMoreBtn = document.getElementById('loadMoreBtn');
             if (loadMoreBtn) {
                 loadMoreBtn.style.display = displayCount >= filteredProducts.length ? 'none' : 'inline-block';
                 loadMoreBtn.innerText = '加载更多 (' + filteredProducts.length + ')';
