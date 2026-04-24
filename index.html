@@ -481,10 +481,11 @@
         console.log('Starting product load...');
         
         async function loadAllProducts() {
+            const grid = document.getElementById('productsGrid');
             try {
                 console.log('Fetching products.json...');
                 const response = await fetch('data/products.json');
-                console.log('Response status:', response.status);
+                console.log('Response status:', response.status, response.ok);
                 
                 if (!response.ok) {
                     throw new Error('HTTP ' + response.status);
@@ -510,10 +511,11 @@
                 renderProducts();
                 
                 console.log('Loaded ' + allProducts.length + ' products');
-            } catch (error) {
-                console.error('Failed to load products:', error);
-                document.getElementById('productsGrid').innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#666;padding:60px 0;">产品加载失败，请刷新页面重试</p>';
+} catch (error) {
+                console.error('Error loading products:', error);
+                grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#c9a962;padding:60px 0;">产品加载失败，请刷新页面重试</p>';
             }
+        }
         }
         
         // Render products
