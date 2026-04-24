@@ -1,5 +1,5 @@
 /* ========================================
-    TapingTrading - JavaScript
+    LuxuryTrading - JavaScript
     ======================================== */
 
 // Multi-language translations object
@@ -24,7 +24,7 @@ const translationsData = {
         hero: { subtitle: 'Elegance Redefined', title: 'Discover Luxury', desc: 'Curated high-end fashion and premium fragrances', ctaClothing: 'Explore Clothing', ctaFragrance: 'Discover Fragrance', scroll: 'Scroll Down' },
         categories: { subtitle: 'Collections', title: 'Curated Selections', clothing: 'Fashion Collection', clothingDesc: 'Exquisite tailoring', fragrance: 'Fragrance Collection', fragranceDesc: 'Premium ingredients', explore: 'Explore More →' },
         products: { featured: 'Featured', clothingTitle: 'Featured Clothing', fragranceTitle: 'Signature Fragrances', viewAllClothing: 'View All', viewAllFragrance: 'View All', quickView: 'Quick View', addToCart: 'Add to Cart' },
-        about: { subtitle: 'Our Story', title: 'About TapingTrading', text1: 'TapingTrading is dedicated to curating the finest high-end fashion.', text2: 'Every product is carefully selected.', years: 'Years of Experience', brands: 'Brand Partnerships', customers: 'Loyal Customers' },
+        about: { subtitle: 'Our Story', title: 'About LuxuryTrading', text1: 'LuxuryTrading is dedicated to curating the finest high-end fashion.', text2: 'Every product is carefully selected.', years: 'Years of Experience', brands: 'Brand Partnerships', customers: 'Loyal Customers' },
         newsletter: { title: 'Subscribe', desc: 'Get latest updates', placeholder: 'Enter your email', button: 'Subscribe' },
         footer: { desc: 'Curating luxury fashion from around the world.', quickLinks: 'Quick Links', service: 'Customer Service', contact: 'Contact Us', shipping: 'Shipping', returns: 'Returns', privacy: 'Privacy', contactUs: 'Contact', globalSourcing: 'Global sourcing', copyright: 'All rights reserved.' },
         cart: { title: 'Shopping Cart', empty: 'Your cart is empty', total: 'Total', checkout: 'Checkout', addedToCart: 'added to cart' },
@@ -37,7 +37,7 @@ const translationsData = {
         hero: { subtitle: '优雅重新定义', title: '探索奢华', desc: '精选高端时装与香氛', ctaClothing: '探索服装', ctaFragrance: '发现香水', scroll: '向下滚动' },
         categories: { subtitle: '系列', title: '精选系列', clothing: '时装系列', clothingDesc: '精致剪裁', fragrance: '香氛系列', fragranceDesc: '顶级香料', explore: '探索更多 →' },
         products: { featured: '精选', clothingTitle: '精选服装', fragranceTitle: '甄选香水', viewAllClothing: '查看全部', viewAllFragrance: '查看全部', quickView: '快速查看', addToCart: '加入购物车' },
-        about: { subtitle: '品牌故事', title: '关于 TapingTrading', text1: '致力于为您甄选全球最优质的高端产品。', text2: '每一件产品都经过精心挑选。', years: '年采购经验', brands: '品牌合作', customers: '忠实客户' },
+        about: { subtitle: '品牌故事', title: '关于 LuxuryTrading', text1: '致力于为您甄选全球最优质的高端产品。', text2: '每一件产品都经过精心挑选。', years: '年采购经验', brands: '品牌合作', customers: '忠实客户' },
         newsletter: { title: '订阅资讯', desc: '获取最新产品信息', placeholder: '输入您的邮箱', button: '订阅' },
         footer: { desc: '甄选全球高端时装与香氛。', quickLinks: '快速链接', service: '客户服务', contact: '联系我们', shipping: '配送说明', returns: '退换政策', privacy: '隐私条款', contactUs: '联系方式', globalSourcing: '全球采购', copyright: '版权所有。' },
         cart: { title: '购物车', empty: '购物车是空的', total: '总计', checkout: '立即结算', addedToCart: '已添加到购物车' },
@@ -89,7 +89,7 @@ const translationsData = {
         hero: { subtitle: 'الأناقة', title: 'اكتشف الفخامة', desc: 'أزياء وعطور فاخرة', ctaClothing: 'الأزياء', ctaFragrance: 'العطور', scroll: 'انتقل للأسفل' },
         categories: { subtitle: 'المجموعات', title: 'اختيارات', clothing: 'الأزياء', clothingDesc: 'رائعة', fragrance: 'العطور', fragranceDesc: 'فاخرة', explore: 'اكتشف المزيد ←' },
         products: { featured: 'مميز', clothingTitle: 'الأزياء', fragranceTitle: 'العطور', viewAllClothing: 'عرض الكل', viewAllFragrance: 'عرض الكل', quickView: 'عرض سريع', addToCart: 'أضف للسلة' },
-        about: { subtitle: 'قصتنا', title: 'عن TapingTrading', text1: 'ن curate أفضل المنتجات.', text2: 'كل منتج يتم اختياره بعناية.', years: 'سنوات', brands: 'علامات', customers: 'عملاء' },
+        about: { subtitle: 'قصتنا', title: 'عن LuxuryTrading', text1: 'ن curate أفضل المنتجات.', text2: 'كل منتج يتم اختياره بعناية.', years: 'سنوات', brands: 'علامات', customers: 'عملاء' },
         newsletter: { title: 'النشرة', desc: 'احصل على التحديثات', placeholder: 'البريد', button: 'اشترك' },
         footer: { desc: 'أزياء فاخرة من كل العالم.', quickLinks: 'روابط', service: 'خدمة', contact: 'اتصل', shipping: 'شحن', returns: 'إرجاع', privacy: 'خصوصية', contactUs: 'اتصل', globalSourcing: 'عالمي', copyright: 'جميع الحقوق.' },
         cart: { title: 'السلة', empty: 'فارغة', total: 'المجموع', checkout: 'إتمام', addedToCart: 'تمت الإضافة' },

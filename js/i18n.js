@@ -1,5 +1,5 @@
 /**
- * TapingTrading - Multi-language System (i18n)
+ * LuxuryTrading - Multi-language System (i18n)
  * Supports: English, 中文, Deutsch, Français, Español, العربية
  */
 
