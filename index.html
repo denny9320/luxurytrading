@@ -478,10 +478,21 @@
         let searchTerm = '';
         
         // Load all products
+        // Debug: Log what's happening
+        console.log('Starting product load...');
+        
         async function loadAllProducts() {
             try {
+                console.log('Fetching products.json...');
                 const response = await fetch('data/products.json');
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status);
+                }
+                
                 const data = await response.json();
+                console.log('Data keys:', Object.keys(data));
                 
                 // Flatten all categories into one array
                 allProducts = [];
@@ -508,6 +519,7 @@
         
         // Render products
         function renderProducts() {
+            console.log('renderProducts called, count:', filteredProducts.length);
             const grid = document.getElementById('productsGrid');
             const toShow = filteredProducts.slice(0, displayCount);
             
