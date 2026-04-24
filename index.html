@@ -259,7 +259,7 @@
             position: relative;
             aspect-ratio: 1;
             overflow: hidden;
-            background: #1a1a1a;
+            background: #222;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -269,7 +269,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+        }
+        
+        .product-img-wrap:empty::after {
+            content: '暂无图片';
+            color: #555;
         }
         
         .product-card:hover .product-img {
@@ -544,7 +548,7 @@
             // Debug: check first image URL
             console.log('First product image:', toShow[0].images ? toShow[0].images[0] : 'no images');
             
-            grid.innerHTML = toShow.map(p => {
+grid.innerHTML = toShow.map(p => {
                 const img = p.images && p.images[0] ? p.images[0] : '';
                 const name = p.name || p.nameEn || 'Unknown Product';
                 const price = p.price || 0;
@@ -561,10 +565,11 @@
                     other: '其他'
                 }[p.categoryKey] || p.categoryKey;
                 
+                // Simple version - always show image if available
                 return `
                     <div class="product-card">
                         <div class="product-img-wrap">
-                            ${hasImg ? `<img class="product-img" src="${img}" alt="${name}" onerror="this.parentElement.innerHTML='<div class=\\'no-img\'>无图片</div>'">` : `<div class="no-img">暂无图片</div>`}
+                            ${hasImg ? `<img class="product-img" src="${img}" alt="${name}">` : ''}
                         </div>
                         <div class="product-info">
                             <div class="product-cat">${catDisplay}</div>
