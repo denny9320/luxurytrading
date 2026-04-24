@@ -502,7 +502,11 @@
                 }
             }
             
-filteredProducts = allProducts;
+// Debug: check first image
+            console.log('First product:', allProducts[0] ? allProducts[0].name : 'none');
+            console.log('First image:', allProducts[0] && allProducts[0].images ? allProducts[0].images[0] : 'no images');
+            
+            filteredProducts = allProducts;
             renderProducts();
             console.log('Loaded ' + allProducts.length + ' products');
         }
