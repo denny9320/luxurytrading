@@ -557,7 +557,14 @@
                 html += '</div>';
             }
             grid.innerHTML = html;
-            console.log('Grid HTML length:', html.length);
+            
+            // Force show
+            grid.style.display = 'block';
+            grid.style.visibility = 'visible';
+            grid.style.opacity = '1';
+            grid.style.border = '5px solid blue';
+            
+            console.log('Grid innerHTML length:', html.length);
         }
         
  // Filter by category
