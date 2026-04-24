@@ -541,6 +541,9 @@
                 return;
             }
             
+            // Debug: check first image URL
+            console.log('First product image:', toShow[0].images ? toShow[0].images[0] : 'no images');
+            
             grid.innerHTML = toShow.map(p => {
                 const img = p.images && p.images[0] ? p.images[0] : '';
                 const name = p.name || p.nameEn || 'Unknown Product';
