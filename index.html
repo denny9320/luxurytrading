@@ -482,10 +482,18 @@
         
         async function loadAllProducts() {
             const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#c9a962;padding:60px 0;">正在加载产品...</p>';
+            
             try {
-                console.log('Fetching products.json...');
-                // Add timestamp to bypass cache
-                const response = await fetch('data/products.json?v=' + Date.now());
+                // Try fetch with timeout
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 30000);
+                
+                const response = await fetch('data/products.json', { 
+                    signal: controller.signal 
+                });
+                clearTimeout(timeoutId);
+                
                 console.log('Response status:', response.status, response.ok);
                 
                 if (!response.ok) {
@@ -513,8 +521,11 @@
                 
                 console.log('Loaded ' + allProducts.length + ' products');
 } catch (error) {
-                console.error('Error loading products:', error);
-                grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#c9a962;padding:60px 0;">产品加载失败，请刷新页面重试</p>';
+                console.error('Error loading products:', error.name, error.message);
+                const grid = document.getElementById('productsGrid');
+                if (grid) {
+                    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#c9a962;padding:60px 0;">产品加载失败: ' + error.message + '</p>';
+                }
             }
         }
         }
