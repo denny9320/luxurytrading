@@ -467,125 +467,105 @@
     </footer>
     
     <script>
-        // Global error handler
-        window.onerror = function(msg, url, line, col, error) {
-            console.error('JS Error:', msg, 'Line:', line);
-            return false;
-        };
-        
-        // All Products Data
-        let allProducts = [];
-        let filteredProducts = [];
-        let currentCategory = 'all';
-        let displayCount = 24;
-        let searchTerm = '';
+// All Products Data
+        var allProducts = [];
+        var filteredProducts = [];
+        var currentCategory = 'all';
+        var displayCount = 24;
+        var searchTerm = '';
         
         // Load all products
-        // Debug: Log what's happening
-        console.log('Starting product load...');
-        
         async function loadAllProducts() {
-            const grid = document.getElementById('productsGrid');
-            grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#c9a962;padding:60px 0;">正在加载产品...</p>';
+            console.log('Starting product load...');
+            var response = await fetch('data/products.json');
+            var data = await response.json();
             
-            try {
-                // Try fetch with timeout
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 30000);
-                
-                const response = await fetch('data/products.json', { 
-                    signal: controller.signal 
-                });
-                clearTimeout(timeoutId);
-                
-                console.log('Response status:', response.status, response.ok);
-                
-                if (!response.ok) {
-                    throw new Error('HTTP ' + response.status);
-                }
-                
-                const data = await response.json();
-                console.log('Data keys:', Object.keys(data));
-                
-                // Flatten all categories into one array
-                allProducts = [];
-                for (const category in data) {
-                    if (Array.isArray(data[category])) {
-                        data[category].forEach(p => {
-                            allProducts.push({
-                                ...p,
-                                categoryKey: category
-                            });
-                        });
+            allProducts = [];
+            for (var cat in data) {
+                if (Array.isArray(data[cat])) {
+                    for (var i = 0; i < data[cat].length; i++) {
+                        var p = data[cat][i];
+                        p.categoryKey = cat;
+                        allProducts.push(p);
                     }
                 }
-                
-                filteredProducts = [...allProducts];
-                renderProducts();
-                
-                console.log('Loaded ' + allProducts.length + ' products');
-} catch (error) {
-                console.error('Error loading products:', error.name, error.message);
-                const grid = document.getElementById('productsGrid');
-                if (grid) {
-                    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#c9a962;padding:60px 0;">产品加载失败: ' + error.message + '</p>';
-                }
             }
+            
+            filteredProducts = allProducts;
+            renderProducts();
+            console.log('Loaded ' + allProducts.length + ' products');
         }
         
-// Render products
-        function renderProducts() {
-            console.log('renderProducts called, count:', filteredProducts.length);
-            const grid = document.getElementById('productsGrid');
-            const toShow = filteredProducts.slice(0, displayCount);
+// Filter by category
+        function filterByCategory(category) {
+            currentCategory = category;
+            displayCount = 24;
             
-            if (toShow.length === 0) {
-                grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#666;padding:60px 0;">未找到相关产品</p>';
-                return;
-            }
-            
-            var html = '';
-            for (var i = 0; i < toShow.length; i++) {
-                var p = toShow[i];
-                var img = p.images && p.images[0] ? p.images[0] : '';
-                var name = p.name || p.nameEn || 'Unknown Product';
-                var price = p.price || 0;
-                var hasImg = img && img.length > 0;
-                var catDisplay = p.categoryKey;
-                
-                if (catDisplay === 'fragrance') catDisplay = '香水';
-                else if (catDisplay === 'bags') catDisplay = '包包';
-                else if (catDisplay === 'clothing') catDisplay = '服装';
-                else if (catDisplay === 'glasses') catDisplay = '眼镜';
-                else if (catDisplay === 'jewelry') catDisplay = '首饰';
-                else if (catDisplay === 'shoes') catDisplay = '鞋子';
-                else if (catDisplay === 'watches') catDisplay = '腕表';
-                else if (catDisplay === 'accessories') catDisplay = '配饰';
-                
-                html += '<div class="product-card">';
-                html += '<div class="product-img-wrap">';
-                if (hasImg) {
-                    html += '<img class="product-img" src="' + img + '" alt="' + name + '">';
+            if (category === 'all') {
+                if (searchTerm) {
+                    filteredProducts = allProducts.filter(function(p) {
+                        return (p.name && p.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) || 
+                               (p.nameEn && p.nameEn.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
+                    });
                 } else {
-                    html += '<div class="no-img">暂无图片</div>';
+                    filteredProducts = allProducts.slice(0);
                 }
-                html += '</div>';
-                html += '<div class="product-info">';
-                html += '<div class="product-cat">' + catDisplay + '</div>';
-                html += '<div class="product-name">' + name + '</div>';
-                html += '<div class="product-price">' + price.toFixed(2) + '</div>';
-                html += '</div>';
-                html += '</div>';
+            } else {
+                filteredProducts = [];
+                for (var i = 0; i < allProducts.length; i++) {
+                    var p = allProducts[i];
+                    if (p.categoryKey === category) {
+                        if (!searchTerm || (p.name && p.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) || 
+                           (p.nameEn && p.nameEn.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)) {
+                            filteredProducts.push(p);
+                        }
+                    }
+                }
             }
-            grid.innerHTML = html;
             
-            var loadMoreBtn = document.getElementById('loadMoreBtn');
-            if (loadMoreBtn) {
-                loadMoreBtn.style.display = displayCount >= filteredProducts.length ? 'none' : 'inline-block';
-            }
+            renderProducts();
         }
         
-        // Filter by category
+        // Search
+        var searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                searchTerm = e.target.value;
+                filterByCategory(currentCategory);
+            });
+        }
+        
+        // Category tabs
+        var categoryTabs = document.getElementById('categoryTabs');
+        if (categoryTabs) {
+            categoryTabs.addEventListener('click', function(e) {
+                if (e.target.classList && e.target.classList.contains('category-tab')) {
+                    var tabs = categoryTabs.querySelectorAll('.category-tab');
+                    for (var i = 0; i < tabs.length; i++) {
+                        tabs[i].classList.remove('active');
+                    }
+                    e.target.classList.add('active');
+                    filterByCategory(e.target.dataset.category);
+                }
+            });
+        }
+        
+        // Load more
+        var loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function() {
+                displayCount += 24;
+                renderProducts();
+            });
+        }
+        
+        // Init
+        loadAllProducts();
+    </script>
+</body>
+</html>
+</body>
+</html>
         function filterByCategory(category) {
             currentCategory = category;
             displayCount = 24;
@@ -629,6 +609,3 @@
         
         // Init
         loadAllProducts();
-    </script>
-</body>
-</html>
