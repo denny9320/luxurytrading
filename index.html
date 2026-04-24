@@ -482,7 +482,7 @@
         var allProducts = [];
         var filteredProducts = [];
         var currentCategory = 'all';
-        var displayCount = 24;
+        var displayCount = 48; // 显示更多产品
         var searchTerm = '';
         
         // Load all products
@@ -530,6 +530,7 @@
                 var price = p.price || 0;
                 var hasImg = img && img.length > 0;
                 var catDisplay = p.categoryKey;
+                var allImages = p.images ? p.images.join('|||') : '';
                 
                 if (catDisplay) {
                     if (catDisplay === 'fragrance') catDisplay = '香水';
@@ -542,8 +543,8 @@
                     else if (catDisplay === 'accessories') catDisplay = '配饰';
                 }
                 
-                // 直接用内联样式确保显示
-                html += '<div style="background:#222;padding:15px;margin:8px;border:1px solid #c9a962;display:inline-block;width:220px;vertical-align:top;color:#fff;box-sizing:border-box;">';
+                // 点击查看详情的链接
+                html += '<div style="background:#222;padding:15px;margin:8px;border:1px solid #c9a962;display:inline-block;width:220px;vertical-align:top;color:#fff;box-sizing:border-box;cursor:pointer;" onclick="showProductDetail(\'' + p.id + '\')">';
                 if (hasImg) {
                     html += '<img src="' + img + '" style="width:100%;height:150px;object-fit:cover;display:block;background:#333;" onerror="this.style.display=\'none\'">';
                 }
@@ -554,7 +555,50 @@
             }
             
             grid.innerHTML = html;
+            
+            // 更新显示数量
+            var loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = displayCount >= filteredProducts.length ? 'none' : 'inline-block';
+                loadMoreBtn.innerText = '加载更多 (' + filteredProducts.length + ')';
+            }
+            
             console.log('Grid innerHTML length:', html.length);
+        }
+        
+        // 产品详情弹窗
+        function showProductDetail(productId) {
+            var product = null;
+            for (var i = 0; i < allProducts.length; i++) {
+                if (allProducts[i].id === productId) {
+                    product = allProducts[i];
+                    break;
+                }
+            }
+            
+            if (!product) return;
+            
+            var images = product.images || [];
+            var imgHtml = '';
+            for (var j = 0; j < images.length; j++) {
+                imgHtml += '<img src="' + images[j] + '" style="max-width:100%;max-height:300px;margin:5px;" onerror="this.style.display=\'none\'">';
+            }
+            
+            var html = '<div style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.95);z-index:9999;padding:40px;overflow:auto;">';
+            html += '<button onclick="this.parentElement.remove()" style="position:absolute;top:20px;right:20px;background:#c9a962;color:#000;border:none;padding:10px 20px;cursor:pointer;font-size:16px;">关闭</button>';
+            html += '<div style="max-width:800px;margin:0 auto;background:#222;padding:30px;border:1px solid #c9a962;">';
+            html += '<h2 style="color:#c9a962;margin:0 0 20px;">' + (product.name || product.nameEn || '产品详情') + '</h2>';
+            html += '<div style="text-align:center;margin:20px 0;">' + imgHtml + '</div>';
+            html += '<p style="color:#888;font-size:14px;margin:10px 0;">分类: ' + (product.categoryKey || '') + '</p>';
+            html += '<p style="color:#c9a962;font-size:24px;font-weight:bold;margin:20px 0;">¥' + (product.price || 0).toFixed(2) + '</p>';
+            if (product.description) {
+                html += '<p style="color:#888;margin:20px 0;">' + product.description + '</p>';
+            }
+            html += '</div></div>';
+            
+            var div = document.createElement('div');
+            div.innerHTML = html;
+            document.body.appendChild(div);
         }
             
             var html = '';
