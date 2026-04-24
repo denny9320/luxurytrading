@@ -613,13 +613,19 @@ filteredProducts = allProducts;
         var loadMoreBtn = document.getElementById('loadMoreBtn');
         if (loadMoreBtn) {
             loadMoreBtn.addEventListener('click', function() {
-                displayCount += 24;
-                renderProducts();
-            });
-        }
+displayCount += 24;
+            renderProducts();
+        });
         
         // Init
         loadAllProducts();
+        
+        // Debug: check grid after 2 sec
+        setTimeout(function() {
+            var g = document.getElementById('productsGrid');
+            console.log('Grid innerHTML length:', g ? g.innerHTML.length : 'not found');
+            if (g) g.style.border = '3px solid red';
+        }, 2000);
     </script>
 </body>
 </html>
