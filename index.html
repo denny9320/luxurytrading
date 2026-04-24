@@ -464,10 +464,10 @@
         <div class="footer-logo">LUXURYTRADING</div>
         <p class="footer-text">汇聚全球奢品 | 品质保证 | 假一赔十</p>
         <p class="footer-copy">&copy; 2026 LuxuryTrading. All Rights Reserved.</p>
-    </footer>
+</footer>
     
     <script>
-// All Products Data
+        // All Products Data
         var allProducts = [];
         var filteredProducts = [];
         var currentCategory = 'all';
@@ -491,12 +491,59 @@
                 }
             }
             
-            filteredProducts = allProducts;
+filteredProducts = allProducts;
             renderProducts();
             console.log('Loaded ' + allProducts.length + ' products');
         }
         
-// Filter by category
+        // Render products
+        function renderProducts() {
+            console.log('renderProducts called, count:', filteredProducts.length);
+            var grid = document.getElementById('productsGrid');
+            var toShow = filteredProducts.slice(0, displayCount);
+            
+            if (toShow.length === 0) {
+                grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#666;padding:60px 0;">未找到相关产品</p>';
+                return;
+            }
+            
+            var html = '';
+            for (var i = 0; i < toShow.length; i++) {
+                var p = toShow[i];
+                var img = p.images && p.images[0] ? p.images[0] : '';
+                var name = p.name || p.nameEn || 'Unknown Product';
+                var price = p.price || 0;
+                var hasImg = img && img.length > 0;
+                var catDisplay = p.categoryKey;
+                
+                if (catDisplay === 'fragrance') catDisplay = '香水';
+                else if (catDisplay === 'bags') catDisplay = '包包';
+                else if (catDisplay === 'clothing') catDisplay = '服装';
+                else if (catDisplay === 'glasses') catDisplay = '眼镜';
+                else if (catDisplay === 'jewelry') catDisplay = '首饰';
+                else if (catDisplay === 'shoes') catDisplay = '鞋子';
+                else if (catDisplay === 'watches') catDisplay = '腕表';
+                else if (catDisplay === 'accessories') catDisplay = '配饰';
+                
+                html += '<div class="product-card">';
+                html += '<div class="product-img-wrap">';
+                if (hasImg) {
+                    html += '<img class="product-img" src="' + img + '" alt="' + name + '">';
+                } else {
+                    html += '<div class="no-img">暂无图片</div>';
+                }
+                html += '</div>';
+                html += '<div class="product-info">';
+                html += '<div class="product-cat">' + catDisplay + '</div>';
+                html += '<div class="product-name">' + name + '</div>';
+                html += '<div class="product-price">' + price.toFixed(2) + '</div>';
+                html += '</div>';
+                html += '</div>';
+            }
+            grid.innerHTML = html;
+        }
+        
+ // Filter by category
         function filterByCategory(category) {
             currentCategory = category;
             displayCount = 24;
