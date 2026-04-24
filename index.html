@@ -464,6 +464,12 @@
     
     <script src="script.js"></script>
     <script>
+        // Global error handler
+        window.onerror = function(msg, url, line, col, error) {
+            console.error('JS Error:', msg, 'Line:', line);
+            return false;
+        };
+        
         // All Products Data
         let allProducts = [];
         let filteredProducts = [];
@@ -480,12 +486,14 @@
                 // Flatten all categories into one array
                 allProducts = [];
                 for (const category in data) {
-                    data[category].forEach(p => {
-                        allProducts.push({
-                            ...p,
-                            categoryKey: category
+                    if (Array.isArray(data[category])) {
+                        data[category].forEach(p => {
+                            allProducts.push({
+                                ...p,
+                                categoryKey: category
+                            });
                         });
-                    });
+                    }
                 }
                 
                 filteredProducts = [...allProducts];
@@ -494,6 +502,7 @@
                 console.log('Loaded ' + allProducts.length + ' products');
             } catch (error) {
                 console.error('Failed to load products:', error);
+                document.getElementById('productsGrid').innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#666;padding:60px 0;">产品加载失败，请刷新页面重试</p>';
             }
         }
         
