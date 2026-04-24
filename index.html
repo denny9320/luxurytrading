@@ -260,6 +260,9 @@
             aspect-ratio: 1;
             overflow: hidden;
             background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .product-img {
@@ -306,6 +309,12 @@
             content: '¥';
             font-size: 12px;
             margin-right: 2px;
+        }
+        
+        .no-img {
+            color: #444;
+            font-size: 12px;
+            text-align: center;
         }
         
         /* Load More */
@@ -499,9 +508,10 @@
             }
             
             grid.innerHTML = toShow.map(p => {
-                const img = p.images && p.images[0] ? p.images[0] : 'https://via.placeholder.com/400x400?text=No+Image';
+                const img = p.images && p.images[0] ? p.images[0] : '';
                 const name = p.name || p.nameEn || 'Unknown Product';
                 const price = p.price || 0;
+                const hasImg = img && img.length > 0;
                 const catDisplay = {
                     fragrance: '香水',
                     bags: '包包',
@@ -517,7 +527,7 @@
                 return `
                     <div class="product-card">
                         <div class="product-img-wrap">
-                            <img class="product-img" src="${img}" alt="${name}" onerror="this.src='https://via.placeholder.com/400x400?text=No+Image'">
+                            ${hasImg ? `<img class="product-img" src="${img}" alt="${name}" onerror="this.parentElement.innerHTML='<div class=\\'no-img\'>无图片</div>'">` : `<div class="no-img">暂无图片</div>`}
                         </div>
                         <div class="product-info">
                             <div class="product-cat">${catDisplay}</div>
