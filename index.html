@@ -559,6 +559,12 @@
             grid.innerHTML = html;
             
             console.log('Grid innerHTML length:', html.length);
+            
+            // Debug: force all children visible
+            var childs = grid.children;
+            for (var i = 0; i < childs.length; i++) {
+                childs[i].style.display = 'inline-block';
+            }
         }
         
  // Filter by category
