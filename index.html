@@ -573,55 +573,14 @@
                             <div class="product-price">${price.toFixed(2)}</div>
                         </div>
                     </div>`;
-                }).join('');
-            } catch(e) {
-                console.error('Render error:', e);
-                document.getElementById('productsGrid').innerHTML = '<p>渲染错误</p>';
+}).join('');
             }
-        }
             
-            // Debug: check first image URL
-            console.log('First product image:', toShow[0].images ? toShow[0].images[0] : 'no images');
-            
-grid.innerHTML = toShow.map((p, idx) => {
-                // For testing: use placeholder or real image
-                let img = p.images && p.images[0] ? p.images[0] : '';
-                const name = p.name || p.nameEn || 'Unknown Product';
-                const price = p.price || 0;
-                const hasImg = img && img.length > 0;
-                const catDisplay = {
-                    fragrance: '香水',
-                    bags: '包包',
-                    clothing: '服装',
-                    glasses: '眼镜',
-                    jewelry: '首饰',
-                    shoes: '鞋子',
-                    watches: '腕表',
-                    accessories: '配饰',
-                    other: '其他'
-                }[p.categoryKey] || p.categoryKey;
-                
-                // Debug first few products
-                if (idx < 3) console.log('Product', idx, ':', name, '| Image:', hasImg ? 'yes' : 'no');
-                
-                return `
-                    <div class="product-card">
-                        <div class="product-img-wrap">
-                            <img class="product-img" src="${hasImg ? img : ''}" alt="${name}" style="display:${hasImg?'block':'none'}">
-                            ${!hasImg ? '<div class="no-img">暂无图片</div>' : ''}
-                        </div>
-                        <div class="product-info">
-                            <div class="product-cat">${catDisplay}</div>
-                            <div class="product-name">${name}</div>
-                            <div class="product-price">${price.toFixed(2)}</div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-            
-            // Hide load more if all shown
+            // Hide load more button
             const loadMoreBtn = document.getElementById('loadMoreBtn');
-            loadMoreBtn.style.display = displayCount >= filteredProducts.length ? 'none' : 'inline-block';
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = displayCount >= filteredProducts.length ? 'none' : 'inline-block';
+            }
         }
         
         // Filter by category
