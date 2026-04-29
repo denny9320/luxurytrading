@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "langCode": "fr",
+    "langName": "Français",
+    "dir": "ltr"
+  },
+  "nav": {
+    "home": "Accueil",
+    "clothing": "Vêtements",
+    "fragrance": "Parfums",
+    "about": "À propos"
+  },
+  "hero": {
+    "subtitle": "L'élégance redéfinie",
+    "title": "Découvrez le luxe",
+    "desc": "Mode haut de gamme et parfums premium sélectionnés pour votre style unique",
+    "ctaClothing": "Explorer les vêtements",
+    "ctaFragrance": "Découvrir les parfums",
+    "scroll": "Défiler vers le bas"
+  },
+  "categories": {
+    "subtitle": "Collections",
+    "title": "Sélections soigneusement choisies",
+    "clothing": "Collection mode",
+    "clothingDesc": "Tailleur exquis, design élégant",
+    "fragrance": "Collection parfums",
+    "fragranceDesc": "Ingrédients premium, impressions durables",
+    "explore": "Explorer plus →"
+  },
+  "products": {
+    "featured": "En vedette",
+    "clothingTitle": "Vêtements en vedette",
+    "fragranceTitle": "Parfums signature",
+    "viewAllClothing": "Voir tous les vêtements",
+    "viewAllFragrance": "Voir tous les parfums",
+    "quickView": "Aperçu rapide",
+    "addToCart": "Ajouter au panier",
+    "sizes": "Tailles",
+    "colors": "Couleurs",
+    "notes": "Notes",
+    "size": "Taille"
+  },
+  "about": {
+    "subtitle": "Notre histoire",
+    "title": "À propos de TapingTrading",
+    "text1": "TapingTrading se consacre à la sélection des meilleurs produits de mode haut de gamme et de parfums premium du monde entier. Nous croyons que le vrai luxe ne réside pas seulement dans les produits eux-mêmes, mais dans les expériences uniques et les connexions émotionnelles qu'ils créent.",
+    "text2": "Chaque produit est soigneusement sélectionné pour garantir une qualité exceptionnelle et un design distinctif. Qu'il s'agisse d'une élégante chemise en soie ou d'un parfum français raffiné, nous nous efforçons de vous offrir une sélection unique qui vous distingue.",
+    "years": "Années d'approvisionnement mondial",
+    "brands": "Partenariats de marques sélectionnées",
+    "customers": "Clients fidèles"
+  },
+  "newsletter": {
+    "title": "Abonnez-vous à notre newsletter",
+    "desc": "Recevez les dernières mises à jour produits, offres exclusives et actualités mode",
+    "placeholder": "Entrez votre adresse email",
+    "button": "S'abonner"
+  },
+  "footer": {
+    "desc": "Nous sélectionnons mode et parfums de luxe du monde entier.",
+    "quickLinks": "Liens rapides",
+    "service": "Service client",
+    "contact": "Contactez-nous",
+    "shipping": "Informations de livraison",
+    "returns": "Retours et échanges",
+    "privacy": "Politique de confidentialité",
+    "contactUs": "Contact",
+    "globalSourcing": "Approvisionnement mondial, qualité garantie",
+    "copyright": "Tous droits réservés."
+  },
+  "cart": {
+    "title": "Panier",
+    "empty": "Votre panier est vide",
+    "total": "Total",
+    "checkout": "Commander",
+    "addedToCart": "ajouté au panier",
+    "removed": "Retiré du panier",
+    "loading": "Chargement"
+  },
+  "search": {
+    "placeholder": "Rechercher des produits...",
+    "noResults": "Aucun produit trouvé"
+  },
+  "notifications": {
+    "subscribeSuccess": "Merci de votre inscription !",
+    "invalidEmail": "Veuillez entrer une adresse email valide.",
+    "cartAdded": "ajouté au panier"
+  },
+  "modal": {
+    "close": "Fermer"
+  }
+}

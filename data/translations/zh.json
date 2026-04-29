@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "langCode": "zh",
+    "langName": "中文",
+    "dir": "ltr"
+  },
+  "nav": {
+    "home": "首页",
+    "clothing": "服装",
+    "fragrance": "香水",
+    "about": "关于我们"
+  },
+  "hero": {
+    "subtitle": "重新定义优雅",
+    "title": "探索奢华之美",
+    "desc": "精心挑选高端时装与顶级香氛，为您打造独特品味",
+    "ctaClothing": "探索服装",
+    "ctaFragrance": "发现香水",
+    "scroll": "向下滚动"
+  },
+  "categories": {
+    "subtitle": "精选系列",
+    "title": "甄选系列",
+    "clothing": "时装系列",
+    "clothingDesc": "精致剪裁，优雅设计",
+    "fragrance": "香氛系列",
+    "fragranceDesc": "顶级香料，持久留香",
+    "explore": "探索更多 →"
+  },
+  "products": {
+    "featured": "精选",
+    "clothingTitle": "精选服装",
+    "fragranceTitle": "甄选香水",
+    "viewAllClothing": "查看全部服装",
+    "viewAllFragrance": "查看全部香水",
+    "quickView": "快速查看",
+    "addToCart": "加入购物车",
+    "sizes": "尺码",
+    "colors": "颜色",
+    "notes": "香调",
+    "size": "规格"
+  },
+  "about": {
+    "subtitle": "品牌故事",
+    "title": "关于 TapingTrading",
+    "text1": "TapingTrading 致力于为您甄选全球最优质的高端时装与香氛产品。我们相信，真正的奢华不仅在于产品本身，更在于它所带来的独特体验与情感共鸣。",
+    "text2": "每一件产品都经过精心挑选，确保品质卓越、设计独特。无论是优雅的丝绸衬衫还是精致的法式香氛，我们都希望为您带来与众不同的品味之选。",
+    "years": "年全球采购经验",
+    "brands": "精选品牌合作",
+    "customers": "忠实客户信赖"
+  },
+  "newsletter": {
+    "title": "订阅我们的资讯",
+    "desc": "获取最新产品信息、专属优惠和时尚资讯",
+    "placeholder": "输入您的邮箱地址",
+    "button": "订阅"
+  },
+  "footer": {
+    "desc": "甄选全球高端时装与香氛，为您打造独特品味。",
+    "quickLinks": "快速链接",
+    "service": "客户服务",
+    "contact": "联系我们",
+    "shipping": "配送说明",
+    "returns": "退换政策",
+    "privacy": "隐私条款",
+    "contactUs": "联系方式",
+    "globalSourcing": "全球采购，品质保证",
+    "copyright": "版权所有。"
+  },
+  "cart": {
+    "title": "购物车",
+    "empty": "购物车是空的",
+    "total": "总计",
+    "checkout": "立即结算",
+    "addedToCart": "已添加到购物车",
+    "removed": "已从购物车移除",
+    "loading": "加载中"
+  },
+  "search": {
+    "placeholder": "搜索产品...",
+    "noResults": "未找到相关产品"
+  },
+  "notifications": {
+    "subscribeSuccess": "感谢订阅！我们将定期为您发送最新资讯。",
+    "invalidEmail": "请输入有效的邮箱地址。",
+    "cartAdded": "已添加到购物车"
+  },
+  "modal": {
+    "close": "关闭"
+  }
+}

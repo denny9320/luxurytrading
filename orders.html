@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的订单 - TapingTrading</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Lato', sans-serif; background: #FAFAFA; }
+    .header { background: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+    .header a { color: #1A1A1A; text-decoration: none; margin-right: 20px; }
+    .header a:hover { color: #C9A962; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; }
+    .logo span:last-child { color: #C9A962; }
+    .back-link { display: flex; align-items: center; gap: 10px; color: #666; margin-bottom: 20px; }
+    .back-link:hover { color: #C9A962; }
+    
+    .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+    .panel { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .panel h2 { margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+    
+    .order-card { border: 1px solid #eee; padding: 20px; border-radius: 8px; margin-bottom: 15px; }
+    .order-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+    .order-id { font-weight: 600; }
+    .order-status { padding: 5px 12px; border-radius: 20px; font-size: 12px; }
+    .status-pending { background: #fff3cd; color: #856404; }
+    .status-processing { background: #cce5ff; color: #004085; }
+    .status-completed { background: #d4edda; color: #155724; }
+    .order-item { display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px solid #eee; }
+    .order-total { font-weight: 600; font-size: 18px; margin-top: 15px; padding-top: 15px; border-top: 2px solid #1A1A1A; }
+    .order-date { color: #999; font-size: 13px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  
+  <div class="header">
+    <div class="logo">
+      <a href="index.html">TAPING<span>TRADING</span></a>
+    </div>
+  </div>
+  
+  <div class="container">
+    <a href="profile.html" class="back-link">← 返回个人中心</a>
+    
+    <div class="panel">
+      <h2>我的订单</h2>
+      <div id="orderList"></div>
+    </div>
+  </div>
+  
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getFirestore, collection, getDocs, query, where, orderBy } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyC5SZrLBFQoTPGiDfqe0XYwgT2I0caeBvQ",
+      authDomain: "tapingtrading.firebaseapp.com",
+      projectId: "tapingtrading",
+      storageBucket: "tapingtrading.firebasestorage.app",
+      messagingSenderId: "248437210641",
+      appId: "1:248437210641:web:d542acc355793e7ecd3bb0"
+    };
+    
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    let currentUser = null;
+    
+    const statusMap = {
+      'pending': { text: '待处理', class: 'status-pending' },
+      'processing': { text: '处理中', class: 'status-processing' },
+      'completed': { text: '已完成', class: 'status-completed' }
+    };
+    
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        window.location.href = 'login-page.html';
+        return;
+      }
+      currentUser = user;
+      await loadOrders();
+    });
+    
+    async function loadOrders() {
+      try {
+        const q = query(
+          collection(db, "orders"),
+          where("userId", "==", currentUser.uid),
+          orderBy("createdAt", "desc")
+        );
+        const snapshot = await getDocs(q);
+        const list = document.getElementById('orderList');
+        
+        if (snapshot.empty) {
+          list.innerHTML = '<p style="color:#666;">暂无订单</p>';
+          return;
+        }
+        
+        list.innerHTML = snapshot.docs.map(doc => {
+          const order = doc.data();
+          const status = statusMap[order.status] || statusMap['pending'];
+          const date = order.createdAt ? new Date(order.createdAt.seconds * 1000).toLocaleDateString() : '';
+          
+          return `
+            <div class="order-card">
+              <div class="order-header">
+                <span class="order-id">订单号: ${doc.id.substring(0, 8)}</span>
+                <span class="order-status ${status.class}">${status.text}</span>
+              </div>
+              <p class="order-date">下单日期: ${date}</p>
+              ${order.items.map(item => `
+                <div class="order-item">
+                  <span>${item.name} x${item.quantity}</span>
+                  <span>¥${item.price * item.quantity}</span>
+                </div>
+              `).join('')}
+              <div class="order-total">
+                总计: ¥${order.total}
+              </div>
+            </div>
+          `;
+        }).join('');
+      } catch (e) {
+        console.error('Error:', e);
+        document.getElementById('orderList').innerHTML = '<p style="color:red;">加载失败</p>';
+      }
+    }
+  </script>
+</body>
+</html>

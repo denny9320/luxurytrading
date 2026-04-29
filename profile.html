@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Center - TapingTrading</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Lato', sans-serif; background: #FAFAFA; }
+    
+    .header { background: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+    .header a { color: #1A1A1A; text-decoration: none; margin-right: 20px; }
+    .header a:hover { color: #C9A962; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; }
+    .logo span:last-child { color: #C9A962; }
+    .lang-selector { display: flex; gap: 10px; align-items: center; }
+    .lang-btn { padding: 5px 10px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 3px; }
+    .lang-btn.active { background: #C9A962; color: white; border-color: #C9A962; }
+    
+.container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+    
+    .tabs { display: flex; background: white; border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .tab { flex: 1; padding: 15px; text-align: center; cursor: pointer; border: none; background: white; font-size: 15px; }
+    .tab:hover { background: #f5f5f5; }
+    .tab.active { background: #C9A962; color: white; }
+    
+    .panel { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: none; }
+    .panel.active { display: block; }
+    
+    .panel h2 { margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+    
+    .info-group { margin-bottom: 20px; }
+    .info-group label { display: block; margin-bottom: 8px; color: #666; font-size: 14px; }
+    .info-group input, .info-group textarea, .info-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; }
+    
+    .btn { padding: 12px 25px; background: #1A1A1A; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    .btn:hover { background: #333; }
+    .btn-green { background: #27ae60; }
+    
+    .order-card { border: 1px solid #eee; padding: 20px; border-radius: 8px; margin-bottom: 15px; }
+    .order-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+    .order-id { font-weight: 600; }
+    .order-status { padding: 5px 12px; border-radius: 20px; font-size: 12px; }
+    .status-pending { background: #fff3cd; color: #856404; }
+    .status-processing { background: #cce5ff; color: #004085; }
+    .status-completed { background: #d4edda; color: #155724; }
+    .order-item { display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px solid #eee; }
+    .order-total { font-weight: 600; font-size: 18px; margin-top: 15px; padding-top: 15px; border-top: 2px solid #1A1A1A; }
+    
+    .address-card { border: 2px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 15px; cursor: pointer; position: relative; }
+    .address-card.selected { border-color: #C9A962; background: #f9f9f0; }
+    .address-card input[type="radio"] { margin-right: 10px; }
+    .address-card .default-badge { position: absolute; top: 10px; right: 10px; background: #C9A962; color: white; padding: 3px 8px; font-size: 11px; border-radius: 3px; }
+    .address-card .delete-btn { position: absolute; top: 10px; right: 80px; background: none; border: none; color: #999; cursor: pointer; }
+    .address-card .delete-btn:hover { color: red; }
+    
+    .empty-state { text-align: center; padding: 40px; color: #999; }
+    .empty-state a { color: #C9A962; }
+    
+    .success-msg { padding: 15px; background: #d4edda; color: #155724; border-radius: 5px; margin-top: 15px; display: none; }
+    .error-msg { padding: 15px; background: #f8d7da; color: #721c24; border-radius: 5px; margin-top: 15px; display: none; }
+    
+    .logout-btn { background: #1A1A1A; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="index.html" class="logo">TAPING<span>TRADING</span></a>
+    <div style="display:flex;align-items:center;gap:15px">
+      <a href="index.html" data-i18n="nav.home">首页</a>
+      <button class="logout-btn" onclick="logout()" data-i18n="profile.logout">退出登录</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- 标签页切换 -->
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('profile')" data-i18n="tabs.profile">个人资料</button>
+      <button class="tab" onclick="showTab('address')" data-i18n="tabs.address">收货地址</button>
+      <button class="tab" onclick="showTab('orders')" data-i18n="tabs.orders">我的订单</button>
+    </div>
+
+    <!-- Profile Tab -->
+    <div class="panel active" id="panel-profile">
+      <h2 data-i18n="profile.title">My Profile</h2>
+      <div class="info-group">
+        <label data-i18n="profile.name">Name</label>
+        <input type="text" id="profileName" placeholder="Enter your name">
+      </div>
+      <div class="info-group">
+        <label data-i18n="profile.email">Email</label>
+        <input type="email" id="profileEmail" disabled>
+      </div>
+      <div class="info-group">
+        <label data-i18n="profile.phone">Phone</label>
+        <input type="tel" id="profilePhone" placeholder="Enter phone number">
+      </div>
+      <button class="btn" onclick="saveProfile()" data-i18n="profile.save">Save Profile</button>
+      <div id="profileMsg" class="success-msg"></div>
+    </div>
+
+    <!-- Address Tab -->
+    <div class="panel" id="panel-address">
+      <h2 data-i18n="address.title">My Addresses</h2>
+      <div id="addressList"></div>
+      
+      <h3 style="margin: 25px 0 15px" data-i18n="address.addNew">Add New Address</h3>
+      <div class="info-group">
+        <label data-i18n="address.recipient">Recipient Name</label>
+        <input type="text" id="newAddressName" placeholder="Enter recipient name">
+      </div>
+      <div class="info-group">
+        <label data-i18n="address.phone">Phone Number</label>
+        <input type="tel" id="newAddressPhone" placeholder="Enter phone number">
+      </div>
+      <div class="info-group">
+        <label data-i18n="address.province">Province</label>
+        <input type="text" id="newAddressProvince" placeholder="Enter province">
+      </div>
+      <div class="info-group">
+        <label data-i18n="address.city">City</label>
+        <input type="text" id="newAddressCity" placeholder="Enter city">
+      </div>
+      <div class="info-group">
+        <label data-i18n="address.district">District</label>
+        <input type="text" id="newAddressDistrict" placeholder="Enter district">
+      </div>
+      <div class="info-group">
+        <label data-i18n="address.detail">Detailed Address</label>
+        <textarea id="newAddressDetail" rows="3" placeholder="Enter detailed address"></textarea>
+      </div>
+      <div class="info-group">
+        <label data-i18n="address.postalCode">Postal Code</label>
+        <input type="text" id="newAddressPostalCode" placeholder="Enter postal code">
+      </div>
+      <div class="info-group">
+        <label>
+          <input type="checkbox" id="newAddressDefault"> 
+          <span data-i18n="address.setDefault">Set as default address</span>
+        </label>
+      </div>
+      <button class="btn btn-green" onclick="addAddress()" data-i18n="address.addBtn">Add Address</button>
+      <div id="addressMsg" class="success-msg"></div>
+    </div>
+
+    <!-- Orders Tab -->
+    <div class="panel" id="panel-orders">
+      <h2 data-i18n="orders.title">My Orders</h2>
+      <div id="orderList"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getFirestore, collection, addDoc, getDocs, query, where, doc, updateDoc, deleteDoc, orderBy } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC5SZrLBFQoTPGiDfqe0XYwgT2I0caeBvQ",
+      authDomain: "tapingtrading.firebaseapp.com",
+      projectId: "tapingtrading",
+      storageBucket: "tapingtrading.firebasestorage.app",
+      messagingSenderId: "248437210641",
+      appId: "1:248437210641:web:d542acc355793e7ecd3bb0"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+// Profile Translations (embedded for standalone use)
+    const profileTranslations = {
+      en: {
+        nav: { home: 'Home' },
+        profile: { title: 'My Profile', name: 'Name', email: 'Email', phone: 'Phone', save: 'Save Profile', logout: 'Logout', saved: 'Profile saved successfully!' },
+        tabs: { profile: 'My Profile', address: 'Addresses', orders: 'My Orders' },
+        address: { title: 'My Addresses', recipient: 'Recipient Name', phone: 'Phone Number', province: 'Province', city: 'City', district: 'District', detail: 'Detailed Address', postalCode: 'Postal Code', addNew: 'Add New Address', addBtn: 'Add Address', setDefault: 'Set as default address', added: 'Address added successfully!', deleted: 'Address deleted', default: 'Default', noAddress: 'No saved addresses', addFirst: 'Add your first address' },
+        orders: { title: 'My Orders', orderId: 'Order ID', status: 'Status', items: 'Items', total: 'Total', noOrders: 'No orders yet', pending: 'Pending', processing: 'Processing', completed: 'Completed', date: 'Date' }
+      },
+      zh: {
+        nav: { home: '首页' },
+        profile: { title: '个人资料', name: '姓名', email: '邮箱', phone: '电话', save: '保存资料', logout: '退出登录', saved: '资料保存成功！' },
+        tabs: { profile: '个人资料', address: '收货地址', orders: '我的订单' },
+        address: { title: '我的收货地址', recipient: '收货人', phone: '电话号码', province: '省份', city: '城市', district: '区县', detail: '详细地址', postalCode: '邮政编码', addNew: '添加新地址', addBtn: '添加地址', setDefault: '设为默认地址', added: '地址添加成功！', deleted: '地址已删除', default: '默认', noAddress: '暂无保存的地址', addFirst: '添加您的第一个收货地址' },
+        orders: { title: '我的订单', orderId: '订单号', status: '状态', items: '商品', total: '总计', noOrders: '暂无订单', pending: '待处理', processing: '处理中', completed: '已完成', date: '日期' }
+      },
+      de: {
+        nav: { home: 'Startseite' },
+        profile: { title: 'Mein Profil', name: 'Name', email: 'E-Mail', phone: 'Telefon', save: 'Speichern', logout: 'Abmelden', saved: 'Profil gespeichert!' },
+        tabs: { profile: 'Mein Profil', address: 'Adressen', orders: 'Bestellungen' },
+        address: { title: 'Meine Adressen', recipient: 'Empfänger', phone: 'Telefon', province: 'Provinz', city: 'Stadt', district: 'District', detail: 'Adresse', postalCode: 'PLZ', addNew: 'Neue Adresse', addBtn: 'Hinzufügen', setDefault: 'Als Standard', added: 'Adresse hinzugefügt!', deleted: 'Gelöscht', default: 'Standard', noAddress: 'Keine Adressen', addFirst: 'Erste Adresse hinzufügen' },
+        orders: { title: 'Meine Bestellungen', orderId: 'Bestellung', status: 'Status', items: 'Artikel', total: 'Gesamt', noOrders: 'Keine Bestellungen', pending: 'Ausstehend', processing: 'In Bearbeitung', completed: 'Abgeschlossen', date: 'Datum' }
+      },
+      fr: {
+        nav: { home: 'Accueil' },
+        profile: { title: 'Mon profil', name: 'Nom', email: 'Email', phone: 'Téléphone', save: 'Enregistrer', logout: 'Déconnexion', saved: 'Profil enregistré!' },
+        tabs: { profile: 'Mon profil', address: 'Adresses', orders: 'Commandes' },
+        address: { title: 'Mes adresses', recipient: 'Destinataire', phone: 'Téléphone', province: 'Province', city: 'Ville', district: 'District', detail: 'Adresse', postalCode: 'Code postal', addNew: 'Nouvelle adresse', addBtn: 'Ajouter', setDefault: 'Par défaut', added: 'Adresse ajoutée!', deleted: 'Supprimé', default: 'Par défaut', noAddress: 'Aucune adresse', addFirst: 'Ajouter une adresse' },
+        orders: { title: 'Mes commandes', orderId: 'Commande', status: 'Statut', items: 'Articles', total: 'Total', noOrders: 'Aucune commande', pending: 'En attente', processing: 'En cours', completed: 'Terminé', date: 'Date' }
+      },
+      es: {
+        nav: { home: 'Inicio' },
+        profile: { title: 'Mi perfil', name: 'Nombre', email: 'Correo', phone: 'Teléfono', save: 'Guardar', logout: 'Cerrar sesión', saved: '¡Perfil guardado!' },
+        tabs: { profile: 'Mi perfil', address: 'Direcciones', orders: 'Pedidos' },
+        address: { title: 'Mis direcciones', recipient: 'Destinatario', phone: 'Teléfono', province: 'Provincia', city: 'Ciudad', district: 'Distrito', detail: 'Dirección', postalCode: 'Código postal', addNew: 'Nueva dirección', addBtn: 'Añadir', setDefault: 'Por defecto', added: '¡Dirección añadida!', deleted: 'Eliminado', default: 'Por defecto', noAddress: 'Sin direcciones', addFirst: 'Añadir primera dirección' },
+        orders: { title: 'Mis pedidos', orderId: 'Pedido', status: 'Estado', items: 'Artículos', total: 'Total', noOrders: 'Sin pedidos', pending: 'Pendiente', processing: 'Procesando', completed: 'Completado', date: 'Fecha' }
+      },
+      ar: {
+        nav: { home: 'الرئيسية' },
+        profile: { title: 'ملفي', name: 'الاسم', email: 'البريد', phone: 'الهاتف', save: 'حفظ', logout: 'خروج', saved: 'تم الحفظ!' },
+        tabs: { profile: 'ملفي', address: 'العناوين', orders: 'طلباتي' },
+        address: { title: 'عناويني', recipient: 'المستلم', phone: 'الهاتف', province: 'المقاطعة', city: 'المدينة', district: 'المنطقة', detail: 'العنوان', postalCode: 'الرمز', addNew: 'عنوان جديد', addBtn: 'إضافة', setDefault: 'افتراضي', added: 'تمت الإضافة!', deleted: 'تم الحذف', default: 'افتراضي', noAddress: 'لا توجد عناوين', addFirst: 'أضف أول عنوان' },
+        orders: { title: 'طلباتي', orderId: 'طلب', status: 'الحالة', items: 'المنتجات', total: 'المجموع', noOrders: 'لا توجد طلبات', pending: 'قيد الانتظار', processing: 'قيد المعالجة', completed: 'مكتمل', date: 'التاريخ' }
+      }
+    };
+    
+    let currentLang = localStorage.getItem('taping_lang') || 'zh';
+    let currentUser = null;
+
+    // 在页面加载时立即读取URL参数并显示对应的标签页
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialTab = urlParams.get('tab') || 'profile';
+    const tabMap = { 'profile': 'profile', 'addresses': 'address', 'orders': 'orders', 'settings': 'settings' };
+    const targetTab = tabMap[initialTab] || 'profile';
+
+    // Initialize
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        window.location.href = 'login-page.html';
+        return;
+      }
+      currentUser = user;
+      document.getElementById('profileEmail').value = user.email;
+      
+      // Apply translations first, then load data
+      applyTranslations();
+      
+      await loadProfile();
+      await loadAddresses();
+      await loadOrders();
+      
+      // 立即显示正确的标签页（在applyTranslations之后）
+      showTab(targetTab);
+    });
+
+    // Initialize language buttons and apply translations from localStorage
+    function initLangButtons() {
+      // Get language from localStorage (same as homepage)
+      currentLang = localStorage.getItem('taping_lang') || 'zh';
+      applyTranslations();
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(currentLang));
+      });
+    }
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('taping_lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang));
+      });
+      applyTranslations();
+    }
+
+    function applyTranslations() {
+      const t = profileTranslations[currentLang];
+      if (!t) return;
+      
+      // Update all elements with data-i18n attribute
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        const keys = key.split('.');
+        let value = t;
+        keys.forEach(k => value = value ? value[k] : null);
+        if (value) {
+          // Check if element has a parent span with class option-text
+          if (el.classList.contains('option-text')) {
+            el.textContent = value;
+          } else {
+            el.textContent = value;
+          }
+        }
+      });
+      
+      // Update selected text in dropdown
+      updateDropdownSelectedText();
+      
+      // Reload dynamic content
+      loadAddresses();
+      loadOrders();
+    }
+    
+    function updateDropdownSelectedText() {
+      // No longer needed - using tabs instead
+    }
+
+    window.showTab = function(tab) {
+      // Update tab buttons
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelector(`.tab[onclick*="${tab}"]`).classList.add('active');
+      
+      // Update panels
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.getElementById(`panel-${tab}`).classList.add('active');
+      
+      // Reload data if needed
+      if (tab === 'address') {
+        loadAddresses();
+      } else if (tab === 'orders') {
+        loadOrders();
+      }
+    };
+
+    async function loadProfile() {
+      try {
+        const q = query(collection(db, "profiles"), where("userId", "==", currentUser.uid));
+        const snapshot = await getDocs(q);
+        if (!snapshot.empty) {
+          const data = snapshot.docs[0].data();
+          document.getElementById('profileName').value = data.name || '';
+          document.getElementById('profilePhone').value = data.phone || '';
+        }
+      } catch (e) {
+        console.error('Error loading profile:', e);
+      }
+    }
+
+    window.saveProfile = async function() {
+      const name = document.getElementById('profileName').value;
+      const phone = document.getElementById('profilePhone').value;
+      
+      try {
+        const q = query(collection(db, "profiles"), where("userId", "==", currentUser.uid));
+        const snapshot = await getDocs(q);
+        
+        if (snapshot.empty) {
+          await addDoc(collection(db, "profiles"), {
+            userId: currentUser.uid,
+            name,
+            phone,
+            createdAt: new Date().toISOString()
+          });
+        } else {
+          await updateDoc(snapshot.docs[0].ref, { name, phone });
+        }
+        
+        const msg = document.getElementById('profileMsg');
+        msg.textContent = translations[currentLang].profile.saved;
+        msg.style.display = 'block';
+        setTimeout(() => msg.style.display = 'none', 3000);
+      } catch (e) {
+        console.error('Error saving profile:', e);
+      }
+    };
+
+    async function loadAddresses() {
+      const container = document.getElementById('addressList');
+      const t = profileTranslations[currentLang].address;
+      
+      try {
+        const q = query(collection(db, "addresses"), where("userId", "==", currentUser.uid));
+        const snapshot = await getDocs(q);
+        
+        if (snapshot.empty) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <p>${t.noAddress}</p>
+              <p><a href="#">${t.addFirst}</a></p>
+            </div>
+          `;
+          return;
+        }
+        
+        container.innerHTML = snapshot.docs.map(doc => {
+          const addr = doc.data();
+          return `
+            <div class="address-card ${addr.isDefault ? 'selected' : ''}">
+              ${addr.isDefault ? `<span class="default-badge">${t.default}</span>` : ''}
+              <button class="delete-btn" onclick="deleteAddress('${doc.id}')">✕</button>
+              <p><strong>${addr.recipient}</strong> ${addr.phone}</p>
+              <p>${addr.province} ${addr.city} ${addr.district}</p>
+              <p>${addr.detail}</p>
+              ${addr.postalCode ? `<p>${addr.postalCode}</p>` : ''}
+            </div>
+          `;
+        }).join('');
+      } catch (e) {
+        console.error('Error loading addresses:', e);
+      }
+    }
+
+    window.addAddress = async function() {
+      const recipient = document.getElementById('newAddressName').value;
+      const phone = document.getElementById('newAddressPhone').value;
+      const province = document.getElementById('newAddressProvince').value;
+      const city = document.getElementById('newAddressCity').value;
+      const district = document.getElementById('newAddressDistrict').value;
+      const detail = document.getElementById('newAddressDetail').value;
+      const postalCode = document.getElementById('newAddressPostalCode').value;
+      const isDefault = document.getElementById('newAddressDefault').checked;
+      
+      if (!recipient || !detail) {
+        alert('Please fill in required fields');
+        return;
+      }
+      
+      try {
+        await addDoc(collection(db, "addresses"), {
+          userId: currentUser.uid,
+          recipient,
+          phone,
+          province,
+          city,
+          district,
+          detail,
+          postalCode,
+          isDefault,
+          createdAt: new Date().toISOString()
+        });
+        
+        // Clear form
+        document.querySelectorAll('#panel-address input, #panel-address textarea').forEach(el => {
+          if (el.type !== 'checkbox') el.value = '';
+        });
+        document.getElementById('newAddressDefault').checked = false;
+        
+        const msg = document.getElementById('addressMsg');
+        msg.textContent = profileTranslations[currentLang].address.added;
+        msg.style.display = 'block';
+        setTimeout(() => msg.style.display = 'none', 3000);
+        
+        await loadAddresses();
+      } catch (e) {
+        console.error('Error adding address:', e);
+      }
+    };
+
+    window.deleteAddress = async function(id) {
+      if (!confirm('Delete this address?')) return;
+      
+      try {
+        await deleteDoc(doc(db, "addresses", id));
+        await loadAddresses();
+      } catch (e) {
+        console.error('Error deleting address:', e);
+      }
+    };
+
+    async function loadOrders() {
+      const container = document.getElementById('orderList');
+      const t = profileTranslations[currentLang].orders;
+      
+      try {
+        const q = query(collection(db, "orders"), where("userId", "==", currentUser.uid), orderBy("createdAt", "desc"));
+        const snapshot = await getDocs(q);
+        
+        if (snapshot.empty) {
+          container.innerHTML = `<div class="empty-state"><p>${t.noOrders}</p></div>`;
+          return;
+        }
+        
+        container.innerHTML = snapshot.docs.map(doc => {
+          const order = doc.data();
+          const date = new Date(order.createdAt).toLocaleDateString();
+          const statusClass = order.status === 'completed' ? 'status-completed' : order.status === 'processing' ? 'status-processing' : 'status-pending';
+          const statusText = t[order.status] || order.status;
+          
+          return `
+            <div class="order-card">
+              <div class="order-header">
+                <span class="order-id">${t.orderId}: ${doc.id.slice(0, 8)}</span>
+                <span class="order-status ${statusClass}">${statusText}</span>
+              </div>
+              <p style="color:#666;font-size:12px">${t.date}: ${date}</p>
+              ${order.items.map(item => `
+                <div class="order-item">
+                  <span>${item.name} x${item.quantity}</span>
+                  <span>¥${item.price * item.quantity}</span>
+                </div>
+              `).join('')}
+              <div class="order-total">
+                ${t.total}: ¥${order.total}
+              </div>
+            </div>
+          `;
+        }).join('');
+      } catch (e) {
+        console.error('Error loading orders:', e);
+      }
+    }
+
+    window.logout = async function() {
+      await signOut(auth);
+      window.location.href = 'index.html';
+    };
+
+    // Initialize lang buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.toLowerCase().includes(currentLang));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "langCode": "es",
+    "langName": "Español",
+    "dir": "ltr"
+  },
+  "nav": {
+    "home": "Inicio",
+    "clothing": "Ropa",
+    "fragrance": "Fragancias",
+    "about": "Nosotros"
+  },
+  "hero": {
+    "subtitle": "Elegancia redefinida",
+    "title": "Descubre el lujo",
+    "desc": "Moda de alta gama y fragancias premium curadas para tu estilo único",
+    "ctaClothing": "Explorar ropa",
+    "ctaFragrance": "Descubrir fragancias",
+    "scroll": "Desplazarse hacia abajo"
+  },
+  "categories": {
+    "subtitle": "Colecciones",
+    "title": "Selecciones curadas",
+    "clothing": "Colección de moda",
+    "clothingDesc": "Sastrería exquisita, diseño elegante",
+    "fragrance": "Colección de fragancias",
+    "fragranceDesc": "Ingredientes premium, impresiones duraderas",
+    "explore": "Explorar más →"
+  },
+  "products": {
+    "featured": "Destacados",
+    "clothingTitle": "Ropa destacada",
+    "fragranceTitle": "Fragancias signature",
+    "viewAllClothing": "Ver toda la ropa",
+    "viewAllFragrance": "Ver todas las fragancias",
+    "quickView": "Vista rápida",
+    "addToCart": "Añadir al carrito",
+    "sizes": "Tallas",
+    "colors": "Colores",
+    "notes": "Notas",
+    "size": "Tamaño"
+  },
+  "about": {
+    "subtitle": "Nuestra historia",
+    "title": "Sobre TapingTrading",
+    "text1": "TapingTrading se dedica a curar los mejores productos de moda de alta gama y fragancias premium de todo el mundo. Creemos que el verdadero lujo no solo reside en los productos en sí, sino en las experiencias únicas y las conexiones emocionales que crean.",
+    "text2": "Cada producto se selecciona cuidadosamente para garantizar una calidad excepcional y un diseño distintivo. Ya sea una elegante camisa de seda o una refinada fragancia francesa, nos esforzamos por ofrecerle una selección única que lo diferencia.",
+    "years": "Años de abastecimiento global",
+    "brands": "Asociaciones de marcas curadas",
+    "customers": "Clientes leales"
+  },
+  "newsletter": {
+    "title": "Suscríbete a nuestro boletín",
+    "desc": "Recibe las últimas actualizaciones de productos, ofertas exclusivas y novedades de moda",
+    "placeholder": "Ingresa tu dirección de correo",
+    "button": "Suscribirse"
+  },
+  "footer": {
+    "desc": "Curando moda de lujo y fragancias de todo el mundo.",
+    "quickLinks": "Enlaces rápidos",
+    "service": "Servicio al cliente",
+    "contact": "Contáctanos",
+    "shipping": "Información de envío",
+    "returns": "Devoluciones y cambios",
+    "privacy": "Política de privacidad",
+    "contactUs": "Contacto",
+    "globalSourcing": "Abastecimiento global, calidad garantizada",
+    "copyright": "Todos los derechos reservados."
+  },
+  "cart": {
+    "title": "Carrito de compras",
+    "empty": "Tu carrito está vacío",
+    "total": "Total",
+    "checkout": "Finalizar compra",
+    "addedToCart": "añadido al carrito",
+    "removed": "Eliminado del carrito",
+    "loading": "Cargando"
+  },
+  "search": {
+    "placeholder": "Buscar productos...",
+    "noResults": "No se encontraron productos"
+  },
+  "notifications": {
+    "subscribeSuccess": "¡Gracias por suscribirte!",
+    "invalidEmail": "Por favor ingresa un correo electrónico válido.",
+    "cartAdded": "añadido al carrito"
+  },
+  "modal": {
+    "close": "Cerrar"
+  }
+}

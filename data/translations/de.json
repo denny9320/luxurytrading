@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "langCode": "de",
+    "langName": "Deutsch",
+    "dir": "ltr"
+  },
+  "nav": {
+    "home": "Startseite",
+    "clothing": "Kleidung",
+    "fragrance": "Düfte",
+    "about": "Über uns"
+  },
+  "hero": {
+    "subtitle": "Eleganz neu definiert",
+    "title": "Entdecken Sie Luxus",
+    "desc": "Sorgfältig ausgewählte High-End-Mode und Premium-Düfte für Ihren einzigartigen Stil",
+    "ctaClothing": "Kleidung entdecken",
+    "ctaFragrance": "Düfte entdecken",
+    "scroll": "Nach unten scrollen"
+  },
+  "categories": {
+    "subtitle": "Kollektionen",
+    "title": "Kuratierte Auswahl",
+    "clothing": "Modekollektion",
+    "clothingDesc": "Exquisite Schneiderkunst, elegantes Design",
+    "fragrance": "Duftekollektion",
+    "fragranceDesc": "Premium-Zutaten, bleibende Eindrücke",
+    "explore": "Mehr entdecken →"
+  },
+  "products": {
+    "featured": "Empfohlen",
+    "clothingTitle": "Empfohlene Kleidung",
+    "fragranceTitle": "Signature-Düfte",
+    "viewAllClothing": "Alle Kleidung ansehen",
+    "viewAllFragrance": "Alle Düfte ansehen",
+    "quickView": "Schnellansicht",
+    "addToCart": "In den Warenkorb",
+    "sizes": "Größen",
+    "colors": "Farben",
+    "notes": "Noten",
+    "size": "Größe"
+  },
+  "about": {
+    "subtitle": "Unsere Geschichte",
+    "title": "Über TapingTrading",
+    "text1": "TapingTrading widmet sich der Kuratierung der feinsten High-End-Mode und Premium-Duftprodukte aus aller Welt. Wir glauben, dass wahrer Luxus nicht nur in den Produkten selbst liegt, sondern in den einzigartigen Erlebnissen und emotionalen Verbindungen, die sie schaffen.",
+    "text2": "Jedes Produkt wird sorgfältig ausgewählt, um außergewöhnliche Qualität und unverwechselbares Design zu gewährleisten. Ob ein elegantes Seidenhemd oder ein raffinierter französischer Duft - wir streben danach, Ihnen eine einzigartige Auswahl zu bieten, die Sie von anderen abhebt.",
+    "years": "Jahre globaler Beschaffung",
+    "brands": "Kuratierte Markenpartnerschaften",
+    "customers": "Loyale Kunden"
+  },
+  "newsletter": {
+    "title": "Abonnieren Sie unseren Newsletter",
+    "desc": "Erhalten Sie die neuesten Produkt-Updates, exklusive Angebote und Modeneuigkeiten",
+    "placeholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "button": "Abonnieren"
+  },
+  "footer": {
+    "desc": "Wir kuratieren Luxusmode und -düfte aus aller Welt.",
+    "quickLinks": "Schnelllinks",
+    "service": "Kundenservice",
+    "contact": "Kontakt",
+    "shipping": "Versandinformationen",
+    "returns": "Rückgabe & Umtausch",
+    "privacy": "Datenschutz",
+    "contactUs": "Kontakt",
+    "globalSourcing": "Globale Beschaffung, Qualität garantiert",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer",
+    "total": "Gesamt",
+    "checkout": "Zur Kasse",
+    "addedToCart": "zum Warenkorb hinzugefügt",
+    "removed": "Aus dem Warenkorb entfernt",
+    "loading": "Laden"
+  },
+  "search": {
+    "placeholder": "Produkte suchen...",
+    "noResults": "Keine Produkte gefunden"
+  },
+  "notifications": {
+    "subscribeSuccess": "Vielen Dank für Ihr Abonnement!",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "cartAdded": "zum Warenkorb hinzugefügt"
+  },
+  "modal": {
+    "close": "Schließen"
+  }
+}
