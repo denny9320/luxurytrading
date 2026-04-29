@@ -229,18 +229,10 @@ button {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('images/products/perfume1.jpg');
+    background-image: url('images/products/luxury1.jpg');
     background-size: cover;
     background-position: center;
-    animation: heroSlideshow 20s ease-in-out infinite;
-    filter: brightness(0.6) saturate(1.2);
-}
-
-@keyframes heroSlideshow {
-    0%, 25% { background-image: url('images/products/perfume1.jpg'); }
-    33%, 58% { background-image: url('images/products/perfume2.jpg'); }
-    66%, 91% { background-image: url('images/products/perfume3.jpg'); }
-    100% { background-image: url('images/products/perfume1.jpg'); }
+    filter: brightness(0.55) saturate(1.1);
 }
 
 .hero-overlay {
@@ -273,32 +265,16 @@ button {
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: 80px;
+    font-size: 64px;
     font-weight: 300;
     line-height: 1;
     letter-spacing: 4px;
-    margin-bottom: 32px;
-}
-
-.hero-desc {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.8;
-    margin-bottom: 48px;
-    opacity: 0.8;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
 }
 
 .hero-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards 0.9s;
 }
 
 @keyframes fadeInUp {
@@ -415,7 +391,7 @@ button {
 }
 
 /* ========================================
-    Categories - Kallage Style
+    Categories - Horizontal Layout
     ======================================== */
 .categories-grid {
     display: flex;
@@ -427,7 +403,7 @@ button {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 80vh;
+    min-height: 60vh;
     overflow: hidden;
 }
 
@@ -454,23 +430,19 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px;
+    padding: 60px 80px;
     background-color: #FAF9F7;
 }
 
 .category-card:last-child .category-card-content {
-    background-color: #0A0A0A;
-    color: #FAF9F7;
-}
-
-.category-card:first-child .category-card-content {
-    order: -1;
+    background-color: #1A1A1A;
+    color: #FFFFFF;
 }
 
 .category-card-title {
     font-family: var(--font-display);
-    font-size: 42px;
-    font-weight: 400;
+    font-size: 36px;
+    font-weight: 300;
     letter-spacing: 2px;
     margin-bottom: 24px;
     color: inherit;

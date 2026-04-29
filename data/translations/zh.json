@@ -12,14 +12,13 @@
   },
   "hero": {
     "subtitle": "奢华贸易",
-    "title": "香氛与时装",
-    "desc": "探索我们精心策划的顶级香氛和优雅时装系列"
+    "title": "香氛与时装"
   },
   "categories": {
     "clothing": "时装系列",
-    "clothingDesc": "精致剪裁与优雅设计，为现代鉴赏家打造",
+    "clothingDesc": "精致剪裁与优雅设计",
     "fragrance": "香氛系列",
-    "fragranceDesc": "顶级香料，打造持久的Signature香氛。世界顶级调香师精心调配",
+    "fragranceDesc": "顶级香料打造的持久香氛",
     "explore": "探索 →"
   },
   "products": {

@@ -12,14 +12,13 @@
   },
   "hero": {
     "subtitle": "Luxury Trading",
-    "title": "Fragrance & Fashion",
-    "desc": "Discover our curated collection of premium fragrances and elegant fashion pieces."
+    "title": "Fragrance & Fashion"
   },
   "categories": {
     "clothing": "Fashion Collection",
-    "clothingDesc": "Exquisite tailoring and elegant design for the modern connoisseur.",
+    "clothingDesc": "Exquisite tailoring and elegant design.",
     "fragrance": "Fragrance Collection",
-    "fragranceDesc": "Premium ingredients for lasting impressions. Discover signature scents crafted by the world's finest perfumers.",
+    "fragranceDesc": "Premium ingredients for lasting impressions.",
     "explore": "Discover →"
   },
   "products": {
