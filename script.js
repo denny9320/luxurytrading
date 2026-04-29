@@ -527,21 +527,44 @@ async function initProductSystem() {
 function renderFeaturedProducts() {
     console.log('renderFeaturedProducts called, productData:', productData);
     
-    // Render clothing products
-    const clothingGrid = document.getElementById('clothingGrid');
-    if (clothingGrid && productData?.clothing?.length > 0) {
-        clothingGrid.innerHTML = productData.clothing.map(product => 
-            createFeaturedCard(product, 'clothing')
-        ).join('');
+    // Render all products initially
+    renderProductsByCategory('all');
+    
+    // Setup category tabs
+    setupCategoryTabs();
+}
+
+function renderProductsByCategory(category) {
+    const grid = document.getElementById('productsGrid');
+    if (!grid) return;
+    
+    let products = [];
+    if (category === 'all') {
+        // Get all products from all categories
+        Object.keys(productData).forEach(cat => {
+            if (productData[cat] && Array.isArray(productData[cat])) {
+                products = products.concat(productData[cat].map(p => ({...p, type: cat})));
+            }
+        });
+    } else {
+        products = (productData[category] || []).map(p => ({...p, type: category}));
     }
     
-    // Render fragrance products
-    const fragranceGrid = document.getElementById('fragranceGrid');
-    if (fragranceGrid && productData?.fragrance?.length > 0) {
-        fragranceGrid.innerHTML = productData.fragrance.map(product => 
-            createFeaturedCard(product, 'fragrance')
-        ).join('');
-    }
+    grid.innerHTML = products.map(product => 
+        createFeaturedCard(product, product.type)
+    ).join('');
+}
+
+function setupCategoryTabs() {
+    const tabs = document.querySelectorAll('.category-tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            renderProductsByCategory(tab.dataset.category);
+        });
+    });
 }
 
 function createFeaturedCard(product, type) {
@@ -1050,12 +1073,26 @@ function initProductModal() {
 function openProductModal(productId, type) {
     console.log('Opening modal for productId:', productId, 'type:', type);
     
-    // 确保type有效
-    if (!type) {
-        console.error('type is undefined!');
-        // 尝试从ID判断类型
-        type = productId && productId.startsWith('f') ? 'fragrance' : 'clothing';
+    // Ensure type is valid - try to find product in any category if type not provided
+    if (!type || type === 'undefined') {
+        // Search for product in all categories
+        for (const cat in productData) {
+            const found = productData[cat]?.find(p => p.id === productId);
+            if (found) {
+                type = cat;
+                break;
+            }
+        }
+        if (!type) type = 'clothes'; // default
         console.log('Using inferred type:', type);
+    }
+    
+    const product = productData[type]?.find(p => p.id === productId) ||
+                   Object.values(productData).flat().find(p => p.id === productId);
+    
+    if (!product) {
+        console.error('Product not found:', productId);
+        return;
     }
     
     const modal = document.getElementById('productModal');

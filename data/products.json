@@ -1,682 +1,149 @@
 {
-  "clothing": [
+  "clothes": [
     {
-      "id": "c00005",
-      "name": "Supreme FW25 Reflective Logo Hooded Work Jacket | Full Denim Quilted Insulation | Unisex Washed Blue/Black",
-      "nameEn": "Supreme FW25 Reflective Logo Hooded Work Jacket | Full Denim Quilted Insulation | Unisex Washed Blue/Black",
-      "category": "Clothing",
-      "price": 170.0,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/9494efc1d061416f985ae678fd6d398c.jpg",
-        "https://img.jzfileserver.com/product/68014/8b06df467bc343838477b5568f090fde.jpg",
-        "https://img.jzfileserver.com/product/68014/dbea54fd97ff4875b4c1a0f091184e2a.jpg",
-        "https://img.jzfileserver.com/product/68014/87af2cea497d4a38b2b5be1fba239f4b.jpg",
-        "https://img.jzfileserver.com/product/68014/cc24cce445784c9a8f16d0449dfb22aa.jpg",
-        "https://img.jzfileserver.com/product/68014/abf899b8d68e46a1b0735943fa33485e.jpg",
-        "https://img.jzfileserver.com/product/68014/f5a8d014d7cb468786237578adb89091.jpg",
-        "https://img.jzfileserver.com/product/68014/d8a665c16b7f4939aae9db847656c824.jpg",
-        "https://img.jzfileserver.com/product/68014/20591f6f949d4073ba8f2de249fa3644.jpg"
-      ],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Washed Blue"
+      "id": "clothes001",
+      "name": "Supreme FW25 Reflective Jacket",
+      "nameEn": "Supreme FW25 Reflective Jacket",
+      "category": "Clothes",
+      "price": 170,
+      "images": ["images/products/jacket1.jpg"],
+      "description": "Premium reflective jacket"
     },
     {
-      "id": "c00006",
-      "name": "Supreme FW25 Reflective Logo Hooded Work Jacket | Full Denim Quilted Insulation | Unisex Washed Blue/Black",
-      "nameEn": "Supreme FW25 Reflective Logo Hooded Work Jacket | Full Denim Quilted Insulation | Unisex Washed Blue/Black",
-      "category": "Clothing",
-      "price": 170.0,
-      "images": [],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Washed Black"
+      "id": "clothes002",
+      "name": "MONCLER Puffer Jacket",
+      "nameEn": "MONCLER Puffer Jacket",
+      "category": "Clothes",
+      "price": 95,
+      "images": ["images/products/jacket2.jpg"],
+      "description": "Warm puffer jacket"
     },
     {
-      "id": "c00007",
-      "name": "MONCLER Paneled Stand Collar Puffer Jacket | Knitted Cable Sleeves | Luxury Winter Style Redefined",
-      "nameEn": "MONCLER Paneled Stand Collar Puffer Jacket | Knitted Cable Sleeves | Luxury Winter Style Redefined",
-      "category": "Clothing",
-      "price": 95.0,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/d7144efd5cfd472f84f727d15dcac700.jpg",
-        "https://img.jzfileserver.com/product/68014/76b4435234be4ef5bea746a482a24803.jpg",
-        "https://img.jzfileserver.com/product/68014/5ff1dd7472824b48ac58558bc91e2734.jpg",
-        "https://img.jzfileserver.com/product/68014/3cd570d2aa914f029596edbe2555dd28.jpg",
-        "https://img.jzfileserver.com/product/68014/4a421100fc1145e087ae970b58d9af93.jpg",
-        "https://img.jzfileserver.com/product/68014/6ad2222cf0474393970046beebb82965.jpg",
-        "https://img.jzfileserver.com/product/68014/d7245e4c7889494c8051929418a608c5.jpg",
-        "https://img.jzfileserver.com/product/68014/18aac03a2bdd4dcba5f41d1fa5915e9c.jpg"
-      ],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "black"
-    },
-    {
-      "id": "c00008",
-      "name": "KAILAS Ultralight Primaloft® Hooded Jacket | Quilted Construction | Helmet-Compatible Outdoor Insulated Layer",
-      "nameEn": "KAILAS Ultralight Primaloft® Hooded Jacket | Quilted Construction | Helmet-Compatible Outdoor Insulated Layer",
-      "category": "Clothing",
-      "price": 88.0,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/5f0a6dbc6c8d4200a65b9985397ddb45.jpg",
-        "https://img.jzfileserver.com/product/68014/fbba3a224cb14fdc8ec6bc775a7783ea.jpg",
-        "https://img.jzfileserver.com/product/68014/ecfbd9394cd04be384ea6586918722d2.jpg",
-        "https://img.jzfileserver.com/product/68014/ef1973c29ed94ba4951b18a5acbc11a5.jpg",
-        "https://img.jzfileserver.com/product/68014/e0300fd789ef4f29bdbbb4023260c5d8.jpg",
-        "https://img.jzfileserver.com/product/68014/86c23f343a514234b354cb29715376a0.jpg",
-        "https://img.jzfileserver.com/product/68014/1f2d711dd2ff415e8d33659d6c4f4da3.jpg",
-        "https://img.jzfileserver.com/product/68014/d7f34c972692427383f5332c5cd779b1.jpg",
-        "https://img.jzfileserver.com/product/68014/cba1c48d856049f987887a796179530e.jpg"
-      ],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Black"
-    },
-    {
-      "id": "c00009",
-      "name": "KAILAS Ultralight Primaloft® Hooded Jacket | Quilted Construction | Helmet-Compatible Outdoor Insulated Layer",
-      "nameEn": "KAILAS Ultralight Primaloft® Hooded Jacket | Quilted Construction | Helmet-Compatible Outdoor Insulated Layer",
-      "category": "Clothing",
-      "price": 88.0,
-      "images": [],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "navy blue"
-    },
-    {
-      "id": "c00010",
-      "name": "KAILAS Ultralight Primaloft® Hooded Jacket | Quilted Construction | Helmet-Compatible Outdoor Insulated Layer",
-      "nameEn": "KAILAS Ultralight Primaloft® Hooded Jacket | Quilted Construction | Helmet-Compatible Outdoor Insulated Layer",
-      "category": "Clothing",
-      "price": 88.0,
-      "images": [],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "brown"
-    },
-    {
-      "id": "c00011",
-      "name": "KAILAS AC133 Aerogel Insulated Jacket | Smart Temperature Regulation | Wind & Water Resistant | Unisex Outdoor Hiking Hoodie",
-      "nameEn": "KAILAS AC133 Aerogel Insulated Jacket | Smart Temperature Regulation | Wind & Water Resistant | Unisex Outdoor Hiking Hoodie",
-      "category": "Clothing",
-      "price": 120.0,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/2120024f3ff541fab8a2a6c465cbb370.jpg",
-        "https://img.jzfileserver.com/product/68014/96c4fd1a3eb448ac872c0e07afc84000.jpg",
-        "https://img.jzfileserver.com/product/68014/b21cb672923b43c3b4c654f316cf7bfa.jpg",
-        "https://img.jzfileserver.com/product/68014/b72dc07175c54f65b594d3a1500b3671.jpg",
-        "https://img.jzfileserver.com/product/68014/67e9788bdd37417db71b7bcc87ff1402.jpg",
-        "https://img.jzfileserver.com/product/68014/de4bfd968be040bbb61b0a66eccdcfd5.jpg",
-        "https://img.jzfileserver.com/product/68014/d6a1e6fb1e4543aa9cf8cc89da4ec74f.jpg",
-        "https://img.jzfileserver.com/product/68014/34d40be7246f4db59042aa05aa6cf16a.jpg",
-        "https://img.jzfileserver.com/product/68014/7a5e7cfd5b924327b134db88dbdd1eb3.jpg",
-        "https://img.jzfileserver.com/product/68014/7abc1b6a7aa646f695aa78bf35964d92.jpg"
-      ],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Black"
-    },
-    {
-      "id": "c00012",
-      "name": "KAILAS AC133 Aerogel Insulated Jacket | Smart Temperature Regulation | Wind & Water Resistant | Unisex Outdoor Hiking Hoodie",
-      "nameEn": "KAILAS AC133 Aerogel Insulated Jacket | Smart Temperature Regulation | Wind & Water Resistant | Unisex Outdoor Hiking Hoodie",
-      "category": "Clothing",
-      "price": 120.0,
-      "images": [],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Grey"
-    },
-    {
-      "id": "c00013",
-      "name": "ARC‘TERYX Ralle Insulated Waterproof Jacket | Gore-Tex Panels & C棉 Insulation | Windproof & Warm | Unisex",
-      "nameEn": "ARC‘TERYX Ralle Insulated Waterproof Jacket | Gore-Tex Panels & C棉 Insulation | Windproof & Warm | Unisex",
-      "category": "Clothing",
-      "price": 120.0,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/a565fb15aeea4b77add73364939b8da8.jpg",
-        "https://img.jzfileserver.com/product/68014/30ab67ee9467444e974bc534eb94d553.jpg",
-        "https://img.jzfileserver.com/product/68014/27c0f90666794f699c03df97a3617802.jpg",
-        "https://img.jzfileserver.com/product/68014/65c6c886be854bc684cbe63b611be7e8.jpg",
-        "https://img.jzfileserver.com/product/68014/d6b52e0c2f7448ce88e04b35e0b79197.jpg",
-        "https://img.jzfileserver.com/product/68014/3abc68374392408b9c89af882a59c141.jpg",
-        "https://img.jzfileserver.com/product/68014/b1df580f3d0d406bb59b8260a22e4522.jpg",
-        "https://img.jzfileserver.com/product/68014/86ed1ad9547148ebad58e23f352907ca.jpg",
-        "https://img.jzfileserver.com/product/68014/d3037af4606d420cb9d755ade7780ce3.jpg"
-      ],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Black"
-    },
-    {
-      "id": "c00014",
-      "name": "ARC‘TERYX Ralle Insulated Waterproof Jacket | Gore-Tex Panels & C棉 Insulation | Windproof & Warm | Unisex",
-      "nameEn": "ARC‘TERYX Ralle Insulated Waterproof Jacket | Gore-Tex Panels & C棉 Insulation | Windproof & Warm | Unisex",
-      "category": "Clothing",
-      "price": 120.0,
-      "images": [],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Navy"
-    },
-    {
-      "id": "c00015",
-      "name": "ARC‘TERYX Ralle Insulated Waterproof Jacket | Gore-Tex Panels & C棉 Insulation | Windproof & Warm | Unisex",
-      "nameEn": "ARC‘TERYX Ralle Insulated Waterproof Jacket | Gore-Tex Panels & C棉 Insulation | Windproof & Warm | Unisex",
-      "category": "Clothing",
-      "price": 120.0,
-      "images": [],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Red"
-    },
-    {
-      "id": "c00016",
-      "name": "ARC‘TERYX Ralle Insulated Waterproof Jacket | Gore-Tex Panels & C棉 Insulation | Windproof & Warm | Unisex",
-      "nameEn": "ARC‘TERYX Ralle Insulated Waterproof Jacket | Gore-Tex Panels & C棉 Insulation | Windproof & Warm | Unisex",
-      "category": "Clothing",
-      "price": 120.0,
-      "images": [],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Light Grey"
-    },
-    {
-      "id": "c00017",
-      "name": "Carhartt Style Vintage Stand Collar Workwear Jacket | 160g Specialty Quilting | Unisex Baseball Bomber | Black, Army Green",
-      "nameEn": "Carhartt Style Vintage Stand Collar Workwear Jacket | 160g Specialty Quilting | Unisex Baseball Bomber | Black, Army Green",
-      "category": "Clothing",
-      "price": 70.0,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/c654d82970634b0e83a82060d6c7b7aa.jpg",
-        "https://img.jzfileserver.com/product/68014/de1372b57aeb4af7966f08cf0c778426.jpg",
-        "https://img.jzfileserver.com/product/68014/2166c6d0dd2d46c68ac94c9cf08f2d4b.jpg",
-        "https://img.jzfileserver.com/product/68014/e4797e00730946f288d822a1b60a76f1.jpg",
-        "https://img.jzfileserver.com/product/68014/2ff16eebda8b406db597e40135601f5b.jpg",
-        "https://img.jzfileserver.com/product/68014/8e2e02e0026c44e48db5a6a521f4a27f.jpg",
-        "https://img.jzfileserver.com/product/68014/90db57ae68d640ab963293bce548f1aa.jpg",
-        "https://img.jzfileserver.com/product/68014/f6995a58cf9141dc8499370d8cca96bc.jpg"
-      ],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Black"
-    },
-    {
-      "id": "c00018",
-      "name": "Carhartt Style Vintage Stand Collar Workwear Jacket | 160g Specialty Quilting | Unisex Baseball Bomber | Black, Army Green",
-      "nameEn": "Carhartt Style Vintage Stand Collar Workwear Jacket | 160g Specialty Quilting | Unisex Baseball Bomber | Black, Army Green",
-      "category": "Clothing",
-      "price": 70.0,
-      "images": [],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Army Green"
-    },
-    {
-      "id": "c00019",
-      "name": "Adidas Style Side Three-Stripes Suede Fabric & Camel Fleece Zip-Up Jacket | Unisex Couple Matching | Khaki, Dark Grey",
-      "nameEn": "Adidas Style Side Three-Stripes Suede Fabric & Camel Fleece Zip-Up Jacket | Unisex Couple Matching | Khaki, Dark Grey",
-      "category": "Clothing",
-      "price": 86.0,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/2dd421c365234f16963d3d8da9f03d3a.jpg",
-        "https://img.jzfileserver.com/product/68014/1a3cae2f63b148f6bb8d399f8ddf4cac.jpg",
-        "https://img.jzfileserver.com/product/68014/1809ec9da7fd4f2fbe23681ebe1f8125.jpg",
-        "https://img.jzfileserver.com/product/68014/da078c2d7b6c460eaa71834c48f17efb.jpg",
-        "https://img.jzfileserver.com/product/68014/6b7439a2f6da4a7b8a7c83e7aae7fda3.jpg",
-        "https://img.jzfileserver.com/product/68014/86771027e3544d21bdfe7e45b627693a.jpg",
-        "https://img.jzfileserver.com/product/68014/8554234e5da04f17a2c0677864370a24.jpg",
-        "https://img.jzfileserver.com/product/68014/c19e1a0c174846c48f7c5c6c6d3df8e1.jpg",
-        "https://img.jzfileserver.com/product/68014/4c090a7371eb416981503c44bf0af84f.jpg"
-      ],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Khaki"
-    },
-    {
-      "id": "c00020",
-      "name": "Adidas Style Side Three-Stripes Suede Fabric & Camel Fleece Zip-Up Jacket | Unisex Couple Matching | Khaki, Dark Grey",
-      "nameEn": "Adidas Style Side Three-Stripes Suede Fabric & Camel Fleece Zip-Up Jacket | Unisex Couple Matching | Khaki, Dark Grey",
-      "category": "Clothing",
-      "price": 86.0,
-      "images": [],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Dark Grey"
-    },
-    {
-      "id": "c00021",
-      "name": "Stone Island Detachable Fur Collar Jacket - Safari Quilted Coat",
-      "nameEn": "Stone Island Detachable Fur Collar Jacket - Safari Quilted Coat",
-      "category": "Clothing",
-      "price": 105.0,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/e5d933111cfe4f159e3812d9845fb759.jpg",
-        "https://img.jzfileserver.com/product/68014/894d967ce4c0400fbe830ebbdb7d2882.jpg",
-        "https://img.jzfileserver.com/product/68014/d1823ff251694804bbd0c98d3afb8b84.jpg",
-        "https://img.jzfileserver.com/product/68014/7fc51514ffd345069cd99e6dfc3d0289.jpg",
-        "https://img.jzfileserver.com/product/68014/d9925d0cf5a44363bf39b50b4139ed2e.jpg",
-        "https://img.jzfileserver.com/product/68014/9be133c01f4c471aaea9848050d758b0.jpg",
-        "https://img.jzfileserver.com/product/68014/a84b211bfbc643199cb6856cc82c3c55.jpg",
-        "https://img.jzfileserver.com/product/68014/4b03ba2611fe439caa266c3527349a30.jpg",
-        "https://img.jzfileserver.com/product/68014/4f26d3201d6048eba514f554694ee6a2.jpg",
-        "https://img.jzfileserver.com/product/68014/fcda761ea38a4bfab570180800b9f1c0.jpg"
-      ],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Olive Green"
-    },
-    {
-      "id": "c00022",
-      "name": "New Balance Stand Collar Puffer Jacket - 500g Down Cotton Fill Coat",
-      "nameEn": "New Balance Stand Collar Puffer Jacket - 500g Down Cotton Fill Coat",
-      "category": "Clothing",
-      "price": 55.0,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/93f36c0a66e741caa222ed080e9e674e.jpg",
-        "https://img.jzfileserver.com/product/68014/6fc21970e4534ebf951f60090a8f0c52.jpg",
-        "https://img.jzfileserver.com/product/68014/3a54e366f1f94baeb857075ac4ad9b1c.jpg",
-        "https://img.jzfileserver.com/product/68014/9f019850d1ea4b20b8a1ab3cad8fe00a.jpg",
-        "https://img.jzfileserver.com/product/68014/c8c5baec63a14203a3a6576d1fb74930.jpg",
-        "https://img.jzfileserver.com/product/68014/3868b43900c2470c9e99f6411cdfeddf.jpg",
-        "https://img.jzfileserver.com/product/68014/ba90ebd183c04d849001c71096078309.jpg",
-        "https://img.jzfileserver.com/product/68014/7dfd49553ac545f38518d12d5b8e22b2.jpg"
-      ],
-      "description": "",
-      "featured": true,
-      "规格1": "color",
-      "规格值1": "Black"
+      "id": "clothes003",
+      "name": "BURBERRY Trench Coat",
+      "nameEn": "BURBERRY Trench Coat",
+      "category": "Clothes",
+      "price": 280,
+      "images": ["images/products/fashion1.jpg"],
+      "description": "Classic trench coat"
     }
   ],
-  "fragrance": [
+  "shoes": [
     {
-      "id": "f00002",
-      "name": "Jimmy Choo Pour Homme EDT 100ml - Aromatic Woody",
-      "nameEn": "Jimmy Choo Pour Homme EDT 100ml - Aromatic Woody",
-      "category": "Fragrance",
-      "price": 22.99,
-      "images": [
-        "https://img.jzfileserver.com/products/8093e58f530b443e82fa1eface176638.jpg",
-        "https://img.jzfileserver.com/products/3756fd5d80d14d86be5aaaeecfe62024.jpg",
-        "https://img.jzfileserver.com/products/182f7827389c4038a781eb3d1826e086.jpg"
-      ],
-      "description": "",
-      "featured": true
+      "id": "shoes001",
+      "name": "NIKE Air Max",
+      "nameEn": "NIKE Air Max",
+      "category": "Shoes",
+      "price": 150,
+      "images": ["images/products/model1.jpg"],
+      "description": "Comfortable sneakers"
     },
     {
-      "id": "f00003",
-      "name": "Armaf Night Allure Pure Extension EDT 100ml - Elegant Night",
-      "nameEn": "Armaf Night Allure Pure Extension EDT 100ml - Elegant Night",
-      "category": "Fragrance",
-      "price": 22.99,
-      "images": [
-        "https://img.jzfileserver.com/products/b2ebade2af2b425ea1557e395405598a.jpg"
-      ],
-      "description": "",
-      "featured": true
+      "id": "shoes002",
+      "name": "ADIDAS Ultraboost",
+      "nameEn": "ADIDAS Ultraboost",
+      "category": "Shoes",
+      "price": 180,
+      "images": ["images/products/model1.jpg"],
+      "description": "Performance running shoes"
+    }
+  ],
+  "bags": [
+    {
+      "id": "bags001",
+      "name": "LOUIS VUITTON Neverfull",
+      "nameEn": "LOUIS VUITTON Neverfull",
+      "category": "Bags",
+      "price": 1200,
+      "images": ["images/products/luxury1.jpg"],
+      "description": "Classic tote bag"
     },
     {
-      "id": "f00130",
-      "name": "Maison Francis Kurkdjian Aqua Celestia Cologne forte",
-      "nameEn": "Maison Francis Kurkdjian Aqua Celestia Cologne forte",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/781e026621b54804b1228ad3e8120ea2.jpg",
-        "https://img.jzfileserver.com/product/68014/897ab7e380354746898ef7ba4d344f7f.jpg",
-        "https://img.jzfileserver.com/product/68014/cfa0dd701d3f44bd94cd5af4d796db05.jpg",
-        "https://img.jzfileserver.com/product/68014/8465bf9d459c48709e7ea569cb1f9dd2.jpg",
-        "https://img.jzfileserver.com/product/68014/ed812f8def5d4bbd8968fe5014ae6069.jpg",
-        "https://img.jzfileserver.com/product/68014/cbe5d28d3cc5487191c167f65b59e1b2.jpg",
-        "https://img.jzfileserver.com/product/68014/a918cc48c51a4f7e89905e5d6b2b878a.jpg",
-        "https://img.jzfileserver.com/product/68014/169ab2dd0daf435cb0ac032c86bba7fd.jpg",
-        "https://img.jzfileserver.com/product/68014/0ed58c67474942d4a1817a416ded3287.jpg"
-      ],
-      "description": "",
-      "featured": true
+      "id": "bags002",
+      "name": "GUCCI GG Marmont",
+      "nameEn": "GUCCI GG Marmont",
+      "category": "Bags",
+      "price": 980,
+      "images": ["images/products/luxury1.jpg"],
+      "description": "Matelassé shoulder bag"
+    }
+  ],
+  "perfume": [
+    {
+      "id": "perfume001",
+      "name": "CHANEL No.5",
+      "nameEn": "CHANEL No.5",
+      "category": "Perfume",
+      "price": 120,
+      "images": ["images/products/perfume1.jpg"],
+      "description": "Iconic floral fragrance"
     },
     {
-      "id": "f00137",
-      "name": "Maison Francis Kurkdjian Oud Extrait de parfum",
-      "nameEn": "Maison Francis Kurkdjian Oud Extrait de parfum",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/a7144def02a34a3c914cfe6a2648fe29.jpg",
-        "https://img.jzfileserver.com/product/68014/00a6618fcd47480a8403bcee9d9abdfe.jpg",
-        "https://img.jzfileserver.com/product/68014/0557d3cffe264d0bbb0f02e0c405c254.jpg",
-        "https://img.jzfileserver.com/product/68014/adc1cf3baeb24373bd104a64b5e0e6f8.jpg",
-        "https://img.jzfileserver.com/product/68014/921ac7f0bfb54109aaf52096254e8f54.jpg",
-        "https://img.jzfileserver.com/product/68014/70e4dbc8af4a4541aba64d933eb75780.jpg"
-      ],
-      "description": "",
-      "featured": true
+      "id": "perfume002",
+      "name": "DIOR Sauvage",
+      "nameEn": "DIOR Sauvage",
+      "category": "Perfume",
+      "price": 95,
+      "images": ["images/products/perfume2.jpg"],
+      "description": "Fresh spicy fragrance"
     },
     {
-      "id": "f00150",
-      "name": "Roja Dove Elysium Pour Homme EDP",
-      "nameEn": "Roja Dove Elysium Pour Homme EDP",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/7c445b4ca8794e7880d922cd0e41c485.jpg",
-        "https://img.jzfileserver.com/product/68014/327aacecc01041bb819a12e476489dcb.jpg",
-        "https://img.jzfileserver.com/product/68014/99fa436d2d314740832f528540b80bf3.jpg",
-        "https://img.jzfileserver.com/product/68014/21fec5a9772044b8a3415a60e3d6838c.jpg",
-        "https://img.jzfileserver.com/product/68014/8020469282a643bd9a2bca428114f240.jpg",
-        "https://img.jzfileserver.com/product/68014/d3078ddfac02413b8e30f6a5d70e0cc0.jpg",
-        "https://img.jzfileserver.com/product/68014/813d15af76d446ea94a413e49e4d1723.jpg",
-        "https://img.jzfileserver.com/product/68014/4dda1de159934f0bba43e426598a7e9c.jpg",
-        "https://img.jzfileserver.com/product/68014/3fd7d3e508644f55b8bf297040865182.jpg"
-      ],
-      "description": "",
-      "featured": true
+      "id": "perfume003",
+      "name": "TOM FORD Oud Wood",
+      "nameEn": "TOM FORD Oud Wood",
+      "category": "Perfume",
+      "price": 180,
+      "images": ["images/products/perfume3.jpg"],
+      "description": "Luxurious oud fragrance"
     },
     {
-      "id": "f00154",
-      "name": "Roja Dove Reckless Pour Femme Essence De Parfum 2021",
-      "nameEn": "Roja Dove Reckless Pour Femme Essence De Parfum 2021",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/b95e217942e841cb8ecc616ea7b7b577.jpg",
-        "https://img.jzfileserver.com/product/68014/3c9bb29420a54035a8d0208039315f22.jpg",
-        "https://img.jzfileserver.com/product/68014/756942109de245bca2724db1b986f328.jpg",
-        "https://img.jzfileserver.com/product/68014/2fc6b57942f54a8aad10bdb165e48a61.jpg",
-        "https://img.jzfileserver.com/product/68014/27ce7517eb784c93bff2fa16b30846f4.jpg",
-        "https://img.jzfileserver.com/product/68014/7613d3fd217643cca2bf29f3f5eb723f.jpg",
-        "https://img.jzfileserver.com/product/68014/b71a1840e8a4404dbf2cc99b32e555e5.jpg"
-      ],
-      "description": "",
-      "featured": true
+      "id": "perfume004",
+      "name": "YSL Black Opium",
+      "nameEn": "YSL Black Opium",
+      "category": "Perfume",
+      "price": 110,
+      "images": ["images/products/perfume5.jpg"],
+      "description": "Gourmand floral"
+    }
+  ],
+  "sunglasses": [
+    {
+      "id": "sunglasses001",
+      "name": "RAY-BAN Aviator",
+      "nameEn": "RAY-BAN Aviator",
+      "category": "Sunglasses",
+      "price": 150,
+      "images": ["images/products/perfume-custom.jpg"],
+      "description": "Classic aviator style"
     },
     {
-      "id": "f00158",
-      "name": "Roja Dove Elixir Pour Femme Essence De Parfum 2019",
-      "nameEn": "Roja Dove Elixir Pour Femme Essence De Parfum 2019",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/a985c713007c4e639bc0a143f6c81af3.jpg",
-        "https://img.jzfileserver.com/product/68014/d542e6f61b494f7db4f89e6abf4e7858.jpg",
-        "https://img.jzfileserver.com/product/68014/9bfec9bc00624c6783503ad00101a0b3.jpg",
-        "https://img.jzfileserver.com/product/68014/176ea2b9dc7c4367a9d3611dd1bb29df.jpg",
-        "https://img.jzfileserver.com/product/68014/d2489e7e118849438ae86596fd0c6492.jpg",
-        "https://img.jzfileserver.com/product/68014/62016902a91040b28be2b718f767cb4c.jpg",
-        "https://img.jzfileserver.com/product/68014/f54ba5cd20b341fd9482f894487283f3.jpg",
-        "https://img.jzfileserver.com/product/68014/abbbc6ca18744e888b84dc17996ca47b.jpg",
-        "https://img.jzfileserver.com/product/68014/e88144cbdad342bebadddae21d4ea30a.jpg"
-      ],
-      "description": "",
-      "featured": true
+      "id": "sunglasses002",
+      "name": "GUCCI Oversized",
+      "nameEn": "GUCCI Oversized",
+      "category": "Sunglasses",
+      "price": 380,
+      "images": ["images/products/perfume-custom.jpg"],
+      "description": "Bold oversized frames"
+    }
+  ],
+  "watches": [
+    {
+      "id": "watches001",
+      "name": "ROLEX Submariner",
+      "nameEn": "ROLEX Submariner",
+      "category": "Watches",
+      "price": 8500,
+      "images": ["images/products/luxury1.jpg"],
+      "description": "Luxury dive watch"
     },
     {
-      "id": "f00159",
-      "name": "Roja Dove Enigma Pour Femme Essence De Parfum 2021",
-      "nameEn": "Roja Dove Enigma Pour Femme Essence De Parfum 2021",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/d5c9565bb3f643ed9c6a92b94b04293b.jpg",
-        "https://img.jzfileserver.com/product/68014/bb6b81fa03344bbdb415031a66dadf1d.jpg",
-        "https://img.jzfileserver.com/product/68014/ee7f87f2bc6b49caa710bb390255f366.jpg",
-        "https://img.jzfileserver.com/product/68014/7ed009346e1244f4b3afa1c7a7eba3a7.jpg",
-        "https://img.jzfileserver.com/product/68014/7ef80aa0de504cb0b62ccca5007c4031.jpg",
-        "https://img.jzfileserver.com/product/68014/818e2053f31a404c871848d9538b0813.jpg",
-        "https://img.jzfileserver.com/product/68014/1de72136c4a34c89a4668b0b79b75764.jpg",
-        "https://img.jzfileserver.com/product/68014/df1cd8a3e3864d69b061bad33fb9e65f.jpg",
-        "https://img.jzfileserver.com/product/68014/f2e324ea6f0a43b1b02ec7fb3c3d5ef2.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00162",
-      "name": "Roja Dove Harrods Parfum Pour Femme",
-      "nameEn": "Roja Dove Harrods Parfum Pour Femme",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/78166029bd1c46c697781a4319763d0c.jpg",
-        "https://img.jzfileserver.com/product/68014/1e54db53c5ae44d08a1a5f9c5732d882.jpg",
-        "https://img.jzfileserver.com/product/68014/f5a0597435204ad7ae34b2e79f922ec1.jpg",
-        "https://img.jzfileserver.com/product/68014/7cbeeea4af964337b876456248388878.jpg",
-        "https://img.jzfileserver.com/product/68014/0e026cce24264205b833e22f3655b10a.jpg",
-        "https://img.jzfileserver.com/product/68014/8217f3c0c8f84adfa45151208bc73c04.jpg",
-        "https://img.jzfileserver.com/product/68014/2ffbedf65d854cd1b0c03219c15f7344.jpg",
-        "https://img.jzfileserver.com/product/68014/426e26695a024e929d4795fc5d83b7a7.jpg",
-        "https://img.jzfileserver.com/product/68014/a647baeff30743f8b58d669ddacde91c.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00165",
-      "name": "Roja Dove Harrods Parfum Pour Homme 2019",
-      "nameEn": "Roja Dove Harrods Parfum Pour Homme 2019",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/f426d70aa6ce4c5a84ab6a6354ff886e.jpg",
-        "https://img.jzfileserver.com/product/68014/9765b4db49604ae78db9b4f2fbd81574.jpg",
-        "https://img.jzfileserver.com/product/68014/eb7251e7ab9a43e7800e97902e5b5f5d.jpg",
-        "https://img.jzfileserver.com/product/68014/76d7b27d58ae44f3a9a3060fadf2a15e.jpg",
-        "https://img.jzfileserver.com/product/68014/dd4641166c18464c8389f4da9ade1c4d.jpg",
-        "https://img.jzfileserver.com/product/68014/149611ba660b44eeafe58d12e0b11358.jpg",
-        "https://img.jzfileserver.com/product/68014/823d2a5101354e75bbea73cfad49f1af.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00166",
-      "name": "Roja Dove Vetiver Pour Homme Parfum Cologne 2019",
-      "nameEn": "Roja Dove Vetiver Pour Homme Parfum Cologne 2019",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/914fa856a95a41d2bc96c91e96e0d7d8.jpg",
-        "https://img.jzfileserver.com/product/68014/0c713878d9fc428dac121cdd625065c9.jpg",
-        "https://img.jzfileserver.com/product/68014/a000a6adf2be4029b9a7a75d6a0d27e8.jpg",
-        "https://img.jzfileserver.com/product/68014/5fa78c63d5fa48278a8541a3d2107132.jpg",
-        "https://img.jzfileserver.com/product/68014/1fbde885f536474984e1891222af5de5.jpg",
-        "https://img.jzfileserver.com/product/68014/6b2fd40bffcd43fdbceef663a8e63b04.jpg",
-        "https://img.jzfileserver.com/product/68014/e6f595d25ee44275b2caa69a79fd7137.jpg",
-        "https://img.jzfileserver.com/product/68014/ee578c5084a84e04bef47f8529ab7d13.jpg",
-        "https://img.jzfileserver.com/product/68014/3bdc743b2a4b48c6b887f942c3db9774.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00167",
-      "name": "Roja Dove Enigma Pour Homme Parfum Cologne 2019",
-      "nameEn": "Roja Dove Enigma Pour Homme Parfum Cologne 2019",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/0d616d249e8c4b2fbce83521f9980a79.jpg",
-        "https://img.jzfileserver.com/product/68014/7db683981b6c4ef9a751ed42cd190351.jpg",
-        "https://img.jzfileserver.com/product/68014/9e8add8c5411474a81f4456e3d0583ba.jpg",
-        "https://img.jzfileserver.com/product/68014/6c4958be2dbf4262a1f20b0bd58af2f9.jpg",
-        "https://img.jzfileserver.com/product/68014/efe9e57718624822a3bcb3ca4926f034.jpg",
-        "https://img.jzfileserver.com/product/68014/6f5e08a1f9a443f2b58b84557c45634c.jpg",
-        "https://img.jzfileserver.com/product/68014/4193ee0deed240f595b68207d85c5b27.jpg",
-        "https://img.jzfileserver.com/product/68014/b2af604855444b8ea7ec41b5a72e957d.jpg",
-        "https://img.jzfileserver.com/product/68014/9d9c94a47c2e4071bbec768ed21833ec.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00171",
-      "name": "Roja Dove Danger Pour Homme Parfum Cologne 2019",
-      "nameEn": "Roja Dove Danger Pour Homme Parfum Cologne 2019",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/eda54b6e311b43098479189207aec710.jpg",
-        "https://img.jzfileserver.com/product/68014/c6fdcd9965fa492b85f98fd1d3562a66.jpg",
-        "https://img.jzfileserver.com/product/68014/83cd1c0f584944788f8d82498f44efae.jpg",
-        "https://img.jzfileserver.com/product/68014/452c8ab4ccfe42239a829716ce89020b.jpg",
-        "https://img.jzfileserver.com/product/68014/0f6e5cc71eb24882819badfba05faacd.jpg",
-        "https://img.jzfileserver.com/product/68014/68033543a23f4b1db030381790ed9f5f.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00172",
-      "name": "Roja Dove Scandal Pour Homme Parfum Cologne 2019",
-      "nameEn": "Roja Dove Scandal Pour Homme Parfum Cologne 2019",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/0c9ad410eaec4078ac6e460f25280945.jpg",
-        "https://img.jzfileserver.com/product/68014/f91063359eb94168a8179a0a46d30b91.jpg",
-        "https://img.jzfileserver.com/product/68014/a122d421602e40678eaab997eeaf43de.jpg",
-        "https://img.jzfileserver.com/product/68014/4188339fd84546b5a1c6753f29a82a7d.jpg",
-        "https://img.jzfileserver.com/product/68014/43c98a60a4df4eb1a042ec9ac4b8ad71.jpg",
-        "https://img.jzfileserver.com/product/68014/09747c430d2c4a459c11733f44a673fb.jpg",
-        "https://img.jzfileserver.com/product/68014/7c411c93a0d24197a9fcc2bbc2633743.jpg",
-        "https://img.jzfileserver.com/product/68014/9fb71d8075c7498db3dcc0241f2576f2.jpg",
-        "https://img.jzfileserver.com/product/68014/27d027850ad643969391426a9b4c79c1.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00173",
-      "name": "Roja Dove Elysium Pour Homme Parfum Cologne 2017",
-      "nameEn": "Roja Dove Elysium Pour Homme Parfum Cologne 2017",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/5693651cb2134eb4ae4fe8cb548382da.jpg",
-        "https://img.jzfileserver.com/product/68014/f050cbb4f20d48e88d51d023e5f12083.jpg",
-        "https://img.jzfileserver.com/product/68014/36ef68abda5843c19144a74d9795e563.jpg",
-        "https://img.jzfileserver.com/product/68014/57f114368039469881c52151eb3c2ec7.jpg",
-        "https://img.jzfileserver.com/product/68014/39101c509ea0460cb6e174e1f3b94a2b.jpg",
-        "https://img.jzfileserver.com/product/68014/bbdc39152c0a42b791ea744fbfd423f1.jpg",
-        "https://img.jzfileserver.com/product/68014/babc3b04554648bfb00d61ada5add055.jpg",
-        "https://img.jzfileserver.com/product/68014/42256bc5cd5341dea80b8a6e6364ebc6.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00177",
-      "name": "PARFUMS de MARLY Darcy",
-      "nameEn": "PARFUMS de MARLY Darcy",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/9e594c9fd44045529c4718082fb23527.jpg",
-        "https://img.jzfileserver.com/product/68014/dde32711e57b498d80e73aca0cd97c9c.jpg",
-        "https://img.jzfileserver.com/product/68014/b882e0c142ae44a3abaa71707553e255.jpg",
-        "https://img.jzfileserver.com/product/68014/182e7c4015b1455b9e4eba48661cb6f7.jpg",
-        "https://img.jzfileserver.com/product/68014/5de1b634e32e4049919e034e8dd80ac0.jpg",
-        "https://img.jzfileserver.com/product/68014/1728e8f68c694a508963cae5f186ec11.jpg",
-        "https://img.jzfileserver.com/product/68014/a3c0e3948c3e468aaa2988804d696d01.jpg",
-        "https://img.jzfileserver.com/product/68014/7e990d8ca6ce476b97951cd7131d9e31.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00178",
-      "name": "PARFUMS de MARLY Sedbury",
-      "nameEn": "PARFUMS de MARLY Sedbury",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/23813241b38b40538d3d9a6a879a1365.jpg",
-        "https://img.jzfileserver.com/product/68014/f02b624b027b4ea9809babaa95303ee9.jpg",
-        "https://img.jzfileserver.com/product/68014/2e0912836b644a3ba1f53833bd031af5.jpg",
-        "https://img.jzfileserver.com/product/68014/2f03b21813914919826c458476ac97ca.jpg",
-        "https://img.jzfileserver.com/product/68014/ceac65e86d46466a9026032d561ec335.jpg",
-        "https://img.jzfileserver.com/product/68014/0be3e402fccb448cafadfe321e66b184.jpg",
-        "https://img.jzfileserver.com/product/68014/652c5e155fe74021a40b44ec0ca82425.jpg",
-        "https://img.jzfileserver.com/product/68014/a0cf3c72a3d44b54b1abcde3e7e3550e.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00179",
-      "name": "PARFUMS de MARLY Meliora",
-      "nameEn": "PARFUMS de MARLY Meliora",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/a70e28bc84bf402a860bd02ca5cc970d.jpg",
-        "https://img.jzfileserver.com/product/68014/11e1b80e06cb4ec1ab223c06a66b4128.jpg",
-        "https://img.jzfileserver.com/product/68014/388f97f9534346b993eea87b3ff06a9a.jpg",
-        "https://img.jzfileserver.com/product/68014/2c2dcbcf38054235a439700d119312d2.jpg",
-        "https://img.jzfileserver.com/product/68014/d6fbaec550e0470280c1d55ae3d55e74.jpg",
-        "https://img.jzfileserver.com/product/68014/34cccf973d0149e38fbe7fd8b930b3ac.jpg",
-        "https://img.jzfileserver.com/product/68014/744ab30e875246aa97977d43e32653bf.jpg",
-        "https://img.jzfileserver.com/product/68014/b06440880dc647de8e58ab154717d75a.jpg",
-        "https://img.jzfileserver.com/product/68014/8873d042194c41fb84e9b6f2848c7932.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00180",
-      "name": "PARFUMS de MARLY Oriana",
-      "nameEn": "PARFUMS de MARLY Oriana",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/69e890a8ba234e11a3e950f8de886c7d.jpg",
-        "https://img.jzfileserver.com/product/68014/1eecd96f23514b48ac02523c97d7a32e.jpg",
-        "https://img.jzfileserver.com/product/68014/4e28d24785ce48ea97245a1e72007030.jpg",
-        "https://img.jzfileserver.com/product/68014/69a258bc4173440cb28c31d03fc9d00d.jpg",
-        "https://img.jzfileserver.com/product/68014/aaf7915165824fed856ea02dd12d270e.jpg",
-        "https://img.jzfileserver.com/product/68014/a33f4b40690943aba9f9c036e51c881b.jpg",
-        "https://img.jzfileserver.com/product/68014/ec1cf8e86e49459eabe4e1ecc35eeec6.jpg",
-        "https://img.jzfileserver.com/product/68014/5778713e40fb4a6087c3cbcfa4ce19ad.jpg"
-      ],
-      "description": "",
-      "featured": true
-    },
-    {
-      "id": "f00181",
-      "name": "PARFUMS de MARLY Palatine 2024",
-      "nameEn": "PARFUMS de MARLY Palatine 2024",
-      "category": "Fragrance",
-      "price": 20.99,
-      "images": [
-        "https://img.jzfileserver.com/product/68014/10073c603df94c38b309f3851f10e71a.jpg",
-        "https://img.jzfileserver.com/product/68014/943f1859a9e94ada935bda7fca3bf258.jpg",
-        "https://img.jzfileserver.com/product/68014/96707bf5b2ff405ba338cc2b567b1d28.jpg",
-        "https://img.jzfileserver.com/product/68014/2ecfd2b501ee40aeac23017a05beaa80.jpg",
-        "https://img.jzfileserver.com/product/68014/146b61d0fe954237826c8a957e5bafc6.jpg",
-        "https://img.jzfileserver.com/product/68014/e397fd65902246138b6b52aecfce2282.jpg",
-        "https://img.jzfileserver.com/product/68014/30d4f4f042fa4b6d9297b0df0bdb9254.jpg",
-        "https://img.jzfileserver.com/product/68014/866aa9598b3a42aab48866d506273a6b.jpg"
-      ],
-      "description": "",
-      "featured": true
+      "id": "watches002",
+      "name": "OMEGA Speedmaster",
+      "nameEn": "OMEGA Speedmaster",
+      "category": "Watches",
+      "price": 5200,
+      "images": ["images/products/luxury1.jpg"],
+      "description": "Classic chronograph"
     }
   ]
 }

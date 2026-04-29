@@ -505,6 +505,38 @@ button {
 }
 
 /* ========================================
+    Categories Nav
+    ======================================== */
+.categories-nav-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.categories-nav {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-tab {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+    padding: 16px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.category-tab:hover,
+.category-tab.active {
+    color: #1A1A1A;
+    border-bottom-color: #1A1A1A;
+}
+
+/* ========================================
     Products Layout
     ======================================== */
 .products-section {
@@ -512,31 +544,12 @@ button {
     background: #FFFFFF;
 }
 
-.products-single {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.products-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.products-column-title {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #E5E5E5;
-}
-
-.products-grid-compact {
+.products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Featured Cards - Compact */

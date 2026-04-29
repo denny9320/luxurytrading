@@ -112,22 +112,28 @@
                     <img src="images/products/fashion1.jpg" alt="Fashion Collection">
                 </div>
                 <div class="category-card-content">
-                    <h3 class="category-card-title" data-i18n="categories.clothing">Fashion Collection</h3>
-                    <p class="category-card-desc" data-i18n="categories.clothingDesc">Exquisite tailoring and elegant design.</p>
-                    <span class="category-card-link" data-i18n="categories.explore">Explore →</span>
+                    <h3 class="category-card-title">Collections</h3>
+                    <p class="category-card-desc">Explore our curated luxury collections.</p>
+                    <span class="category-card-link">Explore →</span>
                 </div>
             </a>
         </div>
     </section>
 
-    <!-- Products - Fashion Only -->
+    <!-- Products by Category -->
     <section class="products-section" id="products">
-        <div class="products-single">
-            <div class="products-column">
-                <h3 class="products-column-title">Fashion</h3>
-                <div class="products-grid-compact" id="clothingGrid"></div>
-            </div>
+        <div class="categories-nav-wrapper">
+            <nav class="categories-nav" id="categoriesNav">
+                <a href="#" class="category-tab active" data-category="all">All</a>
+                <a href="#" class="category-tab" data-category="clothes">Clothes</a>
+                <a href="#" class="category-tab" data-category="shoes">Shoes</a>
+                <a href="#" class="category-tab" data-category="bags">Bags</a>
+                <a href="#" class="category-tab" data-category="perfume">Perfume</a>
+                <a href="#" class="category-tab" data-category="sunglasses">Sunglasses</a>
+                <a href="#" class="category-tab" data-category="watches">Watches</a>
+            </nav>
         </div>
+        <div class="products-grid" id="productsGrid"></div>
     </section>
 
     <!-- About Section -->
