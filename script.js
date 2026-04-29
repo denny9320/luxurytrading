@@ -527,21 +527,16 @@ async function initProductSystem() {
 function renderFeaturedProducts() {
     console.log('renderFeaturedProducts called, productData:', productData);
     
-    // Render clothing products with background images (3x4 grid)
+    // Combine clothing and fragrance products in one grid
     const clothingGrid = document.getElementById('clothingGrid');
-    if (clothingGrid && productData?.clothing?.length > 0) {
-        console.log('Rendering', productData.clothing.length, 'clothing products');
-        clothingGrid.innerHTML = productData.clothing.map(product => 
-            createFeaturedCard(product, 'clothing')
-        ).join('');
-    }
-    
-    // Render fragrance products with background images (3x4 grid)
-    const fragranceGrid = document.getElementById('fragranceGrid');
-    if (fragranceGrid && productData?.fragrance?.length > 0) {
-        console.log('Rendering', productData.fragrance.length, 'fragrance products');
-        fragranceGrid.innerHTML = productData.fragrance.map(product => 
-            createFeaturedCard(product, 'fragrance')
+    if (clothingGrid) {
+        const allProducts = [
+            ...(productData.clothing || []).map(p => ({...p, type: 'clothing'})),
+            ...(productData.fragrance || []).map(p => ({...p, type: 'fragrance'}))
+        ];
+        console.log('Rendering', allProducts.length, 'total products');
+        clothingGrid.innerHTML = allProducts.map(product => 
+            createFeaturedCard(product, product.type)
         ).join('');
     }
 }
