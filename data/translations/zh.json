@@ -14,6 +14,14 @@
     "subtitle": "奢华贸易",
     "title": "奢华系列"
   },
+  "category": {
+    "all": "全部",
+    "shoes": "鞋履",
+    "bags": "箱包",
+    "perfume": "香水",
+    "sunglasses": "墨镜",
+    "watches": "腕表"
+  },
   "categories": {
     "clothing": "时装系列",
     "clothingDesc": "精致剪裁与优雅设计",

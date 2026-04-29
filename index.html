@@ -80,12 +80,16 @@
                     </svg>
 <span class="cart-count">0</span>
                 </button>
-                <select id="currencySelector" class="currency-select" onchange="changeCurrency(this.value)">
+<select id="currencySelector" class="currency-select" onchange="changeCurrency(this.value)">
                     <option value="USD">USD $</option>
                     <option value="CNY">¥CNY</option>
                     <option value="EUR">€EUR</option>
                     <option value="GBP">£GBP</option>
                 </select>
+                <div class="lang-selector">
+                    <button class="lang-btn" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+                </div>
                 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
                     <span></span>
                     <span></span>
@@ -108,12 +112,12 @@
     <section class="products-section" id="products">
         <div class="categories-nav-wrapper">
             <nav class="categories-nav" id="categoriesNav">
-                <a href="#" class="category-tab active" data-category="all">All</a>
-                <a href="#" class="category-tab" data-category="shoes">Shoes</a>
-                <a href="#" class="category-tab" data-category="bags">Bags</a>
-                <a href="#" class="category-tab" data-category="perfume">Perfume</a>
-                <a href="#" class="category-tab" data-category="sunglasses">Sunglasses</a>
-                <a href="#" class="category-tab" data-category="watches">Watches</a>
+                <a href="#" class="category-tab active" data-category="all" data-i18n="category.all">All</a>
+                <a href="#" class="category-tab" data-category="shoes" data-i18n="category.shoes">Shoes</a>
+                <a href="#" class="category-tab" data-category="bags" data-i18n="category.bags">Bags</a>
+                <a href="#" class="category-tab" data-category="perfume" data-i18n="category.perfume">Perfume</a>
+                <a href="#" class="category-tab" data-category="sunglasses" data-i18n="category.sunglasses">Sunglasses</a>
+                <a href="#" class="category-tab" data-category="watches" data-i18n="category.watches">Watches</a>
             </nav>
         </div>
         <div class="products-grid" id="productsGrid"></div>

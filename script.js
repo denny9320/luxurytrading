@@ -1379,8 +1379,8 @@ window.changeThumbnailImage = function(direction) {
    Multi-language System (i18n)
    ======================================== */
 function initI18n() {
-    // Get saved language or detect browser language
-    const savedLang = localStorage.getItem('taping_lang');
+// Get saved language or detect browser language
+    const savedLang = localStorage.getItem('luxury_lang');
     const browserLang = navigator.language.split('-')[0];
     
     // Priority: saved > browser > default (en)
@@ -1399,17 +1399,22 @@ function initI18n() {
 function setLanguage(langCode) {
     if (!translations[langCode]) return;
     
-    currentLang = langCode;
-    localStorage.setItem('taping_lang', langCode);
+currentLang = langCode;
+    localStorage.setItem('luxury_lang', langCode);
     
     // Update document direction (for RTL support)
     const dir = translations[langCode].meta.dir;
     document.documentElement.dir = dir;
     document.documentElement.lang = langCode;
     
-    // Update all translatable elements
+// Update all translatable elements
     updatePageTranslations();
     updateLanguageSwitcher();
+}
+
+// Alias for button onclick
+window.setLang = function(langCode) {
+    setLanguage(langCode);
 }
 
 function updatePageTranslations() {
@@ -1430,21 +1435,16 @@ function updatePageTranslations() {
     updateElements('[data-i18n="nav.signOut"]', t.nav.signOut);
     
     // Hero section
-    updateElement('[data-i18n="hero.subtitle"]', t.hero.subtitle);
+updateElement('[data-i18n="hero.subtitle"]', t.hero.subtitle);
     updateElement('[data-i18n="hero.title"]', t.hero.title);
-    updateElement('[data-i18n="hero.desc"]', t.hero.desc);
-    updateElement('[data-i18n="hero.ctaClothing"]', t.hero.ctaClothing);
-    updateElement('[data-i18n="hero.ctaFragrance"]', t.hero.ctaFragrance);
-    updateElement('[data-i18n="hero.scroll"]', t.hero.scroll);
     
-    // Categories
-    updateElement('[data-i18n="categories.subtitle"]', t.categories.subtitle);
-    updateElement('[data-i18n="categories.title"]', t.categories.title);
-    updateElement('[data-i18n="categories.clothing"]', t.categories.clothing);
-    updateElement('[data-i18n="categories.clothingDesc"]', t.categories.clothingDesc);
-    updateElement('[data-i18n="categories.fragrance"]', t.categories.fragrance);
-    updateElement('[data-i18n="categories.fragranceDesc"]', t.categories.fragranceDesc);
-    updateElements('[data-i18n="categories.explore"]', t.categories.explore);
+    // Category tabs
+    updateElements('[data-i18n="category.all"]', t.category?.all || 'All');
+    updateElements('[data-i18n="category.shoes"]', t.category?.shoes || 'Shoes');
+    updateElements('[data-i18n="category.bags"]', t.category?.bags || 'Bags');
+    updateElements('[data-i18n="category.perfume"]', t.category?.perfume || 'Perfume');
+    updateElements('[data-i18n="category.sunglasses"]', t.category?.sunglasses || 'Sunglasses');
+    updateElements('[data-i18n="category.watches"]', t.category?.watches || 'Watches');
     
     // Products
     updateElement('[data-i18n="products.subtitle"]', t.products.featured);
