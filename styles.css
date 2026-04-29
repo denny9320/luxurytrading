@@ -106,25 +106,17 @@ button {
 /* Logo */
 .logo {
     display: flex;
-    flex-direction: column;
-    line-height: 1;
     align-items: center;
-    gap: 2px;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-text {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    color: var(--color-primary);
-}
-
-.logo-accent {
-    font-family: var(--font-body);
-    font-size: 10px;
-    letter-spacing: 5px;
-    color: var(--color-accent);
+    display: none;
 }
 
 /* Navigation */
