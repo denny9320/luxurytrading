@@ -11,21 +11,16 @@
     "about": "关于我们"
   },
   "hero": {
-    "subtitle": "重新定义优雅",
-    "title": "探索奢华之美",
-    "desc": "精心挑选高端时装与顶级香氛，为您打造独特品味",
-    "ctaClothing": "探索服装",
-    "ctaFragrance": "发现香水",
-    "scroll": "向下滚动"
+    "subtitle": "奢华贸易",
+    "title": "香氛与时装",
+    "desc": "探索我们精心策划的顶级香氛和优雅时装系列"
   },
   "categories": {
-    "subtitle": "精选系列",
-    "title": "甄选系列",
     "clothing": "时装系列",
-    "clothingDesc": "精致剪裁，优雅设计",
+    "clothingDesc": "精致剪裁与优雅设计，为现代鉴赏家打造",
     "fragrance": "香氛系列",
-    "fragranceDesc": "顶级香料，持久留香",
-    "explore": "探索更多 →"
+    "fragranceDesc": "顶级香料，打造持久的Signature香氛。世界顶级调香师精心调配",
+    "explore": "探索 →"
   },
   "products": {
     "featured": "精选",

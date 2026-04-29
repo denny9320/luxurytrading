@@ -11,21 +11,16 @@
     "about": "About"
   },
   "hero": {
-    "subtitle": "Elegance Redefined",
-    "title": "Discover Luxury",
-    "desc": "Curated high-end fashion and premium fragrances for your unique style",
-    "ctaClothing": "Explore Clothing",
-    "ctaFragrance": "Discover Fragrance",
-    "scroll": "Scroll Down"
+    "subtitle": "Luxury Trading",
+    "title": "Fragrance & Fashion",
+    "desc": "Discover our curated collection of premium fragrances and elegant fashion pieces."
   },
   "categories": {
-    "subtitle": "Collections",
-    "title": "Curated Selections",
     "clothing": "Fashion Collection",
-    "clothingDesc": "Exquisite tailoring, elegant design",
+    "clothingDesc": "Exquisite tailoring and elegant design for the modern connoisseur.",
     "fragrance": "Fragrance Collection",
-    "fragranceDesc": "Premium ingredients, lasting impressions",
-    "explore": "Explore More →"
+    "fragranceDesc": "Premium ingredients for lasting impressions. Discover signature scents crafted by the world's finest perfumers.",
+    "explore": "Discover →"
   },
   "products": {
     "featured": "Featured",

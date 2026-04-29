@@ -237,69 +237,67 @@ button {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('images/products/luxury1.jpg');
+    background-image: url('images/products/perfume1.jpg');
     background-size: cover;
     background-position: center;
-    transform: scale(1.1);
-    animation: heroZoom 15s ease-in-out infinite alternate;
-    filter: brightness(0.85) saturate(1.1);
+    animation: heroSlideshow 20s ease-in-out infinite;
+    filter: brightness(0.6) saturate(1.2);
 }
 
-@keyframes heroZoom {
-    from { transform: scale(1.1) translateX(0); }
-    to { transform: scale(1.05) translateX(-1%); }
+@keyframes heroSlideshow {
+    0%, 25% { background-image: url('images/products/perfume1.jpg'); }
+    33%, 58% { background-image: url('images/products/perfume2.jpg'); }
+    66%, 91% { background-image: url('images/products/perfume3.jpg'); }
+    100% { background-image: url('images/products/perfume1.jpg'); }
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        135deg,
-        rgba(15, 15, 15, 0.5) 0%,
-        rgba(15, 15, 15, 0.3) 50%,
-        rgba(15, 15, 15, 0.7) 100%
+        180deg,
+        rgba(10, 10, 10, 0.6) 0%,
+        rgba(10, 10, 10, 0.2) 40%,
+        rgba(10, 10, 10, 0.4) 100%
     );
-    backdrop-filter: blur(2px);
 }
 
 .hero-content {
     position: relative;
     text-align: center;
     color: var(--color-white);
-    max-width: 800px;
+    max-width: 900px;
     padding: 0 24px;
 }
 
 .hero-subtitle {
     display: block;
-    font-size: 14px;
-    letter-spacing: 6px;
+    font-size: 12px;
+    letter-spacing: 8px;
     text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards 0.3s;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 24px;
 }
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: 72px;
-    font-weight: 500;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards 0.5s;
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 4px;
+    margin-bottom: 32px;
 }
 
 .hero-desc {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
-    margin-bottom: 40px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards 0.7s;
+    line-height: 1.8;
+    margin-bottom: 48px;
+    opacity: 0.8;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
 }
 
 .hero-buttons {
@@ -409,54 +407,105 @@ button {
 
 .section-subtitle {
     display: block;
-    font-size: 13px;
-    letter-spacing: 4px;
+    font-size: 11px;
+    letter-spacing: 6px;
     text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 16px;
 }
 
 .section-title {
     font-family: var(--font-display);
-    font-size: 48px;
-    font-weight: 500;
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: 2px;
     color: var(--color-primary);
 }
 
 /* ========================================
-   Categories
-   ======================================== */
+    Categories - Kallage Style
+    ======================================== */
 .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .category-card {
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+    overflow: hidden;
+}
+
+.category-card-image {
+    position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.category-card-clothing {
-    background-color: var(--color-secondary);
-}
-
-.category-card-fragrance {
-    background-color: #EDE8E1;
-}
-
-.category-image {
-    flex: 0 0 50%;
-    overflow: hidden;
-}
-
-.category-image img {
+.category-card-image img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
-    transition: var(--transition-smooth);
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.category-card:hover .category-card-image img {
+    transform: scale(1.05);
+}
+
+.category-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    background-color: #FAF9F7;
+}
+
+.category-card:last-child .category-card-content {
+    background-color: #0A0A0A;
+    color: #FAF9F7;
+}
+
+.category-card:first-child .category-card-content {
+    order: -1;
+}
+
+.category-card-title {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    color: inherit;
+}
+
+.category-card-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    opacity: 0.7;
+    margin-bottom: 40px;
+    max-width: 400px;
+}
+
+.category-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: inherit;
+    transition: gap 0.3s ease;
+}
+
+.category-card-link:hover {
+    gap: 20px;
+}
 }
 
 .category-card:hover .category-image img {
@@ -490,32 +539,24 @@ button {
 }
 
 /* ========================================
-   Products Grid
-   ======================================== */
+    Products Grid - Clean Style
+    ======================================== */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 24px;
 }
 
-/* Featured Cards with Background Images (3x4 Grid) */
+/* Featured Cards */
 .featured-card {
     position: relative;
     aspect-ratio: 3/4;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
     cursor: pointer;
-    min-height: 300px;
-}
-
-.featured-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: currentValue;
+    min-height: 400px;
 }
 
 .featured-overlay {
