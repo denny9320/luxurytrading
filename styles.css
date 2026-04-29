@@ -503,15 +503,44 @@ button {
 }
 
 /* ========================================
-    Products Grid - Clean Style
+    Products Split Layout
     ======================================== */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+.products-section {
+    padding: 60px 40px;
+    background: #FFFFFF;
 }
 
-/* Featured Cards */
+.products-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.products-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.products-column-title {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.products-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* Featured Cards - Compact */
 .featured-card {
     position: relative;
     aspect-ratio: 3/4;
@@ -520,7 +549,8 @@ button {
     background-repeat: no-repeat;
     overflow: hidden;
     cursor: pointer;
-    min-height: 400px;
+    min-height: 280px;
+    border-radius: 4px;
 }
 
 .featured-overlay {

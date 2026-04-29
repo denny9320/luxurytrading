@@ -21,7 +21,7 @@
             <nav class="nav" id="nav">
 <ul class="nav-list">
                     <li><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
-                    <li><a href="#products" class="nav-link" data-i18n="nav.products">Products</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
                     <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
                 </ul>
             </nav>
@@ -130,15 +130,16 @@
         </div>
     </section>
 
-    <!-- All Products - Combined -->
-    <section class="products section" id="products">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Collections</span>
-                <h2 class="section-title">Fragrance & Fashion</h2>
+    <!-- Products - Two Columns -->
+    <section class="products-section" id="products">
+        <div class="products-split">
+            <div class="products-column">
+                <h3 class="products-column-title">Fragrance</h3>
+                <div class="products-grid-compact" id="fragranceGrid"></div>
             </div>
-            <div class="products-grid" id="clothingGrid">
-                <!-- Products loaded dynamically -->
+            <div class="products-column">
+                <h3 class="products-column-title">Fashion</h3>
+                <div class="products-grid-compact" id="clothingGrid"></div>
             </div>
         </div>
     </section>
