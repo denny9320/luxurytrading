@@ -506,15 +506,15 @@ button {
     Products Split Layout
     ======================================== */
 .products-section {
-    padding: 60px 40px;
+    padding: 40px 24px;
     background: #FFFFFF;
 }
 
 .products-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    max-width: 1400px;
+    gap: 40px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -525,19 +525,19 @@ button {
 
 .products-column-title {
     font-family: var(--font-display);
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 300;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #E5E5E5;
 }
 
 .products-grid-compact {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 12px;
 }
 
 /* Featured Cards - Compact */
@@ -549,7 +549,7 @@ button {
     background-repeat: no-repeat;
     overflow: hidden;
     cursor: pointer;
-    min-height: 280px;
+    min-height: 200px;
     border-radius: 4px;
 }
 
