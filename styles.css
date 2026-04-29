@@ -396,14 +396,16 @@ button {
 .categories-grid {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    align-items: center;
 }
 
 .category-card {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 60vh;
+    max-width: 1000px;
+    width: 100%;
+    min-height: 50vh;
     overflow: hidden;
 }
 
@@ -503,17 +505,14 @@ button {
 }
 
 /* ========================================
-    Products Split Layout
+    Products Layout
     ======================================== */
 .products-section {
     padding: 40px 24px;
     background: #FFFFFF;
 }
 
-.products-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+.products-single {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -536,8 +535,8 @@ button {
 
 .products-grid-compact {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
 }
 
 /* Featured Cards - Compact */
@@ -549,7 +548,7 @@ button {
     background-repeat: no-repeat;
     overflow: hidden;
     cursor: pointer;
-    min-height: 200px;
+    min-height: 250px;
     border-radius: 4px;
 }
 
