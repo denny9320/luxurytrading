@@ -49,21 +49,88 @@ const translationsData = {
     'en': {
         meta: { langCode: 'en', langName: 'English', dir: 'ltr' },
         nav: { home: 'Home', about: 'About', signIn: 'Sign In', createAccount: 'Create Account', profile: 'My Profile', myOrders: 'My Orders', addresses: 'Addresses', accountSettings: 'Account Settings', signOut: 'Sign Out' },
-        hero: { subtitle: 'Luxury Trading', title: 'Luxury Collections' },
+        hero: { subtitle: 'Luxury Trading', title: 'Luxury Collections', desc: 'Curated luxury products', ctaClothing: 'Explore Clothing', ctaFragrance: 'Discover Fragrance', scroll: 'Scroll Down' },
+        categories: { subtitle: 'Collections', title: 'Curated Selections', clothing: 'Fashion', clothingDesc: 'Exquisite', fragrance: 'Fragrance', fragranceDesc: 'Premium', explore: 'Explore More →' },
         category: { all: 'All', shoes: 'Shoes', bags: 'Bags', perfume: 'Perfume', sunglasses: 'Sunglasses', watches: 'Watches' },
-        about: { subtitle: 'Our Story', title: 'About Luxury Trading', text1: 'Luxury Trading is dedicated to curating the finest luxury products.' },
-        footer: { contact: 'Contact', copyright: 'All rights reserved.' },
-        search: { placeholder: 'Search products...', noResults: 'No products found' }
+        products: { featured: 'Featured', clothingTitle: 'Fashion', fragranceTitle: 'Fragrances', viewAllClothing: 'View All', viewAllFragrance: 'View All', quickView: 'Quick View', addToCart: 'Add to Cart' },
+        about: { subtitle: 'Our Story', title: 'About Luxury Trading', text1: 'Luxury Trading curates the finest products.', text2: 'Every product is carefully selected.', years: 'Years Experience', brands: 'Brand Partnerships', customers: 'Customers' },
+        newsletter: { title: 'Subscribe', desc: 'Get latest updates', placeholder: 'Enter your email', button: 'Subscribe' },
+        footer: { desc: 'Curating luxury from around the world.', quickLinks: 'Quick Links', service: 'Customer Service', contact: 'Contact Us', shipping: 'Shipping', returns: 'Returns', privacy: 'Privacy', contactUs: 'Contact', globalSourcing: 'Global Sourcing', copyright: 'All rights reserved.' },
+        cart: { title: 'Shopping Cart', empty: 'Your cart is empty', total: 'Total', checkout: 'Checkout', addedToCart: 'added to cart' },
+        search: { placeholder: 'Search products...', noResults: 'No products found' },
+        notifications: { subscribeSuccess: 'Thank you!', invalidEmail: 'Invalid email', cartAdded: 'added to cart' }
     },
     'zh': {
         meta: { langCode: 'zh', langName: '中文', dir: 'ltr' },
         nav: { home: '首页', about: '关于我们', signIn: '登录', createAccount: '创建账户', profile: '个人信息', myOrders: '我的订单', addresses: '收货地址', accountSettings: '账户设置', signOut: '退出登录' },
-        hero: { subtitle: '奢华贸易', title: '奢华系列' },
+        hero: { subtitle: '奢华贸易', title: '奢华系列', desc: '甄选奢华产品', ctaClothing: '探索服装', ctaFragrance: '发现香水', scroll: '向下滚动' },
+        categories: { subtitle: '系列', title: '甄选系列', clothing: '时装', clothingDesc: '精致', fragrance: '香氛', fragranceDesc: '顶级', explore: '探索更多 →' },
         category: { all: '全部', shoes: '鞋履', bags: '箱包', perfume: '香水', sunglasses: '墨镜', watches: '腕表' },
-        about: { subtitle: '品牌故事', title: '关于奢华贸易' },
-        footer: { contact: '联系我们', copyright: '版权所有。' },
-        search: { placeholder: '搜索产品...', noResults: '未找到产品' }
+        products: { featured: '精选', clothingTitle: '服装', fragranceTitle: '香水', viewAllClothing: '查看全部', viewAllFragrance: '查看全部', quickView: '快速查看', addToCart: '加入购物车' },
+        about: { subtitle: '品牌故事', title: '关于奢华贸易', text1: '致力于甄选全球最优质产品。', text2: '每一件产品都经过精心挑选。', years: '年采购经验', brands: '品牌合作', customers: '忠实客户' },
+        newsletter: { title: '订阅资讯', desc: '获取最新产品信息', placeholder: '输入您的邮箱', button: '订阅' },
+        footer: { desc: '甄选全球奢华产品。', quickLinks: '快速链接', service: '客户服务', contact: '联系我们', shipping: '配送说明', returns: '退换政策', privacy: '��私条款', contactUs: '联系方式', globalSourcing: '全球采购', copyright: '版权所有。' },
+        cart: { title: '购物车', empty: '购物车是空的', total: '总计', checkout: '立即结算', addedToCart: '已添到购物车' },
+        search: { placeholder: '搜索产品...', noResults: '未找到产品' },
+        notifications: { subscribeSuccess: '感谢订阅！', invalidEmail: '请输入有效邮箱', cartAdded: '已添加' }
     },
+    'de': {
+        meta: { langCode: 'de', langName: 'Deutsch', dir: 'ltr' },
+        nav: { home: 'Startseite', about: 'Über uns', signIn: 'Anmelden', createAccount: 'Konto erstellen', profile: 'Mein Profil', myOrders: 'Meine Bestellungen', addresses: 'Adressen', accountSettings: 'Kontoeinstellungen', signOut: 'Abmelden' },
+        hero: { subtitle: 'Luxus', title: 'Luxus Kollektionen', desc: 'Kuratierte Luxusprodukte', ctaClothing: 'Kleidung', ctaFragrance: 'Düfte', scroll: 'Scroll' },
+        categories: { subtitle: 'Kollektionen', title: 'Auswahl', clothing: 'Mode', clothingDesc: 'Exquisit', fragrance: 'Düfte', fragranceDesc: 'Premium', explore: 'Mehr →' },
+        category: { all: 'Alle', shoes: 'Schuhe', bags: 'Taschen', perfume: 'Parfüm', sunglasses: 'Sonnenbrillen', watches: 'Uhren' },
+        products: { featured: 'Empfohlen', clothingTitle: 'Kleidung', fragranceTitle: 'Düfte', viewAllClothing: 'Alle', viewAllFragrance: 'Alle', quickView: 'Schnellansicht', addToCart: 'In den Warenkorb' },
+        about: { subtitle: 'Geschichte', title: 'Über uns', text1: 'Wir kuratieren die feinsten Produkte.', text2: 'Jedes Produkt wird sorgfältig ausgewählt.', years: 'Jahre', brands: 'Marken', customers: 'Kunden' },
+        newsletter: { title: 'Newsletter', desc: 'Updates erhalten', placeholder: 'Email', button: 'Abonnieren' },
+        footer: { desc: 'Luxus aus aller Welt.', quickLinks: 'Links', service: 'Service', contact: 'Kontakt', shipping: 'Versand', returns: 'Retouren', privacy: 'Datenschutz', contactUs: 'Kontakt', globalSourcing: 'Global', copyright: 'Rechte vorbehalten.' },
+        cart: { title: 'Warenkorb', empty: 'Leer', total: 'Gesamt', checkout: 'Kasse', addedToCart: 'hinzugefügt' },
+        search: { placeholder: 'Suchen...', noResults: 'Keine Ergebnisse' },
+        notifications: { subscribeSuccess: 'Danke!', invalidEmail: 'Ungültige Email', cartAdded: 'hinzugefügt' }
+    },
+    'fr': {
+        meta: { langCode: 'fr', langName: 'Français', dir: 'ltr' },
+        nav: { home: 'Accueil', about: 'À propos', signIn: 'Se connecter', createAccount: 'Créer un compte', profile: 'Mon profil', myOrders: 'Mes commandes', addresses: 'Adresses', accountSettings: 'Paramètres du compte', signOut: 'Se déconnecter' },
+        hero: { subtitle: 'Luxe', title: 'Collections de Luxe', desc: 'Produits de luxe curatés', ctaClothing: 'Vêtements', ctaFragrance: 'Parfums', scroll: 'Défiler' },
+        categories: { subtitle: 'Collections', title: 'Sélection', clothing: 'Mode', clothingDesc: 'Exquise', fragrance: 'Parfums', fragranceDesc: 'Premium', explore: 'Explorer →' },
+        category: { all: 'Tous', shoes: 'Chaussures', bags: 'Sacs', perfume: 'Parfum', sunglasses: 'Lunettes', watches: 'Montres' },
+        products: { featured: 'En vedette', clothingTitle: 'Vêtements', fragranceTitle: 'Parfums', viewAllClothing: 'Tous', viewAllFragrance: 'Tous', quickView: 'Aperçu', addToCart: 'Ajouter au panier' },
+        about: { subtitle: 'Notre histoire', title: 'À propos', text1: 'Nous curons les meilleurs produits.', text2: 'Chaque produit est soigneusement choisi.', years: 'Ans', brands: 'Marques', customers: 'Clients' },
+        newsletter: { title: 'Newsletter', desc: 'Recevez les mises à jour', placeholder: 'Email', button: "S'abonner" },
+        footer: { desc: 'Luxe du monde entier.', quickLinks: 'Liens', service: 'Service', contact: 'Contact', shipping: 'Livraison', returns: 'Retours', privacy: 'Confidentialité', contactUs: 'Contact', globalSourcing: 'Mondial', copyright: 'Droits r��servés.' },
+        cart: { title: 'Panier', empty: 'Vide', total: 'Total', checkout: 'Commander', addedToCart: 'ajouté' },
+        search: { placeholder: 'Rechercher...', noResults: 'Aucun résultat' },
+        notifications: { subscribeSuccess: 'Merci!', invalidEmail: 'Email invalide', cartAdded: 'ajouté' }
+    },
+    'es': {
+        meta: { langCode: 'es', langName: 'Español', dir: 'ltr' },
+        nav: { home: 'Inicio', about: 'Nosotros', signIn: 'Iniciar sesión', createAccount: 'Crear cuenta', profile: 'Mi perfil', myOrders: 'Mis pedidos', addresses: 'Direcciones', accountSettings: 'Configuración de cuenta', signOut: 'Cerrar sesión' },
+        hero: { subtitle: 'Lujo', title: 'Colecciones de Lujo', desc: 'Productos de lujo curados', ctaClothing: 'Ropa', ctaFragrance: 'Fragancias', scroll: 'Desplazar' },
+        categories: { subtitle: 'Colecciones', title: 'Selección', clothing: 'Moda', clothingDesc: 'Exquisita', fragrance: 'Fragancias', fragranceDesc: 'Premium', explore: 'Explorar →' },
+        category: { all: 'Todos', shoes: 'Zapatos', bags: 'Bolsas', perfume: 'Perfume', sunglasses: 'Gafas', watches: 'Relojes' },
+        products: { featured: 'Destacados', clothingTitle: 'Ropa', fragranceTitle: 'Fragancias', viewAllClothing: 'Ver todos', viewAllFragrance: 'Ver todos', quickView: 'Vista rápida', addToCart: 'Añadir al carrito' },
+        about: { subtitle: 'Nuestra historia', title: 'Sobre nosotros', text1: 'Curamos los mejores productos.', text2: 'Cada producto se selecciona cuidadosamente.', years: 'Años', brands: 'Marcas', customers: 'Clientes' },
+        newsletter: { title: 'Newsletter', desc: 'Recibe actualizaciones', placeholder: 'Email', button: 'Suscribirse' },
+        footer: { desc: 'Moda de lujo de todo el mundo.', quickLinks: 'Enlaces', service: 'Servicio', contact: 'Contacto', shipping: 'Envío', returns: 'Devoluciones', privacy: 'Privacidad', contactUs: 'Contacto', globalSourcing: 'Global', copyright: 'Derechos reservados.' },
+        cart: { title: 'Carrito', empty: 'Vacío', total: 'Total', checkout: 'Finalizar', addedToCart: 'añadido' },
+        search: { placeholder: 'Buscar...', noResults: 'Sin resultados' },
+        notifications: { subscribeSuccess: '¡Gracias!', invalidEmail: 'Email inválido', cartAdded: 'añadido' }
+    },
+    'ar': {
+        meta: { langCode: 'ar', langName: 'العربية', dir: 'rtl' },
+        nav: { home: 'الرئيسية', about: 'من نحن', signIn: 'تسجيل الدخول', createAccount: 'إنشاء حساب', profile: 'ملفي', myOrders: 'طلباتي', addresses: 'العناوين', accountSettings: 'إعدادات الحساب', signOut: 'تسجيل الخروج' },
+        hero: { subtitle: 'الرفاهية', title: 'مجموعات الرفاهية', desc: 'منتجات راقية', ctaClothing: 'الأزياء', ctaFragrance: 'العطور', scroll: 'انتقل للأسفل' },
+        categories: { subtitle: 'المجموعات', title: 'اختيارات', clothing: 'الأزياء', clothingDesc: 'راقية', fragrance: 'العطور', fragranceDesc: 'فاخرة', explore: 'اكتشف المزيد ←' },
+        category: { all: 'الكل', shoes: 'أحذية', bags: 'حقائب', perfume: 'عطور', sunglasses: 'نظارات', watches: 'ساعات' },
+        products: { featured: 'مميز', clothingTitle: 'الأزياء', fragranceTitle: 'العطور', viewAllClothing: 'عرض الكل', viewAllFragrance: 'عرض الكل', quickView: 'عرض سريع', addToCart: 'أضف للسلة' },
+        about: { subtitle: 'قصتنا', title: 'عننا', text1: 'ن curate أفضل المنتجات.', text2: 'كل منتج يتم اختياره بعناية.', years: 'سنوات', brands: 'علامات', customers: 'عملاء' },
+        newsletter: { title: 'النشرة', desc: 'احصل على التحديثات', placeholder: 'البريد', button: 'اشترك' },
+        footer: { desc: 'منتجات راقية من كل العالم.', quickLinks: 'روابط', service: 'خدمة', contact: 'اتصل', shipping: 'شحن', returns: 'إرجاع', privacy: 'خصوصية', contactUs: 'اتصل', globalSourcing: 'عالمي', copyright: 'جميع الحقوق.' },
+        cart: { title: 'السلة', empty: 'فارغة', total: 'المجموع', checkout: 'إتمام', addedToCart: 'تمت الإضافة' },
+        search: { placeholder: 'ابحث...', noResults: 'لا نتائج' },
+        notifications: { subscribeSuccess: 'شكراً!', invalidEmail: 'بريد غير صالح', cartAdded: 'تمت الإضافة' }
+    }
+};
 'de': {
         meta: { langCode: 'de', langName: 'Deutsch', dir: 'ltr' },
         nav: { home: 'Startseite', clothing: 'Kleidung', fragrance: 'Düfte', about: 'Über uns', signIn: 'Anmelden', createAccount: 'Konto erstellen', profile: 'Mein Profil', myOrders: 'Meine Bestellungen', addresses: 'Adressen', accountSettings: 'Kontoeinstellungen', signOut: 'Abmelden' },
@@ -1393,6 +1460,14 @@ function updatePageTranslations() {
     updateElement('[data-i18n="hero.ctaClothing"]', t.hero.ctaClothing);
     updateElement('[data-i18n="hero.ctaFragrance"]', t.hero.ctaFragrance);
     updateElement('[data-i18n="hero.scroll"]', t.hero.scroll);
+    
+    // Category tabs
+    updateElements('[data-i18n="category.all"]', t.category?.all || 'All');
+    updateElements('[data-i18n="category.shoes"]', t.category?.shoes || 'Shoes');
+    updateElements('[data-i18n="category.bags"]', t.category?.bags || 'Bags');
+    updateElements('[data-i18n="category.perfume"]', t.category?.perfume || 'Perfume');
+    updateElements('[data-i18n="category.sunglasses"]', t.category?.sunglasses || 'Sunglasses');
+    updateElements('[data-i18n="category.watches"]', t.category?.watches || 'Watches');
     
     // Categories
     updateElement('[data-i18n="categories.subtitle"]', t.categories.subtitle);
