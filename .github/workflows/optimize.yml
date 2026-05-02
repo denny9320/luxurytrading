@@ -1,0 +1,64 @@
+name: 网站自动化优化（每次推送自动执行）
+on:
+  push:
+    branches: [ main, master ]  # 主分支名（显示main填main，显示master填master）
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 克隆代码
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}  # GitHub自动提供的安全令牌
+
+    - name: 安装优化工具
+      run: |
+        npm install -g sharp  # 图片压缩工具
+        sudo apt-get update && sudo apt-get install -y jpegoptim optipng
+
+    - name: 生成SEO文件（robots.txt + sitemap.xml）
+      run: |
+        # 创建robots.txt
+        cat > robots.txt << EOF
+        User-agent: *
+        Allow: /
+        Disallow: /admin
+        Sitemap: https://www.luxurytrading.cn/sitemap.xml
+        EOF
+        
+        # 创建sitemap.xml
+        cat > sitemap.xml << EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          <url><loc>https://www.luxurytrading.cn/</loc><lastmod>$(date -I)</lastmod><priority>1.0</priority></url>
+          <url><loc>https://www.luxurytrading.cn/products</loc><lastmod>$(date -I)</lastmod><priority>0.8</priority></url>
+          <url><loc>https://www.luxurytrading.cn/about</loc><lastmod>$(date -I)</lastmod><priority>0.6</priority></url>
+        </urlset>
+        EOF
+
+    - name: 自动压缩所有图片
+      run: |
+        find . -name "*.jpg" -o -name "*.jpeg" | xargs jpegoptim --max=80 --strip-all || true
+        find . -name "*.png" | xargs optipng -o2 || true
+
+    - name: 设置缓存策略（提升加载速度）
+      run: |
+        cat > _headers << EOF
+        /*.css
+          Cache-Control: max-age=31536000
+        /*.js
+          Cache-Control: max-age=31536000
+        /*.jpg
+          Cache-Control: max-age=31536000
+        /*.png
+          Cache-Control: max-age=31536000
+        EOF
+
+    - name: 提交优化结果
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git diff --staged --quiet || git commit -m "🤖 自动优化：SEO+图片+缓存"
+        git push
