@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 克隆代码
-      uses: actions/checkout@v4.2.2  # 👈 已完全支持 Node.js 24
+      uses: actions/checkout@v4.2.2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        fetch-depth: 0  # 拉取完整历史，解决推送权限问题
+        fetch-depth: 0
 
     - name: 安装优化工具
       run: |
@@ -57,9 +57,13 @@ jobs:
           Cache-Control: max-age=31536000
         EOF
 
-    - name: 提交优化结果（修复128错误版）
+    - name: 提交优化结果（修复版）
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git diff --staged --quiet || (git commit -m "🤖 自动优化：SEO+图片+缓存" && git push)
+        # 只有在有修改时才提交推送，避免空提交报错
+        if ! git diff --staged --quiet; then
+          git commit -m "🤖 自动优化：SEO+图片+缓存"
+          git push origin HEAD:${{ github.ref_name }}
+        fi
