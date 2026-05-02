@@ -1,5 +1,7 @@
 name: 网站自动化优化（每次推送自动执行）
 on:
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   push:
     branches: [ main, master ]  # 主分支名（显示main填main，显示master填master）
 
