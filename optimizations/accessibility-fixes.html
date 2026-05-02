@@ -1,0 +1,19 @@
+<!-- 无障碍性修复：图像Alt文本 + 键盘导航 -->
+
+<!-- 1. 图像替代文本修复 -->
+<img src="featured-dress.jpg" alt="黑色简约连衣裙 - 纯棉材质 V领设计">
+<img src="fragrance-bottle.jpg" alt="法国进口香水 - 木质调持久留香">
+
+<!-- 2. 键盘导航优化（为所有交互元素添加tabindex） -->
+<button tabindex="0" class="product-card">查看详情</button>
+<a href="/checkout" tabindex="0" class="btn-primary">立即购买</a>
+<input type="search" tabindex="0" placeholder="搜索产品">
+
+<!-- 3. 聚焦样式（添加到全局CSS） -->
+<style>
+  *:focus {
+    outline: 3px solid #4d90fe;
+    outline-offset: 2px;
+    z-index: 100;
+  }
+</style>

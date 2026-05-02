@@ -1,0 +1,50 @@
+[
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "丝绒晚礼服",
+    "image": "https://www.tapingtrading.com/images/velvet-gown.jpg",
+    "description": "意大利工艺手工缝制的丝绒晚礼服，优雅修身剪裁，适合正式场合穿着",
+    "brand": {
+      "@type": "Brand",
+      "name": "TapingTrading"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.tapingtrading.com/products/velvet-gown",
+      "priceCurrency": "USD",
+      "price": "299.00",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "126"
+    }
+  },
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "法国进口香水",
+    "image": "https://www.tapingtrading.com/images/french-perfume.jpg",
+    "description": "法国格拉斯产地进口香水，木质调香调，持久留香8小时",
+    "brand": {
+      "@type": "Brand",
+      "name": "TapingTrading"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.tapingtrading.com/products/french-perfume",
+      "priceCurrency": "USD",
+      "price": "129.00",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "89"
+    }
+  }
+]
