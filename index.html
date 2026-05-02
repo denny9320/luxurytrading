@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Trading | Luxury Fashion & Fragrance</title>
+    <link rel="icon" type="image/jpeg" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Luxury Trading" class="logo-image">
+            </a>
+            
+            <nav class="nav" id="nav">
+<ul class="nav-list">
+                    <li><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+<div class="user-account-menu" id="userAccountMenu" style="display:none;">
+                    <div class="user-account-trigger" onclick="toggleUserDropdown(event)">
+                        <span class="user-email-text" id="headerUserEmail"></span>
+                        <svg class="user-account-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="user-account-dropdown" id="userDropdown">
+                        <a href="profile.html" class="user-account-item" onclick="closeUserDropdown()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <span data-i18n="nav.profile">个人信息</span>
+                        </a>
+                        <a href="addresses.html" class="user-account-item" onclick="closeUserDropdown()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6.4-10 12-10 12s-10-5.6-10-12a10 10 0 0110-10z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span data-i18n="nav.addresses">收货地址</span>
+                        </a>
+                        <a href="orders.html" class="user-account-item" onclick="closeUserDropdown()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 01-8 0"></path></svg>
+                            <span data-i18n="nav.myOrders">我的订单</span>
+                        </a>
+                        <a href="profile.html?tab=settings" class="user-account-item" onclick="closeUserDropdown()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 00-.3.6V18a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2h2.5a2 2 0 001-1.4"></path></svg>
+                            <span data-i18n="nav.accountSettings">账户设置</span>
+                        </a>
+                        <div class="user-account-divider"></div>
+                        <a href="#" class="user-account-item user-account-logout" onclick="signOut(); closeUserDropdown(); return false;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                            <span data-i18n="nav.signOut">退出登录</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="user-login-btn" id="loginBtn">
+                    <button class="icon-btn" aria-label="Login" onclick="showLoginModal()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                </div>
+                <button class="icon-btn search-btn" aria-label="Search" id="searchBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 01-8 0"></path>
+                    </svg>
+<span class="cart-count">0</span>
+                </button>
+<select id="currencySelector" class="currency-select" onchange="changeCurrency(this.value)">
+                    <option value="USD">USD $</option>
+                    <option value="CNY">¥CNY</option>
+                    <option value="EUR">€EUR</option>
+                    <option value="GBP">£GBP</option>
+                </select>
+                <div class="lang-selector">
+                    <button class="lang-btn" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+<!-- Hero Section - Kallage Style -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="hero-subtitle" data-i18n="hero.subtitle">Luxury Trading</span>
+            <h1 class="hero-title" data-i18n="hero.title">Luxury Collections</h1>
+        </div>
+</section>
+
+    <!-- Products by Category -->
+    <section class="products-section" id="products">
+        <div class="categories-nav-wrapper">
+            <nav class="categories-nav" id="categoriesNav">
+                <a href="#" class="category-tab active" data-category="all" data-i18n="category.all">All</a>
+                <a href="#" class="category-tab" data-category="shoes" data-i18n="category.shoes">Shoes</a>
+                <a href="#" class="category-tab" data-category="bags" data-i18n="category.bags">Bags</a>
+                <a href="#" class="category-tab" data-category="perfume" data-i18n="category.perfume">Perfume</a>
+                <a href="#" class="category-tab" data-category="sunglasses" data-i18n="category.sunglasses">Sunglasses</a>
+                <a href="#" class="category-tab" data-category="watches" data-i18n="category.watches">Watches</a>
+            </nav>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/products/luxury1.jpg" alt="Our Story">
+                    <div class="about-image-accent"></div>
+                </div>
+                <div class="about-content">
+                    <span class="section-subtitle" data-i18n="about.subtitle">Our Story</span>
+<h2 class="section-title" data-i18n="about.title">About Luxury Trading</h2>
+<p class="about-text" data-i18n="about.text1">Luxury Trading is dedicated to curating the finest high-end fashion and premium fragrance products from around the world.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="feature-number">10+</span>
+                            <span class="feature-label" data-i18n="about.years">Years of Global Sourcing</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-number">500+</span>
+                            <span class="feature-label" data-i18n="about.brands">Curated Brand Partnerships</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-number">50k+</span>
+                            <span class="feature-label" data-i18n="about.customers">Loyal Customers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title" data-i18n="newsletter.title">Subscribe to Our Newsletter</h2>
+                <p class="newsletter-desc" data-i18n="newsletter.desc">Get the latest product updates, exclusive offers, and fashion insights</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address" data-i18n-placeholder="newsletter.placeholder">
+                    <button type="submit" class="btn btn-primary" data-i18n="newsletter.button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+<div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo">
+                        <img src="images/logo.png" alt="Luxury Trading" class="logo-image" style="height:40px;">
+                    </a>
+                    <p class="footer-desc" data-i18n="footer.desc">Curating luxury fashion and fragrances from around the world.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#clothing" data-i18n="nav.clothing">Fashion Collection</a></li>
+                        <li><a href="#fragrance" data-i18n="nav.fragrance">Fragrance Collection</a></li>
+                        <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="admin.html" target="_blank">Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.service">Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="footer.shipping">Shipping Info</a></li>
+                        <li><a href="#" data-i18n="footer.returns">Returns & Exchanges</a></li>
+                        <li><a href="#" data-i18n="footer.privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-i18n="footer.contactUs">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.contact">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span data-i18n="footer.globalSourcing">Global sourcing, quality assured</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>service@luxurytrading.cn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxury Trading. <span data-i18n="footer.copyright">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <button class="search-close" id="searchClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <input type="text" class="search-input" placeholder="Search products..." data-i18n-placeholder="search.placeholder" id="searchInput">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+    
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 data-i18n="cart.title">Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty" data-i18n="cart.empty">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-i18n="cart.total">Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" onclick="goToCheckout()">Checkout</button>
+        </div>
+    </div>
+    
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details loaded dynamically -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    
+    <!-- Login Modal -->
+    <div class="product-modal" id="loginModal" style="display:none">
+        <div class="modal-content" style="max-width:400px">
+            <button class="modal-close" onclick="closeLoginModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+<line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" style="padding:40px">
+                <h2 style="text-align:center;margin-bottom:30px;font-family:'Playfair Display',serif">Login</h2>
+                
+                <!-- 登录表单 - 默认显示 -->
+                <div id="loginForm">
+                    <div class="form-group">
+                        <label style="display:block;margin-bottom:8px;color:#666">邮箱</label>
+                        <input type="email" id="loginEmail" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:5px">
+                    </div>
+                    <div class="form-group">
+                        <label style="display:block;margin-bottom:8px;color:#666">密码</label>
+                        <input type="password" id="loginPassword" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:5px">
+                    </div>
+                    <button onclick="doLogin()" style="width:100%;padding:14px;background:#1A1A1A;color:white;border:none;border-radius:5px;cursor:pointer">登录</button>
+                </div>
+                
+                <!-- 注册表单 - 默认隐藏 -->
+                <div id="registerForm" style="display:none">
+                    <div class="form-group">
+                        <label style="display:block;margin-bottom:8px;color:#666">名字</label>
+                        <input type="text" id="regName" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:5px">
+                    </div>
+                    <div class="form-group">
+                        <label style="display:block;margin-bottom:8px;color:#666">邮箱</label>
+                        <input type="email" id="regEmail" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:5px">
+                    </div>
+                    <div class="form-group">
+                        <label style="display:block;margin-bottom:8px;color:#666">密码</label>
+                        <input type="password" id="regPassword" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:5px">
+                    </div>
+                    <button onclick="doRegister()" style="width:100%;padding:14px;background:#27ae60;color:white;border:none;border-radius:5px;cursor:pointer">注册</button>
+                </div>
+                
+                <p style="text-align:center;margin-top:20px">
+                    <a href="#" onclick="toggleLoginRegister(); return false;" id="toggleLoginText" style="color:#C9A962;text-decoration:none">没有账号？点击注册</a>
+                </p>
+                <p id="loginError" style="color:red;text-align:center;margin-top:15px;font-size:14px"></p>
+            </div>
+        </div>
+    </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC5SZrLBFQoTPGiDfqe0XYwgT2I0caeBvQ",
+authDomain: "luxurytrading.cn",
+      projectId: "luxurytrading",
+      storageBucket: "luxurytrading.firebasestorage.app",
+      messagingSenderId: "248437210641",
+      appId: "1:248437210641:web:d542acc355793e7ecd3bb0"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    let currentUser = null;
+
+onAuthStateChanged(auth, (user) => {
+      currentUser = user;
+      window.currentUser = user;
+      window.isLoggedIn = !!user;
+      if (user) {
+        document.getElementById('loginBtn').style.display = 'none';
+        document.getElementById('userAccountMenu').style.display = 'block';
+        
+        // 获取保存的用户名
+        let savedName = localStorage.getItem('tapingUserName');
+        // 如果保存的用户名是空或者是电话号码，显示"用户"
+        if (!savedName || savedName.length < 2 || /^\d+$/.test(savedName)) {
+          savedName = '用户';
+        }
+        document.getElementById('headerUserEmail').textContent = savedName;
+      } else {
+        document.getElementById('loginBtn').style.display = 'flex';
+        document.getElementById('userAccountMenu').style.display = 'none';
+      }
+      window.updateUserDropdownState && window.updateUserDropdownState();
+    });
+
+window.showLoginModal = function() {
+      const modal = document.getElementById('loginModal');
+      if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.add('active');
+      }
+    };
+
+    window.closeLoginModal = function() {
+      const modal = document.getElementById('loginModal');
+      if (modal) {
+        modal.style.display = 'none';
+        modal.classList.remove('active');
+      }
+    };
+
+    window.toggleLoginRegister = function() {
+      const loginForm = document.getElementById('loginForm');
+      const registerForm = document.getElementById('registerForm');
+      const toggleText = document.getElementById('toggleLoginText');
+      
+      if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+        toggleText.textContent = '没有账号？点击注册';
+      } else {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+        toggleText.textContent = '已有账号？点击登录';
+      }
+    };
+
+window.doLogin = async function() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      const errorEl = document.getElementById('loginError');
+      
+      if (!email || !password) {
+        errorEl.textContent = '请填写邮箱和密码';
+        return;
+      }
+      
+      try {
+        errorEl.textContent = '登录中...';
+        await signInWithEmailAndPassword(auth, email, password);
+        
+        // 登录成功后不在刷新页面，直接更新UI
+        const savedName = localStorage.getItem('tapingUserName');
+        // 如果保存的用户名是空或者是电话号码，显示"用户"
+        const displayName = (!savedName || savedName.length < 2 || /^\d+$/.test(savedName)) ? '用户' : savedName;
+        
+        // 隐藏登录按钮，显示用户菜单
+        document.getElementById('loginBtn').style.display = 'none';
+        document.getElementById('userAccountMenu').style.display = 'block';
+        document.getElementById('headerUserEmail').textContent = savedName;
+        
+        closeLoginModal();
+      } catch (e) {
+        errorEl.textContent = '登录失败: ' + e.message;
+      }
+    };
+
+    window.doRegister = async function() {
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+      const errorEl = document.getElementById('loginError');
+      
+      if (!name || !email || !password) {
+        errorEl.textContent = '请填写所有信息';
+        return;
+      }
+      
+try {
+        errorEl.textContent = '注册中...';
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        
+        // 保存用户名到localStorage - 确保保存的是名字而不是电话号码
+        if (name && name.length >= 2 && !/^\d+$/.test(name)) {
+          localStorage.setItem('tapingUserName', name);
+        }
+        
+        // 立即更新header显示
+        const headerEl = document.getElementById('headerUserEmail');
+        if (headerEl) {
+          headerEl.textContent = name;
+        }
+        
+        if (db && userCredential.user) {
+          await addDoc(collection(db, 'users'), {
+            uid: userCredential.user.uid,
+            email: email,
+            name: name,
+            createdAt: new Date()
+          });
+        }
+        
+        closeLoginModal();
+      } catch (e) {
+        errorEl.textContent = '注册失败: ' + e.message;
+      }
+    };
+
+    // 登录后保存用户名
+    window.saveUserName = function(name) {
+      localStorage.setItem('tapingUserName', name);
+      document.getElementById('headerUserEmail').textContent = name;
+    };
+
+    window.signOut = async function() {
+      try {
+        await signOut(auth);
+        localStorage.removeItem('tapingUserName');
+        document.getElementById('loginBtn').style.display = 'flex';
+        document.getElementById('userAccountMenu').style.display = 'none';
+      } catch (e) {
+        console.error('Sign out error:', e);
+      }
+    };
+
+window.toggleUserDropdown = function(event) {
+      event.stopPropagation();
+      const menu = document.getElementById('userAccountMenu');
+      if (menu) {
+        menu.classList.toggle('open');
+      }
+    };
+
+    window.closeUserDropdown = function() {
+      const menu = document.getElementById('userAccountMenu');
+      if (menu) {
+        menu.classList.remove('open');
+      }
+    };
+
+    // Update user dropdown based on login state
+    window.updateUserDropdownState = function() {
+      const notLoggedIn = document.getElementById('userDropdownNotLoggedIn');
+      const loggedIn = document.getElementById('userDropdownLoggedIn');
+      const userEmailEl = document.getElementById('userDropdownEmail');
+      const isLoggedIn = window.isLoggedIn && window.currentUser;
+      
+      if (notLoggedIn && loggedIn) {
+        notLoggedIn.style.display = isLoggedIn ? 'none' : 'block';
+        loggedIn.style.display = isLoggedIn ? 'block' : 'none';
+      }
+      
+      if (isLoggedIn && userEmailEl && window.currentUser) {
+        userEmailEl.textContent = window.currentUser.email || '';
+      }
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('userAccountMenu');
+      if (menu && !menu.contains(event.target)) {
+        menu.classList.remove('open');
+      }
+    });
+
+    window.goToCheckout = function() {
+      window.location.href = 'checkout.html';
+    };
+  </script>
+</body>
+</html>

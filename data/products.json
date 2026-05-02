@@ -1,0 +1,149 @@
+{
+  "clothes": [
+    {
+      "id": "clothes001",
+      "name": "Supreme FW25 Reflective Jacket",
+      "nameEn": "Supreme FW25 Reflective Jacket",
+      "category": "Clothes",
+      "price": 170,
+      "images": ["images/products/jacket1.jpg"],
+      "description": "Premium reflective jacket"
+    },
+    {
+      "id": "clothes002",
+      "name": "MONCLER Puffer Jacket",
+      "nameEn": "MONCLER Puffer Jacket",
+      "category": "Clothes",
+      "price": 95,
+      "images": ["images/products/jacket2.jpg"],
+      "description": "Warm puffer jacket"
+    },
+    {
+      "id": "clothes003",
+      "name": "BURBERRY Trench Coat",
+      "nameEn": "BURBERRY Trench Coat",
+      "category": "Clothes",
+      "price": 280,
+      "images": ["images/products/fashion1.jpg"],
+      "description": "Classic trench coat"
+    }
+  ],
+  "shoes": [
+    {
+      "id": "shoes001",
+      "name": "NIKE Air Max",
+      "nameEn": "NIKE Air Max",
+      "category": "Shoes",
+      "price": 150,
+      "images": ["images/products/model1.jpg"],
+      "description": "Comfortable sneakers"
+    },
+    {
+      "id": "shoes002",
+      "name": "ADIDAS Ultraboost",
+      "nameEn": "ADIDAS Ultraboost",
+      "category": "Shoes",
+      "price": 180,
+      "images": ["images/products/model1.jpg"],
+      "description": "Performance running shoes"
+    }
+  ],
+  "bags": [
+    {
+      "id": "bags001",
+      "name": "LOUIS VUITTON Neverfull",
+      "nameEn": "LOUIS VUITTON Neverfull",
+      "category": "Bags",
+      "price": 1200,
+      "images": ["images/products/luxury1.jpg"],
+      "description": "Classic tote bag"
+    },
+    {
+      "id": "bags002",
+      "name": "GUCCI GG Marmont",
+      "nameEn": "GUCCI GG Marmont",
+      "category": "Bags",
+      "price": 980,
+      "images": ["images/products/luxury1.jpg"],
+      "description": "Matelassé shoulder bag"
+    }
+  ],
+  "perfume": [
+    {
+      "id": "perfume001",
+      "name": "CHANEL No.5",
+      "nameEn": "CHANEL No.5",
+      "category": "Perfume",
+      "price": 120,
+      "images": ["images/products/perfume1.jpg"],
+      "description": "Iconic floral fragrance"
+    },
+    {
+      "id": "perfume002",
+      "name": "DIOR Sauvage",
+      "nameEn": "DIOR Sauvage",
+      "category": "Perfume",
+      "price": 95,
+      "images": ["images/products/perfume2.jpg"],
+      "description": "Fresh spicy fragrance"
+    },
+    {
+      "id": "perfume003",
+      "name": "TOM FORD Oud Wood",
+      "nameEn": "TOM FORD Oud Wood",
+      "category": "Perfume",
+      "price": 180,
+      "images": ["images/products/perfume3.jpg"],
+      "description": "Luxurious oud fragrance"
+    },
+    {
+      "id": "perfume004",
+      "name": "YSL Black Opium",
+      "nameEn": "YSL Black Opium",
+      "category": "Perfume",
+      "price": 110,
+      "images": ["images/products/perfume5.jpg"],
+      "description": "Gourmand floral"
+    }
+  ],
+  "sunglasses": [
+    {
+      "id": "sunglasses001",
+      "name": "RAY-BAN Aviator",
+      "nameEn": "RAY-BAN Aviator",
+      "category": "Sunglasses",
+      "price": 150,
+      "images": ["images/products/perfume-custom.jpg"],
+      "description": "Classic aviator style"
+    },
+    {
+      "id": "sunglasses002",
+      "name": "GUCCI Oversized",
+      "nameEn": "GUCCI Oversized",
+      "category": "Sunglasses",
+      "price": 380,
+      "images": ["images/products/perfume-custom.jpg"],
+      "description": "Bold oversized frames"
+    }
+  ],
+  "watches": [
+    {
+      "id": "watches001",
+      "name": "ROLEX Submariner",
+      "nameEn": "ROLEX Submariner",
+      "category": "Watches",
+      "price": 8500,
+      "images": ["images/products/luxury1.jpg"],
+      "description": "Luxury dive watch"
+    },
+    {
+      "id": "watches002",
+      "name": "OMEGA Speedmaster",
+      "nameEn": "OMEGA Speedmaster",
+      "category": "Watches",
+      "price": 5200,
+      "images": ["images/products/luxury1.jpg"],
+      "description": "Classic chronograph"
+    }
+  ]
+}

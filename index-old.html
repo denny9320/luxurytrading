@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxuryTrading | Luxury Fashion & Fragrance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-text">LUXURY</span>
+                <span class="logo-accent">TRADING</span>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#clothing" class="nav-link" data-i18n="nav.clothing">Clothing</a></li>
+                    <li><a href="#fragrance" class="nav-link" data-i18n="nav.fragrance">Fragrance</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="icon-btn search-btn" aria-label="Search" id="searchBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 01-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <span class="hero-subtitle" data-i18n="hero.subtitle">Elegance Redefined</span>
+            <h1 class="hero-title" data-i18n="hero.title">Discover Luxury</h1>
+            <p class="hero-desc" data-i18n="hero.desc">Curated high-end fashion and premium fragrances for your unique style</p>
+<div class="hero-buttons">
+                <a href="#clothing" class="btn btn-primary">Explore Clothing</a>
+                <a href="#fragrance" class="btn btn-secondary">Discover Fragrance</a>
+            </div>
+            <div class="hero-buttons" style="margin-top: 16px;">
+                <a href="order-form.html" class="btn btn-outline">🛒 Place Order</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span data-i18n="hero.scroll">Scroll Down</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-i18n="categories.subtitle">Collections</span>
+                <h2 class="section-title" data-i18n="categories.title">Curated Selections</h2>
+            </div>
+            <div class="categories-grid">
+                <a href="#clothing" class="category-card category-card-clothing">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&q=80" alt="Fashion">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title" data-i18n="categories.clothing">Fashion Collection</h3>
+                        <p class="category-desc" data-i18n="categories.clothingDesc">Exquisite tailoring, elegant design</p>
+                        <span class="category-link" data-i18n="categories.explore">Explore More →</span>
+                    </div>
+                </a>
+                <a href="#fragrance" class="category-card category-card-fragrance">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?w=600&q=80" alt="Fragrance">
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title" data-i18n="categories.fragrance">Fragrance Collection</h3>
+                        <p class="category-desc" data-i18n="categories.fragranceDesc">Premium ingredients, lasting impressions</p>
+                        <span class="category-link" data-i18n="categories.explore">Explore More →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products - Clothing -->
+    <section class="products section" id="clothing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-i18n="products.subtitle">Featured</span>
+                <h2 class="section-title" data-i18n="products.clothingTitle">Featured Clothing</h2>
+            </div>
+            <div class="products-grid" id="clothingGrid">
+                <!-- Products loaded dynamically -->
+            </div>
+            <div class="products-cta">
+                <a href="#" class="btn btn-outline" data-i18n="products.viewAllClothing">View All Clothing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products - Fragrance -->
+    <section class="products section" id="fragrance">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Essence</span>
+                <h2 class="section-title" data-i18n="products.fragranceTitle">Signature Fragrances</h2>
+            </div>
+            <div class="products-grid" id="fragranceGrid">
+                <!-- Products loaded dynamically -->
+            </div>
+            <div class="products-cta">
+                <a href="#" class="btn btn-outline" data-i18n="products.viewAllFragrance">View All Fragrances</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&q=80" alt="Our Story">
+                    <div class="about-image-accent"></div>
+                </div>
+                <div class="about-content">
+                    <span class="section-subtitle" data-i18n="about.subtitle">Our Story</span>
+                    <h2 class="section-title" data-i18n="about.title">About Luxury Trading</h2>
+                    <p class="about-text" data-i18n="about.text1">Luxury Trading is dedicated to curating the finest high-end fashion and premium fragrance products from around the world. We believe that true luxury lies not only in the products themselves but in the unique experiences and emotional connections they create.</p>
+                    <p class="about-text" data-i18n="about.text2">Every product is carefully selected to ensure exceptional quality and distinctive design. Whether it's an elegant silk blouse or a refined French fragrance, we strive to offer you a unique selection that sets you apart.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="feature-number">10+</span>
+                            <span class="feature-label" data-i18n="about.years">Years of Global Sourcing</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-number">500+</span>
+                            <span class="feature-label" data-i18n="about.brands">Curated Brand Partnerships</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-number">50k+</span>
+                            <span class="feature-label" data-i18n="about.customers">Loyal Customers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title" data-i18n="newsletter.title">Subscribe to Our Newsletter</h2>
+                <p class="newsletter-desc" data-i18n="newsletter.desc">Get the latest product updates, exclusive offers, and fashion insights</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address" data-i18n-placeholder="newsletter.placeholder">
+                    <button type="submit" class="btn btn-primary" data-i18n="newsletter.button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo">
+                        <span class="logo-text">LUXURY</span>
+                        <span class="logo-accent">TRADING</span>
+                    </a>
+                    <p class="footer-desc" data-i18n="footer.desc">Curating luxury fashion and fragrances from around the world.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#clothing" data-i18n="nav.clothing">Fashion Collection</a></li>
+                        <li><a href="#fragrance" data-i18n="nav.fragrance">Fragrance Collection</a></li>
+                        <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="admin.html" target="_blank">Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.service">Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="footer.shipping">Shipping Info</a></li>
+                        <li><a href="#" data-i18n="footer.returns">Returns & Exchanges</a></li>
+                        <li><a href="#" data-i18n="footer.privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-i18n="footer.contactUs">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.contact">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span data-i18n="footer.globalSourcing">Global sourcing, quality assured</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>service@luxurytrading.cn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxury Trading. <span data-i18n="footer.copyright">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <button class="search-close" id="searchClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <input type="text" class="search-input" placeholder="Search products..." data-i18n-placeholder="search.placeholder" id="searchInput">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+    
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 data-i18n="cart.title">Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty" data-i18n="cart.empty">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-i18n="cart.total">Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" data-i18n="cart.checkout">Checkout</button>
+        </div>
+    </div>
+    
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details loaded dynamically -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+</body>
+</html>
