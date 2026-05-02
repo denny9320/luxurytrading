@@ -1,27 +1,28 @@
 name: 网站自动化优化（每次推送自动执行）
 on:
+  push:
+    branches: [ main, master ]
+
+# 👇 这里强制启用 Node.js 24，彻底消除警告
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  push:
-    branches: [ main, master ]  # 主分支名（显示main填main，显示master填master）
 
 jobs:
   optimize:
     runs-on: ubuntu-latest
     steps:
     - name: 克隆代码
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4.2.1  # 👈 已修复 Node.js 24 兼容
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}  # GitHub自动提供的安全令牌
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: 安装优化工具
       run: |
-        npm install -g sharp  # 图片压缩工具
+        npm install -g sharp
         sudo apt-get update && sudo apt-get install -y jpegoptim optipng
 
     - name: 生成SEO文件（robots.txt + sitemap.xml）
       run: |
-        # 创建robots.txt
         cat > robots.txt << EOF
         User-agent: *
         Allow: /
@@ -29,7 +30,6 @@ jobs:
         Sitemap: https://www.luxurytrading.cn/sitemap.xml
         EOF
         
-        # 创建sitemap.xml
         cat > sitemap.xml << EOF
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
