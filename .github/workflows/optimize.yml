@@ -3,7 +3,6 @@ on:
   push:
     branches: [ main, master ]
 
-# 👇 这里强制启用 Node.js 24，彻底消除警告
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -12,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 克隆代码
-      uses: actions/checkout@v4.2.1  # 👈 已修复 Node.js 24 兼容
+      uses: actions/checkout@v4.2.2  # 👈 已完全支持 Node.js 24
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0  # 拉取完整历史，解决推送权限问题
 
     - name: 安装优化工具
       run: |
@@ -57,10 +57,9 @@ jobs:
           Cache-Control: max-age=31536000
         EOF
 
-    - name: 提交优化结果
+    - name: 提交优化结果（修复128错误版）
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git diff --staged --quiet || git commit -m "🤖 自动优化：SEO+图片+缓存"
-        git push
+        git diff --staged --quiet || (git commit -m "🤖 自动优化：SEO+图片+缓存" && git push)
