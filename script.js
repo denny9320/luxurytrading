@@ -2072,11 +2072,11 @@ function updatePageTranslations() {
 
 function updateElement(selector, text) {
     const el = document.querySelector(selector);
-    if (el) el.textContent = text;
+    if (el) el.innerHTML = text;
 }
 
 function updateElements(selector, text) {
-    document.querySelectorAll(selector).forEach(el => el.textContent = text);
+    document.querySelectorAll(selector).forEach(el => el.innerHTML = text);
 }
 
 function createLanguageSwitcher() {
