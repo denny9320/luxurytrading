@@ -36,7 +36,7 @@
       "nameEn": "NIKE Air Max",
       "category": "Shoes",
       "price": 150,
-      "images": ["images/products/model1.jpg"],
+      "images": ["images/products/clothing-category.jpg"],
       "description": "Comfortable sneakers",
       "featured": true
     },
@@ -46,7 +46,7 @@
       "nameEn": "ADIDAS Ultraboost",
       "category": "Shoes",
       "price": 180,
-      "images": ["images/products/model1.jpg"],
+      "images": ["images/products/test-perfume.jpg"],
       "description": "Performance running shoes",
       "featured": false
     },
@@ -86,7 +86,7 @@
       "nameEn": "GUCCI Oversized",
       "category": "Sunglasses",
       "price": 380,
-      "images": ["images/products/perfume-custom.jpg"],
+      "images": ["images/products/perfume-custom2.jpg"],
       "description": "Bold oversized frames",
       "featured": false
     },
@@ -118,7 +118,7 @@
       "nameEn": "CHANEL No.5",
       "category": "Floral",
       "price": 120,
-      "images": ["images/products/perfume1.jpg"],
+      "images": ["images/products/perfume-custom.jpg"],
       "description": "Iconic floral fragrance",
       "featured": true
     },
@@ -128,7 +128,7 @@
       "nameEn": "DIOR Sauvage",
       "category": "Fresh",
       "price": 95,
-      "images": ["images/products/perfume2.jpg"],
+      "images": ["images/products/perfume-custom2.jpg"],
       "description": "Fresh spicy fragrance",
       "featured": true
     },
@@ -148,7 +148,7 @@
       "nameEn": "YSL Black Opium",
       "category": "Oriental",
       "price": 110,
-      "images": ["images/products/perfume5.jpg"],
+      "images": ["images/products/test-perfume.jpg"],
       "description": "Gourmand floral",
       "featured": true
     }
