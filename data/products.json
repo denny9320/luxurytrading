@@ -1,149 +1,156 @@
 {
-  "clothes": [
+  "clothing": [
     {
-      "id": "clothes001",
-      "name": "Supreme FW25 Reflective Jacket",
+      "id": "c001",
+      "name": "Supreme FW25 反光夹克",
       "nameEn": "Supreme FW25 Reflective Jacket",
-      "category": "Clothes",
+      "category": "Clothing",
       "price": 170,
       "images": ["images/products/jacket1.jpg"],
-      "description": "Premium reflective jacket"
+      "description": "Premium reflective jacket",
+      "featured": true
     },
     {
-      "id": "clothes002",
-      "name": "MONCLER Puffer Jacket",
+      "id": "c002",
+      "name": "MONCLER 羽绒服",
       "nameEn": "MONCLER Puffer Jacket",
-      "category": "Clothes",
+      "category": "Outerwear",
       "price": 95,
       "images": ["images/products/jacket2.jpg"],
-      "description": "Warm puffer jacket"
+      "description": "Warm puffer jacket",
+      "featured": true
     },
     {
-      "id": "clothes003",
-      "name": "BURBERRY Trench Coat",
+      "id": "c003",
+      "name": "BURBERRY 风衣",
       "nameEn": "BURBERRY Trench Coat",
-      "category": "Clothes",
+      "category": "Outerwear",
       "price": 280,
       "images": ["images/products/fashion1.jpg"],
-      "description": "Classic trench coat"
-    }
-  ],
-  "shoes": [
+      "description": "Classic trench coat",
+      "featured": true
+    },
     {
-      "id": "shoes001",
+      "id": "c004",
       "name": "NIKE Air Max",
       "nameEn": "NIKE Air Max",
       "category": "Shoes",
       "price": 150,
       "images": ["images/products/model1.jpg"],
-      "description": "Comfortable sneakers"
+      "description": "Comfortable sneakers",
+      "featured": true
     },
     {
-      "id": "shoes002",
+      "id": "c005",
       "name": "ADIDAS Ultraboost",
       "nameEn": "ADIDAS Ultraboost",
       "category": "Shoes",
       "price": 180,
       "images": ["images/products/model1.jpg"],
-      "description": "Performance running shoes"
-    }
-  ],
-  "bags": [
+      "description": "Performance running shoes",
+      "featured": false
+    },
     {
-      "id": "bags001",
+      "id": "c006",
       "name": "LOUIS VUITTON Neverfull",
       "nameEn": "LOUIS VUITTON Neverfull",
       "category": "Bags",
       "price": 1200,
       "images": ["images/products/luxury1.jpg"],
-      "description": "Classic tote bag"
+      "description": "Classic tote bag",
+      "featured": true
     },
     {
-      "id": "bags002",
+      "id": "c007",
       "name": "GUCCI GG Marmont",
       "nameEn": "GUCCI GG Marmont",
       "category": "Bags",
       "price": 980,
       "images": ["images/products/luxury1.jpg"],
-      "description": "Matelassé shoulder bag"
-    }
-  ],
-  "perfume": [
-    {
-      "id": "perfume001",
-      "name": "CHANEL No.5",
-      "nameEn": "CHANEL No.5",
-      "category": "Perfume",
-      "price": 120,
-      "images": ["images/products/perfume1.jpg"],
-      "description": "Iconic floral fragrance"
+      "description": "Matelassé shoulder bag",
+      "featured": false
     },
     {
-      "id": "perfume002",
-      "name": "DIOR Sauvage",
-      "nameEn": "DIOR Sauvage",
-      "category": "Perfume",
-      "price": 95,
-      "images": ["images/products/perfume2.jpg"],
-      "description": "Fresh spicy fragrance"
-    },
-    {
-      "id": "perfume003",
-      "name": "TOM FORD Oud Wood",
-      "nameEn": "TOM FORD Oud Wood",
-      "category": "Perfume",
-      "price": 180,
-      "images": ["images/products/perfume3.jpg"],
-      "description": "Luxurious oud fragrance"
-    },
-    {
-      "id": "perfume004",
-      "name": "YSL Black Opium",
-      "nameEn": "YSL Black Opium",
-      "category": "Perfume",
-      "price": 110,
-      "images": ["images/products/perfume5.jpg"],
-      "description": "Gourmand floral"
-    }
-  ],
-  "sunglasses": [
-    {
-      "id": "sunglasses001",
-      "name": "RAY-BAN Aviator",
+      "id": "c008",
+      "name": "RAY-BAN 飞行员墨镜",
       "nameEn": "RAY-BAN Aviator",
       "category": "Sunglasses",
       "price": 150,
       "images": ["images/products/perfume-custom.jpg"],
-      "description": "Classic aviator style"
+      "description": "Classic aviator style",
+      "featured": false
     },
     {
-      "id": "sunglasses002",
-      "name": "GUCCI Oversized",
+      "id": "c009",
+      "name": "GUCCI 大框墨镜",
       "nameEn": "GUCCI Oversized",
       "category": "Sunglasses",
       "price": 380,
       "images": ["images/products/perfume-custom.jpg"],
-      "description": "Bold oversized frames"
-    }
-  ],
-  "watches": [
+      "description": "Bold oversized frames",
+      "featured": false
+    },
     {
-      "id": "watches001",
-      "name": "ROLEX Submariner",
+      "id": "c010",
+      "name": "ROLEX 潜航者",
       "nameEn": "ROLEX Submariner",
       "category": "Watches",
       "price": 8500,
       "images": ["images/products/luxury1.jpg"],
-      "description": "Luxury dive watch"
+      "description": "Luxury dive watch",
+      "featured": true
     },
     {
-      "id": "watches002",
-      "name": "OMEGA Speedmaster",
+      "id": "c011",
+      "name": "OMEGA 超霸",
       "nameEn": "OMEGA Speedmaster",
       "category": "Watches",
       "price": 5200,
       "images": ["images/products/luxury1.jpg"],
-      "description": "Classic chronograph"
+      "description": "Classic chronograph",
+      "featured": false
+    }
+  ],
+  "fragrance": [
+    {
+      "id": "f001",
+      "name": "香奈儿5号",
+      "nameEn": "CHANEL No.5",
+      "category": "Floral",
+      "price": 120,
+      "images": ["images/products/perfume1.jpg"],
+      "description": "Iconic floral fragrance",
+      "featured": true
+    },
+    {
+      "id": "f002",
+      "name": "迪奥旷野",
+      "nameEn": "DIOR Sauvage",
+      "category": "Fresh",
+      "price": 95,
+      "images": ["images/products/perfume2.jpg"],
+      "description": "Fresh spicy fragrance",
+      "featured": true
+    },
+    {
+      "id": "f003",
+      "name": "TOM FORD 乌木沉香",
+      "nameEn": "TOM FORD Oud Wood",
+      "category": "Woody",
+      "price": 180,
+      "images": ["images/products/perfume3.jpg"],
+      "description": "Luxurious oud fragrance",
+      "featured": true
+    },
+    {
+      "id": "f004",
+      "name": "YSL 黑鸦片",
+      "nameEn": "YSL Black Opium",
+      "category": "Oriental",
+      "price": 110,
+      "images": ["images/products/perfume5.jpg"],
+      "description": "Gourmand floral",
+      "featured": true
     }
   ]
 }

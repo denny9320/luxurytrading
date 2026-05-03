@@ -979,7 +979,31 @@ async function initProductSystem() {
         const json = await response.json();
         console.log('Raw JSON:', json);
         
-        productData = json;
+        // Normalize data structure: merge old keys into clothing/fragrance
+        const clothingKeys = ['clothing', 'clothes', 'shoes', 'bags', 'sunglasses', 'watches', 'accessories'];
+        const fragranceKeys = ['fragrance', 'perfume'];
+        
+        productData = {
+            clothing: [],
+            fragrance: []
+        };
+        
+        clothingKeys.forEach(key => {
+            if (json[key] && Array.isArray(json[key])) {
+                productData.clothing = productData.clothing.concat(json[key]);
+            }
+        });
+        
+        fragranceKeys.forEach(key => {
+            if (json[key] && Array.isArray(json[key])) {
+                productData.fragrance = productData.fragrance.concat(json[key]);
+            }
+        });
+        
+        // If JSON already has clothing/fragrance directly, use those
+        if (json.clothing && Array.isArray(json.clothing)) productData.clothing = json.clothing;
+        if (json.fragrance && Array.isArray(json.fragrance)) productData.fragrance = json.fragrance;
+        
         console.log('productData set to:', productData);
         
         // Render featured products
