@@ -730,16 +730,18 @@ function initMobileMenu() {
 }
 
 /* ========================================
-   Scroll Reveal Animation
-   ======================================== */
+    Scroll Reveal Animation
+    ======================================== */
+let productCardObserver = null;
+
 function initScrollReveal() {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
-    
-    const observer = new IntersectionObserver((entries) => {
+
+    productCardObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 // Add staggered delay for product cards
@@ -747,22 +749,19 @@ function initScrollReveal() {
                 const parent = card.parentElement;
                 const siblings = Array.from(parent.querySelectorAll('.product-card'));
                 const cardIndex = siblings.indexOf(card);
-                
+
                 setTimeout(() => {
                     card.classList.add('visible');
                 }, cardIndex * 100);
-                
-                observer.unobserve(card);
+
+                productCardObserver.unobserve(card);
             }
         });
     }, observerOptions);
-    
-    // Observe product cards
-    const productCards = document.querySelectorAll('.product-card');
-    productCards.forEach(card => {
-        observer.observe(card);
-    });
-    
+
+    // Observe any existing product cards
+    observeProductCards();
+
     // Also observe sections for fade in effect
     const sections = document.querySelectorAll('.section');
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -773,12 +772,21 @@ function initScrollReveal() {
             }
         });
     }, { threshold: 0.1 });
-    
+
     sections.forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(30px)';
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         sectionObserver.observe(section);
+    });
+}
+
+// Re-observe product cards after they are dynamically rendered
+function observeProductCards() {
+    if (!productCardObserver) return;
+    const productCards = document.querySelectorAll('.product-card');
+    productCards.forEach(card => {
+        productCardObserver.observe(card);
     });
 }
 
@@ -1063,6 +1071,9 @@ function renderFeaturedProducts() {
         const type = productData.clothing.includes(product) ? 'clothing' : 'fragrance';
         return createProductCard(product, type);
     }).join('');
+
+    // Re-observe newly rendered product cards for scroll reveal animation
+    observeProductCards();
 }
 
 function createFeaturedCard(product, type) {
@@ -1193,6 +1204,9 @@ function filterByCategory(category) {
         const type = productData.clothing.includes(product) ? 'clothing' : 'fragrance';
         return createProductCard(product, type);
     }).join('');
+
+    // Re-observe newly rendered product cards for scroll reveal animation
+    observeProductCards();
 }
 
 /* ========================================
