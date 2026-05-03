@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 400" width="1920" height="400">
+  <defs>
+    <!-- 深邃渐变 -->
+    <linearGradient id="newsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="50%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#0d0d0d"/>
+    </linearGradient>
+
+    <!-- 金色光晕 -->
+    <radialGradient id="newsGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#c9a962;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#c9a962;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- 装饰线渐变 -->
+    <linearGradient id="newsLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c9a962;stop-opacity:0"/>
+      <stop offset="30%" style="stop-color:#c9a962;stop-opacity:0.15"/>
+      <stop offset="70%" style="stop-color:#c9a962;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#c9a962;stop-opacity:0"/>
+    </linearGradient>
+
+    <filter id="newsBlur">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <!-- 基础背景 -->
+  <rect width="1920" height="400" fill="url(#newsGrad)"/>
+
+  <!-- 金色光晕 -->
+  <rect width="1920" height="400" fill="url(#newsGlow)"/>
+
+  <!-- 柔和光斑 -->
+  <ellipse cx="960" cy="200" rx="600" ry="150" fill="#c9a962" opacity="0.06" filter="url(#newsBlur)"/>
+
+  <!-- 装饰线 -->
+  <line x1="200" y1="100" x2="1720" y2="100" stroke="url(#newsLine)" stroke-width="0.5"/>
+  <line x1="200" y1="300" x2="1720" y2="300" stroke="url(#newsLine)" stroke-width="0.5"/>
+
+  <!-- 中心装饰 -->
+  <rect x="860" y="150" width="200" height="100" fill="none" stroke="#c9a962" stroke-width="0.3" opacity="0.1"/>
+
+  <!-- 微妙纹理 -->
+  <circle cx="100" cy="50" r="0.5" fill="#c9a962" opacity="0.05"/>
+  <circle cx="300" cy="350" r="0.4" fill="#c9a962" opacity="0.04"/>
+  <circle cx="1600" cy="80" r="0.5" fill="#c9a962" opacity="0.05"/>
+  <circle cx="1800" cy="320" r="0.4" fill="#c9a962" opacity="0.04"/>
+</svg>

@@ -252,10 +252,10 @@ button {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('images/products/luxury1.jpg');
+    background-image: url('images/products/hero-bg.svg');
     background-size: cover;
     background-position: center;
-    filter: brightness(0.55) saturate(1.1);
+    filter: brightness(1) saturate(1);
 }
 
 .hero-overlay {
@@ -906,6 +906,9 @@ button {
    ======================================== */
 .about {
     background-color: var(--color-secondary);
+    background-image: url('images/products/about-bg.svg');
+    background-size: cover;
+    background-position: center;
 }
 
 .about-grid {
@@ -978,6 +981,9 @@ button {
    ======================================== */
 .newsletter {
     background-color: var(--color-primary);
+    background-image: url('images/products/newsletter-bg.svg');
+    background-size: cover;
+    background-position: center;
     color: var(--color-white);
     text-align: center;
 }

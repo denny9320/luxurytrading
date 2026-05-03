@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <linearGradient id="fragGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1520"/>
+      <stop offset="50%" style="stop-color:#252030"/>
+      <stop offset="100%" style="stop-color:#1a1525"/>
+    </linearGradient>
+
+    <radialGradient id="fragGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:#c9a962;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#c9a962;stop-opacity:0"/>
+    </radialGradient>
+
+    <filter id="fragBlur">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#fragGrad)"/>
+  <rect width="600" height="800" fill="url(#fragGlow)"/>
+
+  <ellipse cx="300" cy="350" rx="180" ry="220" fill="#c9a962" opacity="0.06" filter="url(#fragBlur)"/>
+
+  <circle cx="300" cy="400" r="80" fill="none" stroke="#c9a962" stroke-width="0.5" opacity="0.1"/>
+  <circle cx="300" cy="400" r="120" fill="none" stroke="#c9a962" stroke-width="0.3" opacity="0.06"/>
+</svg>
