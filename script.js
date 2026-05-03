@@ -1983,6 +1983,91 @@ function updatePageTranslations() {
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         btn.textContent = t.products.addToCart;
     });
+    
+    // Returns page translations
+    if (t.returns) {
+        updateElement('[data-i18n="returns.title"]', t.returns.title);
+        updateElement('[data-i18n="returns.scope"]', t.returns.scope);
+        updateElement('[data-i18n="returns.eligibilityTitle"]', t.returns.eligibilityTitle);
+        updateElement('[data-i18n="returns.eligibilityDesc"]', t.returns.eligibilityDesc);
+        updateElement('[data-i18n="returns.eligibility1"]', t.returns.eligibility1);
+        updateElement('[data-i18n="returns.eligibility2"]', t.returns.eligibility2);
+        updateElement('[data-i18n="returns.eligibility3"]', t.returns.eligibility3);
+        updateElement('[data-i18n="returns.eligibility4"]', t.returns.eligibility4);
+        updateElement('[data-i18n="returns.nonReturnableTitle"]', t.returns.nonReturnableTitle);
+        updateElement('[data-i18n="returns.nonReturnable1"]', t.returns.nonReturnable1);
+        updateElement('[data-i18n="returns.nonReturnable2"]', t.returns.nonReturnable2);
+        updateElement('[data-i18n="returns.nonReturnable3"]', t.returns.nonReturnable3);
+        updateElement('[data-i18n="returns.nonReturnable4"]', t.returns.nonReturnable4);
+        updateElement('[data-i18n="returns.processTitle"]', t.returns.processTitle);
+        updateElement('[data-i18n="returns.step1Title"]', t.returns.step1Title);
+        updateElement('[data-i18n="returns.step1Desc"]', t.returns.step1Desc);
+        updateElement('[data-i18n="returns.step1Email"]', t.returns.step1Email);
+        updateElement('[data-i18n="returns.step1Whatsapp"]', t.returns.step1Whatsapp);
+        updateElement('[data-i18n="returns.step1Evidence"]', t.returns.step1Evidence);
+        updateElement('[data-i18n="returns.step2Title"]', t.returns.step2Title);
+        updateElement('[data-i18n="returns.step2Desc"]', t.returns.step2Desc);
+        updateElement('[data-i18n="returns.step2Rma"]', t.returns.step2Rma);
+        updateElement('[data-i18n="returns.step2Address"]', t.returns.step2Address);
+        updateElement('[data-i18n="returns.step3Title"]', t.returns.step3Title);
+        updateElement('[data-i18n="returns.step3Desc"]', t.returns.step3Desc);
+        updateElement('[data-i18n="returns.step3Trackable"]', t.returns.step3Trackable);
+        updateElement('[data-i18n="returns.step3Mark"]', t.returns.step3Mark);
+        updateElement('[data-i18n="returns.step3Keep"]', t.returns.step3Keep);
+        updateElement('[data-i18n="returns.step3Include"]', t.returns.step3Include);
+        updateElement('[data-i18n="returns.customsTitle"]', t.returns.customsTitle);
+        updateElement('[data-i18n="returns.customsDesc"]', t.returns.customsDesc);
+        updateElement('[data-i18n="returns.step4Title"]', t.returns.step4Title);
+        updateElement('[data-i18n="returns.step4Desc"]', t.returns.step4Desc);
+        updateElement('[data-i18n="returns.step4Process"]', t.returns.step4Process);
+        updateElement('[data-i18n="returns.step4Method"]', t.returns.step4Method);
+        updateElement('[data-i18n="returns.step4Bank"]', t.returns.step4Bank);
+        updateElement('[data-i18n="returns.costDeductionsTitle"]', t.returns.costDeductionsTitle);
+        updateElement('[data-i18n="returns.costDeductions1"]', t.returns.costDeductions1);
+        updateElement('[data-i18n="returns.costDeductions2"]', t.returns.costDeductions2);
+        updateElement('[data-i18n="returns.costDeductions3"]', t.returns.costDeductions3);
+        updateElement('[data-i18n="returns.costTitle"]', t.returns.costTitle);
+        updateElement('[data-i18n="returns.costReason"]', t.returns.costReason);
+        updateElement('[data-i18n="returns.costShipping"]', t.returns.costShipping);
+        updateElement('[data-i18n="returns.costReturn"]', t.returns.costReturn);
+        updateElement('[data-i18n="returns.costQuality"]', t.returns.costQuality);
+        updateElement('[data-i18n="returns.costWrong"]', t.returns.costWrong);
+        updateElement('[data-i18n="returns.costTransit"]', t.returns.costTransit);
+        updateElement('[data-i18n="returns.costRemorse"]', t.returns.costRemorse);
+        updateElement('[data-i18n="returns.costOrdering"]', t.returns.costOrdering);
+        updateElement('[data-i18n="returns.costCustoms"]', t.returns.costCustoms);
+        updateElement('[data-i18n="returns.costWePay"]', t.returns.costWePay);
+        updateElement('[data-i18n="returns.costBuyerPay"]', t.returns.costBuyerPay);
+        updateElement('[data-i18n="returns.costBuyerFee"]', t.returns.costBuyerFee);
+        updateElement('[data-i18n="returns.exchangeTitle"]', t.returns.exchangeTitle);
+        updateElement('[data-i18n="returns.exchangeDesc"]', t.returns.exchangeDesc);
+        updateElement('[data-i18n="returns.exchangeInstruction"]', t.returns.exchangeInstruction);
+        updateElement('[data-i18n="returns.exchange1"]', t.returns.exchange1);
+        updateElement('[data-i18n="returns.exchange2"]', t.returns.exchange2);
+        updateElement('[data-i18n="returns.exchange3"]', t.returns.exchange3);
+        updateElement('[data-i18n="returns.cancelTitle"]', t.returns.cancelTitle);
+        updateElement('[data-i18n="returns.cancelDesc"]', t.returns.cancelDesc);
+        updateElement('[data-i18n="returns.cancel1"]', t.returns.cancel1);
+        updateElement('[data-i18n="returns.cancel2"]', t.returns.cancel2);
+        updateElement('[data-i18n="returns.cancelContact"]', t.returns.cancelContact);
+        updateElement('[data-i18n="returns.disputeTitle"]', t.returns.disputeTitle);
+        updateElement('[data-i18n="returns.disputeDesc"]', t.returns.disputeDesc);
+        updateElement('[data-i18n="returns.dispute1"]', t.returns.dispute1);
+        updateElement('[data-i18n="returns.dispute2"]', t.returns.dispute2);
+        updateElement('[data-i18n="returns.dispute3"]', t.returns.dispute3);
+        updateElement('[data-i18n="returns.contactTitle"]', t.returns.contactTitle);
+        updateElement('[data-i18n="returns.contactDesc"]', t.returns.contactDesc);
+        updateElement('[data-i18n="returns.contactEmail"]', t.returns.contactEmail);
+        updateElement('[data-i18n="returns.contactWhatsapp"]', t.returns.contactWhatsapp);
+        updateElement('[data-i18n="returns.contactHours"]', t.returns.contactHours);
+        updateElement('[data-i18n="returns.contactHoursValue"]', t.returns.contactHoursValue);
+        updateElement('[data-i18n="returns.contactAddress"]', t.returns.contactAddress);
+        updateElement('[data-i18n="returns.contactAddressValue"]', t.returns.contactAddressValue);
+        updateElement('[data-i18n="returns.updateTitle"]', t.returns.updateTitle);
+        updateElement('[data-i18n="returns.updateDesc"]', t.returns.updateDesc);
+        updateElement('[data-i18n="returns.effectiveDate"]', t.returns.effectiveDate);
+        updateElement('[data-i18n="returns.effectiveDateValue"]', t.returns.effectiveDateValue);
+    }
 }
 
 function updateElement(selector, text) {
