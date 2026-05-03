@@ -2036,9 +2036,9 @@ function updatePageTranslations() {
         updateElement('[data-i18n="returns.costRemorse"]', t.returns.costRemorse);
         updateElement('[data-i18n="returns.costOrdering"]', t.returns.costOrdering);
         updateElement('[data-i18n="returns.costCustoms"]', t.returns.costCustoms);
-        updateElement('[data-i18n="returns.costWePay"]', t.returns.costWePay);
-        updateElement('[data-i18n="returns.costBuyerPay"]', t.returns.costBuyerPay);
-        updateElement('[data-i18n="returns.costBuyerFee"]', t.returns.costBuyerFee);
+        updateElements('[data-i18n="returns.costWePay"]', t.returns.costWePay);
+        updateElements('[data-i18n="returns.costBuyerPay"]', t.returns.costBuyerPay);
+        updateElements('[data-i18n="returns.costBuyerFee"]', t.returns.costBuyerFee);
         updateElement('[data-i18n="returns.exchangeTitle"]', t.returns.exchangeTitle);
         updateElement('[data-i18n="returns.exchangeDesc"]', t.returns.exchangeDesc);
         updateElement('[data-i18n="returns.exchangeInstruction"]', t.returns.exchangeInstruction);
