@@ -1162,11 +1162,25 @@ function filterByCategory(category) {
     const productsGrid = document.getElementById('productsGrid');
     if (!productsGrid) return;
     
+    // Category mapping: tab value -> product categories
+    const categoryMap = {
+        'all': null,
+        'shoes': ['shoes'],
+        'bags': ['bags'],
+        'perfume': ['perfume', 'fragrance', 'floral', 'woody', 'citrus', 'oriental', 'fresh'],
+        'sunglasses': ['sunglasses', 'glasses'],
+        'watches': ['watches'],
+        'clothing': ['clothing', 'tops', 'outerwear', 'dresses', 'knitwear', 'pants'],
+        'fragrance': ['perfume', 'fragrance', 'floral', 'woody', 'citrus', 'oriental', 'fresh']
+    };
+    
+    const targetCategories = categoryMap[category?.toLowerCase()] || null;
+    
     let filtered = allProducts;
-    if (category !== 'all') {
+    if (targetCategories) {
         filtered = allProducts.filter(p => {
             const cat = (p.category || '').toLowerCase();
-            return cat === category;
+            return targetCategories.includes(cat);
         });
     }
     
