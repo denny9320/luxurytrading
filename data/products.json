@@ -6,9 +6,15 @@
       "nameEn": "Supreme FW25 Reflective Jacket",
       "category": "Clothing",
       "price": 170,
-      "images": ["images/products/jacket1.jpg"],
+      "images": [
+        "images/products/jacket1.jpg"
+      ],
       "description": "Premium reflective jacket",
-      "featured": true
+      "featured": true,
+      "brand": "Supreme",
+      "keywords": "",
+      "subCategory": "Clothing",
+      "gender": "Unisex"
     },
     {
       "id": "c002",
@@ -16,9 +22,15 @@
       "nameEn": "MONCLER Puffer Jacket",
       "category": "Outerwear",
       "price": 95,
-      "images": ["images/products/jacket2.jpg"],
+      "images": [
+        "images/products/jacket2.jpg"
+      ],
       "description": "Warm puffer jacket",
-      "featured": true
+      "featured": true,
+      "brand": "MONCLER",
+      "keywords": "",
+      "subCategory": "Outerwear",
+      "gender": "Unisex"
     },
     {
       "id": "c003",
@@ -26,9 +38,15 @@
       "nameEn": "BURBERRY Trench Coat",
       "category": "Outerwear",
       "price": 280,
-      "images": ["images/products/fashion1.jpg"],
+      "images": [
+        "images/products/fashion1.jpg"
+      ],
       "description": "Classic trench coat",
-      "featured": true
+      "featured": true,
+      "brand": "BURBERRY",
+      "keywords": "",
+      "subCategory": "Outerwear",
+      "gender": "Unisex"
     },
     {
       "id": "c004",
@@ -36,9 +54,15 @@
       "nameEn": "NIKE Air Max",
       "category": "Shoes",
       "price": 150,
-      "images": ["images/products/clothing-category.jpg"],
+      "images": [
+        "images/products/clothing-category.jpg"
+      ],
       "description": "Comfortable sneakers",
-      "featured": true
+      "featured": true,
+      "brand": "NIKE",
+      "keywords": "",
+      "subCategory": "Shoes",
+      "gender": "Unisex"
     },
     {
       "id": "c005",
@@ -46,29 +70,15 @@
       "nameEn": "ADIDAS Ultraboost",
       "category": "Shoes",
       "price": 180,
-      "images": ["images/products/test-perfume.jpg"],
+      "images": [
+        "images/products/test-perfume.jpg"
+      ],
       "description": "Performance running shoes",
-      "featured": false
-    },
-    {
-      "id": "c006",
-      "name": "LOUIS VUITTON Neverfull",
-      "nameEn": "LOUIS VUITTON Neverfull",
-      "category": "Bags",
-      "price": 1200,
-      "images": ["images/products/luxury1.jpg"],
-      "description": "Classic tote bag",
-      "featured": true
-    },
-    {
-      "id": "c007",
-      "name": "GUCCI GG Marmont",
-      "nameEn": "GUCCI GG Marmont",
-      "category": "Bags",
-      "price": 980,
-      "images": ["images/products/luxury1.jpg"],
-      "description": "Matelassé shoulder bag",
-      "featured": false
+      "featured": false,
+      "brand": "ADIDAS",
+      "keywords": "",
+      "subCategory": "Shoes",
+      "gender": "Unisex"
     },
     {
       "id": "c008",
@@ -76,9 +86,15 @@
       "nameEn": "RAY-BAN Aviator",
       "category": "Sunglasses",
       "price": 150,
-      "images": ["images/products/perfume-custom.jpg"],
+      "images": [
+        "images/products/perfume-custom.jpg"
+      ],
       "description": "Classic aviator style",
-      "featured": false
+      "featured": false,
+      "brand": "RAY-BAN",
+      "keywords": "",
+      "subCategory": "Sunglasses",
+      "gender": "Unisex"
     },
     {
       "id": "c009",
@@ -86,29 +102,15 @@
       "nameEn": "GUCCI Oversized",
       "category": "Sunglasses",
       "price": 380,
-      "images": ["images/products/perfume-custom2.jpg"],
+      "images": [
+        "images/products/perfume-custom2.jpg"
+      ],
       "description": "Bold oversized frames",
-      "featured": false
-    },
-    {
-      "id": "c010",
-      "name": "ROLEX 潜航者",
-      "nameEn": "ROLEX Submariner",
-      "category": "Watches",
-      "price": 8500,
-      "images": ["images/products/luxury1.jpg"],
-      "description": "Luxury dive watch",
-      "featured": true
-    },
-    {
-      "id": "c011",
-      "name": "OMEGA 超霸",
-      "nameEn": "OMEGA Speedmaster",
-      "category": "Watches",
-      "price": 5200,
-      "images": ["images/products/luxury1.jpg"],
-      "description": "Classic chronograph",
-      "featured": false
+      "featured": false,
+      "brand": "GUCCI",
+      "keywords": "",
+      "subCategory": "Sunglasses",
+      "gender": "Unisex"
     }
   ],
   "fragrance": [
@@ -118,9 +120,15 @@
       "nameEn": "CHANEL No.5",
       "category": "Floral",
       "price": 120,
-      "images": ["images/products/perfume-custom.jpg"],
+      "images": [
+        "images/products/perfume-custom.jpg"
+      ],
       "description": "Iconic floral fragrance",
-      "featured": true
+      "featured": true,
+      "brand": "CHANEL",
+      "keywords": "",
+      "subCategory": "Floral",
+      "gender": "Unisex"
     },
     {
       "id": "f002",
@@ -128,19 +136,15 @@
       "nameEn": "DIOR Sauvage",
       "category": "Fresh",
       "price": 95,
-      "images": ["images/products/perfume-custom2.jpg"],
+      "images": [
+        "images/products/perfume-custom2.jpg"
+      ],
       "description": "Fresh spicy fragrance",
-      "featured": true
-    },
-    {
-      "id": "f003",
-      "name": "TOM FORD 乌木沉香",
-      "nameEn": "TOM FORD Oud Wood",
-      "category": "Woody",
-      "price": 180,
-      "images": ["images/products/perfume3.jpg"],
-      "description": "Luxurious oud fragrance",
-      "featured": true
+      "featured": true,
+      "brand": "DIOR",
+      "keywords": "",
+      "subCategory": "Fresh",
+      "gender": "Unisex"
     },
     {
       "id": "f004",
@@ -148,9 +152,15 @@
       "nameEn": "YSL Black Opium",
       "category": "Oriental",
       "price": 110,
-      "images": ["images/products/test-perfume.jpg"],
+      "images": [
+        "images/products/test-perfume.jpg"
+      ],
       "description": "Gourmand floral",
-      "featured": true
+      "featured": true,
+      "brand": "YSL",
+      "keywords": "",
+      "subCategory": "Oriental",
+      "gender": "Unisex"
     }
   ]
 }
