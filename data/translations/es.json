@@ -8,7 +8,14 @@
     "home": "Inicio",
     "clothing": "Ropa",
     "fragrance": "Fragancias",
-    "about": "Nosotros"
+    "about": "Nosotros",
+    "signIn": "Iniciar sesión",
+    "createAccount": "Crear cuenta",
+    "profile": "Perfil",
+    "myOrders": "Mis pedidos",
+    "addresses": "Direcciones",
+    "accountSettings": "Configuración de cuenta",
+    "signOut": "Cerrar sesión"
   },
   "hero": {
     "subtitle": "Elegancia redefinida",
@@ -42,8 +49,8 @@
   },
   "about": {
     "subtitle": "Nuestra historia",
-    "title": "Sobre TapingTrading",
-    "text1": "TapingTrading se dedica a curar los mejores productos de moda de alta gama y fragancias premium de todo el mundo. Creemos que el verdadero lujo no solo reside en los productos en sí, sino en las experiencias únicas y las conexiones emocionales que crean.",
+    "title": "Sobre Luxury Trading",
+    "text1": "Luxury Trading se dedica a curar los mejores productos de moda de alta gama y fragancias premium de todo el mundo. Creemos que el verdadero lujo no solo reside en los productos en sí, sino en las experiencias únicas y las conexiones emocionales que crean.",
     "text2": "Cada producto se selecciona cuidadosamente para garantizar una calidad excepcional y un diseño distintivo. Ya sea una elegante camisa de seda o una refinada fragancia francesa, nos esforzamos por ofrecerle una selección única que lo diferencia.",
     "years": "Años de abastecimiento global",
     "brands": "Asociaciones de marcas curadas",
@@ -87,5 +94,21 @@
   },
   "modal": {
     "close": "Cerrar"
+  },
+  "login": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "submit": "Iniciar sesión",
+    "toggleToRegister": "¿No tienes cuenta? Regístrate",
+    "toggleToLogin": "¿Ya tienes cuenta? Inicia sesión",
+    "errorFillAll": "Por favor llena todos los campos",
+    "errorLoginFailed": "Error al iniciar sesión: "
+  },
+  "register": {
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "submit": "Crear cuenta",
+    "errorFillAll": "Por favor llena toda la información"
   }
 }

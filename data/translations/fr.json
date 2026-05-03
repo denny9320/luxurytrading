@@ -8,7 +8,14 @@
     "home": "Accueil",
     "clothing": "Vêtements",
     "fragrance": "Parfums",
-    "about": "À propos"
+    "about": "À propos",
+    "signIn": "Se connecter",
+    "createAccount": "Créer un compte",
+    "profile": "Profil",
+    "myOrders": "Mes commandes",
+    "addresses": "Adresses",
+    "accountSettings": "Paramètres du compte",
+    "signOut": "Se déconnecter"
   },
   "hero": {
     "subtitle": "L'élégance redéfinie",
@@ -42,8 +49,8 @@
   },
   "about": {
     "subtitle": "Notre histoire",
-    "title": "À propos de TapingTrading",
-    "text1": "TapingTrading se consacre à la sélection des meilleurs produits de mode haut de gamme et de parfums premium du monde entier. Nous croyons que le vrai luxe ne réside pas seulement dans les produits eux-mêmes, mais dans les expériences uniques et les connexions émotionnelles qu'ils créent.",
+    "title": "À propos de Luxury Trading",
+    "text1": "Luxury Trading se consacre à la sélection des meilleurs produits de mode haut de gamme et de parfums premium du monde entier. Nous croyons que le vrai luxe ne réside pas seulement dans les produits eux-mêmes, mais dans les expériences uniques et les connexions émotionnelles qu'ils créent.",
     "text2": "Chaque produit est soigneusement sélectionné pour garantir une qualité exceptionnelle et un design distinctif. Qu'il s'agisse d'une élégante chemise en soie ou d'un parfum français raffiné, nous nous efforçons de vous offrir une sélection unique qui vous distingue.",
     "years": "Années d'approvisionnement mondial",
     "brands": "Partenariats de marques sélectionnées",
@@ -87,5 +94,21 @@
   },
   "modal": {
     "close": "Fermer"
+  },
+  "login": {
+    "email": "Email",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "toggleToRegister": "Pas de compte ? S'inscrire",
+    "toggleToLogin": "Déjà un compte ? Se connecter",
+    "errorFillAll": "Veuillez remplir tous les champs",
+    "errorLoginFailed": "Échec de la connexion : "
+  },
+  "register": {
+    "name": "Nom",
+    "email": "Email",
+    "password": "Mot de passe",
+    "submit": "Créer un compte",
+    "errorFillAll": "Veuillez remplir toutes les informations"
   }
 }

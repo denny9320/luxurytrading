@@ -8,11 +8,22 @@
     "home": "Home",
     "clothing": "Clothing",
     "fragrance": "Fragrance",
-    "about": "About"
+    "about": "About",
+    "signIn": "Sign In",
+    "createAccount": "Create Account",
+    "profile": "Profile",
+    "myOrders": "My Orders",
+    "addresses": "Addresses",
+    "accountSettings": "Account Settings",
+    "signOut": "Sign Out"
   },
   "hero": {
     "subtitle": "Luxury Trading",
-    "title": "Luxury Collections"
+    "title": "Luxury Collections",
+    "desc": "High-end fashion and premium fragrances curated for your unique style",
+    "ctaClothing": "Shop Clothing",
+    "ctaFragrance": "Shop Fragrance",
+    "scroll": "Scroll Down"
   },
   "category": {
     "all": "All",
@@ -23,6 +34,8 @@
     "watches": "Watches"
   },
   "categories": {
+    "subtitle": "Collections",
+    "title": "Curated Selections",
     "clothing": "Fashion Collection",
     "clothingDesc": "Exquisite tailoring and elegant design.",
     "fragrance": "Fragrance Collection",
@@ -44,8 +57,8 @@
   },
   "about": {
     "subtitle": "Our Story",
-    "title": "About TapingTrading",
-    "text1": "TapingTrading is dedicated to curating the finest high-end fashion and premium fragrance products from around the world. We believe that true luxury lies not only in the products themselves but in the unique experiences and emotional connections they create.",
+    "title": "About Luxury Trading",
+    "text1": "Luxury Trading is dedicated to curating the finest high-end fashion and premium fragrance products from around the world. We believe that true luxury lies not only in the products themselves but in the unique experiences and emotional connections they create.",
     "text2": "Every product is carefully selected to ensure exceptional quality and distinctive design. Whether it's an elegant silk blouse or a refined French fragrance, we strive to offer you a unique selection that sets you apart.",
     "years": "Years of Global Sourcing",
     "brands": "Curated Brand Partnerships",
@@ -89,5 +102,21 @@
   },
   "modal": {
     "close": "Close"
+  },
+  "login": {
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign In",
+    "toggleToRegister": "Don't have an account? Sign up",
+    "toggleToLogin": "Already have an account? Sign in",
+    "errorFillAll": "Please fill in all fields",
+    "errorLoginFailed": "Login failed: "
+  },
+  "register": {
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Create Account",
+    "errorFillAll": "Please fill in all information"
   }
 }

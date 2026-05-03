@@ -8,11 +8,22 @@
     "home": "首页",
     "clothing": "服装",
     "fragrance": "香水",
-    "about": "关于我们"
+    "about": "关于我们",
+    "signIn": "登录",
+    "createAccount": "创建账户",
+    "profile": "个人资料",
+    "myOrders": "我的订单",
+    "addresses": "收货地址",
+    "accountSettings": "账户设置",
+    "signOut": "退出登录"
   },
   "hero": {
     "subtitle": "奢华贸易",
-    "title": "奢华系列"
+    "title": "奢华系列",
+    "desc": "为您甄选独特风格的高端时装与香氛",
+    "ctaClothing": "探索服装",
+    "ctaFragrance": "探索香氛",
+    "scroll": "向下滚动"
   },
   "category": {
     "all": "全部",
@@ -23,6 +34,8 @@
     "watches": "腕表"
   },
   "categories": {
+    "subtitle": "精选系列",
+    "title": "精心甄选",
     "clothing": "时装系列",
     "clothingDesc": "精致剪裁与优雅设计",
     "fragrance": "香氛系列",
@@ -44,8 +57,8 @@
   },
   "about": {
     "subtitle": "品牌故事",
-    "title": "关于 TapingTrading",
-    "text1": "TapingTrading 致力于为您甄选全球最优质的高端时装与香氛产品。我们相信，真正的奢华不仅在于产品本身，更在于它所带来的独特体验与情感共鸣。",
+    "title": "关于 Luxury Trading",
+    "text1": "Luxury Trading 致力于为您甄选全球最优质的高端时装与香氛产品。我们相信，真正的奢华不仅在于产品本身，更在于它所带来的独特体验与情感共鸣。",
     "text2": "每一件产品都经过精心挑选，确保品质卓越、设计独特。无论是优雅的丝绸衬衫还是精致的法式香氛，我们都希望为您带来与众不同的品味之选。",
     "years": "年全球采购经验",
     "brands": "精选品牌合作",
@@ -89,5 +102,21 @@
   },
   "modal": {
     "close": "关闭"
+  },
+  "login": {
+    "email": "邮箱",
+    "password": "密码",
+    "submit": "登录",
+    "toggleToRegister": "没有账号？点击注册",
+    "toggleToLogin": "已有账号？点击登录",
+    "errorFillAll": "请填写所有信息",
+    "errorLoginFailed": "登录失败："
+  },
+  "register": {
+    "name": "名字",
+    "email": "邮箱",
+    "password": "密码",
+    "submit": "注册",
+    "errorFillAll": "请填写所有信息"
   }
 }

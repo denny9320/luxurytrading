@@ -8,7 +8,14 @@
     "home": "Startseite",
     "clothing": "Kleidung",
     "fragrance": "Düfte",
-    "about": "Über uns"
+    "about": "Über uns",
+    "signIn": "Anmelden",
+    "createAccount": "Konto erstellen",
+    "profile": "Profil",
+    "myOrders": "Meine Bestellungen",
+    "addresses": "Adressen",
+    "accountSettings": "Kontoeinstellungen",
+    "signOut": "Abmelden"
   },
   "hero": {
     "subtitle": "Eleganz neu definiert",
@@ -42,8 +49,8 @@
   },
   "about": {
     "subtitle": "Unsere Geschichte",
-    "title": "Über TapingTrading",
-    "text1": "TapingTrading widmet sich der Kuratierung der feinsten High-End-Mode und Premium-Duftprodukte aus aller Welt. Wir glauben, dass wahrer Luxus nicht nur in den Produkten selbst liegt, sondern in den einzigartigen Erlebnissen und emotionalen Verbindungen, die sie schaffen.",
+    "title": "Über Luxury Trading",
+    "text1": "Luxury Trading widmet sich der Kuratierung der feinsten High-End-Mode und Premium-Duftprodukte aus aller Welt. Wir glauben, dass wahrer Luxus nicht nur in den Produkten selbst liegt, sondern in den einzigartigen Erlebnissen und emotionalen Verbindungen, die sie schaffen.",
     "text2": "Jedes Produkt wird sorgfältig ausgewählt, um außergewöhnliche Qualität und unverwechselbares Design zu gewährleisten. Ob ein elegantes Seidenhemd oder ein raffinierter französischer Duft - wir streben danach, Ihnen eine einzigartige Auswahl zu bieten, die Sie von anderen abhebt.",
     "years": "Jahre globaler Beschaffung",
     "brands": "Kuratierte Markenpartnerschaften",
@@ -87,5 +94,21 @@
   },
   "modal": {
     "close": "Schließen"
+  },
+  "login": {
+    "email": "E-Mail",
+    "password": "Passwort",
+    "submit": "Anmelden",
+    "toggleToRegister": "Kein Konto? Registrieren",
+    "toggleToLogin": "Bereits ein Konto? Anmelden",
+    "errorFillAll": "Bitte füllen Sie alle Felder aus",
+    "errorLoginFailed": "Anmeldung fehlgeschlagen: "
+  },
+  "register": {
+    "name": "Name",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "submit": "Konto erstellen",
+    "errorFillAll": "Bitte füllen Sie alle Informationen aus"
   }
 }
