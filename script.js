@@ -1566,3 +1566,4 @@ function updateLanguageSwitcher() {
 // Expose functions to global scope
 window.addToCart = addToCart;
 window.setLanguage = setLanguage;
+window.setLang = setLanguage; // Alias for HTML onclick handlers
