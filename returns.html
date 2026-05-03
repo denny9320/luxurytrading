@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="returns.title">Returns & Exchanges Policy - Luxury Trading</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; background: #FAFAFA; color: #2D2D2D; line-height: 1.6; }
+        
+        .header { background: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+        .header a { color: #1A1A1A; text-decoration: none; margin-right: 20px; }
+        .header a:hover { color: #C9A962; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 20px; }
+        .logo span:last-child { color: #C9A962; }
+        
+        .lang-selector { display: flex; gap: 5px; }
+        .lang-btn { padding: 5px 10px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 4px; font-size: 12px; }
+        .lang-btn:hover, .lang-btn.active { background: #C9A962; color: white; border-color: #C9A962; }
+        
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        .content { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h1 { font-family: 'Playfair Display', serif; margin-bottom: 30px; color: #1A1A1A; }
+        h2 { font-family: 'Playfair Display', serif; margin: 25px 0 15px; color: #1A1A1A; font-size: 22px; }
+        h3 { font-family: 'Lato', sans-serif; margin: 20px 0 10px; color: #1A1A1A; font-size: 18px; }
+        p { margin-bottom: 15px; color: #666; }
+        ul { margin-bottom: 15px; padding-left: 20px; color: #666; }
+        li { margin-bottom: 8px; }
+        .highlight { background: #FDF9F0; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .warning { background: #F8D7DA; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .step { background: #F9F9F9; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #C9A962; }
+        .contact-box { background: #F9F9F9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .table th, .table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eee; }
+        .table th { background: #F9F9F9; font-weight: 600; }
+        
+        @media (max-width: 768px) {
+            .content { padding: 25px; }
+            .header { padding: 15px 20px; flex-wrap: wrap; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">LUXURY<span>TRADING</span></a>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="profile.html" data-i18n="nav.profile">Profile</a>
+            <div class="lang-selector">
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('zh')">中文</button>
+                <button class="lang-btn" onclick="setLang('de')">DE</button>
+                <button class="lang-btn" onclick="setLang('fr')">FR</button>
+                <button class="lang-btn" onclick="setLang('es')">ES</button>
+                <button class="lang-btn" onclick="setLang('ar')">AR</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <h1 data-i18n="returns.title">Returns & Exchanges Policy</h1>
+            
+            <div class="highlight">
+                <p><strong data-i18n="returns.scopeLabel">Policy Scope:</strong> <span data-i18n="returns.scope">This policy applies to all wholesale (B2B) and custom (OEM/ODM) orders.</span></p>
+            </div>
+            
+            <h2 data-i18n="returns.eligibilityTitle">Return Eligibility</h2>
+            <p data-i18n="returns.eligibilityDesc">You are eligible for a return if:</p>
+            <ul>
+                <li data-i18n="returns.eligibility1">Within <strong>30 days</strong> of receipt for quality issues or manufacturing defects (functional defects)</li>
+                <li data-i18n="returns.eligibility2">Product materially deviates from confirmed specifications (size, material, function, standards, etc.)</li>
+                <li data-i18n="returns.eligibility3">Wrong item shipped (wrong model, configuration, quantity beyond tolerance)</li>
+                <li data-i18n="returns.eligibility4">Visible damage or shortage during transit (report within <strong>48 hours</strong> of delivery)</li>
+            </ul>
+            
+            <div class="warning">
+                <h3 data-i18n="returns.nonReturnableTitle">❌ Non-Returnable Items</h3>
+                <ul>
+                    <li data-i18n="returns.nonReturnable1"><strong>Custom Products (OEM/ODM):</strong> Products customized with your logo, specific colors, or unique packaging cannot be returned unless functionally defective.</li>
+                    <li data-i18n="returns.nonReturnable2"><strong>Clearance Items:</strong> Unless otherwise agreed in writing, clearance items are final sale.</li>
+                    <li data-i18n="returns.nonReturnable3"><strong>Buyer's Remorse:</strong> Change of mind, ordering errors, or refusal to pay customs duties are not eligible for return.</li>
+                    <li data-i18n="returns.nonReturnable4"><strong>Tampered Items:</strong> Products disassembled, modified, or altered by the buyer are not eligible for return.</li>
+                </ul>
+            </div>
+            
+            <h2 data-i18n="returns.processTitle">Return Process (RMA System)</h2>
+            
+            <div class="step">
+                <h3 data-i18n="returns.step1Title">Step 1: Contact Support</h3>
+                <p data-i18n="returns.step1Desc">Within <strong>7 days</strong> of delivery, contact our support team:</p>
+                <ul>
+                    <li><span data-i18n="returns.step1Email">Email</span>: <a href="mailto:kyx9320@163.com">kyx9320@163.com</a></li>
+                    <li><span data-i18n="returns.step1Whatsapp">WhatsApp</span>: +86 133 9765 5758 / +86 193 1361 4241</li>
+                    <li data-i18n="returns.step1Evidence">Provide order number, reason for return, and clear photo/video evidence</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h3 data-i18n="returns.step2Title">Step 2: Get RMA Authorization</h3>
+                <p data-i18n="returns.step2Desc">Our support team will review your request within <strong>24-48 hours</strong> and provide via email:</p>
+                <ul>
+                    <li data-i18n="returns.step2Rma">Return Merchandise Authorization (RMA) number</li>
+                    <li data-i18n="returns.step2Address">Return address and packing instructions</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h3 data-i18n="returns.step3Title">Step 3: Ship the Return</h3>
+                <p data-i18n="returns.step3Desc">Ship the item back within <strong>14 days</strong> of receiving RMA:</p>
+                <ul>
+                    <li data-i18n="returns.step3Trackable">Use a trackable shipping service (DHL, FedEx, UPS, etc.)</li>
+                    <li data-i18n="returns.step3Mark">Clearly mark the RMA number on the package</li>
+                    <li data-i18n="returns.step3Keep">Keep the tracking number as proof</li>
+                    <li data-i18n="returns.step3Include">Item must include all accessories and original packaging</li>
+                </ul>
+                <div class="warning" style="margin-top: 15px;">
+                    <p><strong data-i18n="returns.customsTitle">⚠️ Customs Declaration:</strong> <span data-i18n="returns.customsDesc">For international returns, mark the parcel as "Returned Goods – No Commercial Value" to avoid duties. If duties occur due to incorrect declaration, they will be deducted from your refund.</span></p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3 data-i18n="returns.step4Title">Step 4: Inspection & Refund</h3>
+                <p data-i18n="returns.step4Desc">After our warehouse receives your return, we will inspect:</p>
+                <ul>
+                    <li data-i18n="returns.step4Process">Refund will be processed within <strong>5-10 business days</strong> after inspection</li>
+                    <li data-i18n="returns.step4Method">Refund will be issued to your original payment method</li>
+                    <li data-i18n="returns.step4Bank">Your bank/payment provider may take an additional <strong>5-15 business days</strong> to post the credit</li>
+                </ul>
+                <div class="warning" style="margin-top: 15px;">
+                    <p><strong data-i18n="returns.costDeductionsTitle">⚠️ Cost Deductions:</strong></p>
+                    <ul>
+                        <li data-i18n="returns.costDeductions1">Original shipping fees (if any) are non-refundable unless return is due to our error</li>
+                        <li data-i18n="returns.costDeductions2">Missing accessories or damaged packaging may result in reasonable deductions</li>
+                        <li data-i18n="returns.costDeductions3">Bank fees, payment processing fees, and currency exchange losses are non-refundable</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2 data-i18n="returns.costTitle">Cost Responsibility</h2>
+            <table class="table">
+                <tr>
+                    <th data-i18n="returns.costReason">Reason</th>
+                    <th data-i18n="returns.costShipping">Shipping Cost</th>
+                    <th data-i18n="returns.costReturn">Return Shipping</th>
+                </tr>
+                <tr>
+                    <td data-i18n="returns.costQuality">Quality Defect</td>
+                    <td style="color: #27AE60;" data-i18n="returns.costWePay">✓ We pay</td>
+                    <td style="color: #27AE60;" data-i18n="returns.costWePay">✓ We pay</td>
+                </tr>
+                <tr>
+                    <td data-i18n="returns.costWrong">Wrong Item Shipped</td>
+                    <td style="color: #27AE60;" data-i18n="returns.costWePay">✓ We pay</td>
+                    <td style="color: #27AE60;" data-i18n="returns.costWePay">✓ We pay</td>
+                </tr>
+                <tr>
+                    <td data-i18n="returns.costTransit">Transit Damage</td>
+                    <td style="color: #27AE60;" data-i18n="returns.costWePay">✓ We pay</td>
+                    <td style="color: #27AE60;" data-i18n="returns.costWePay">✓ We pay</td>
+                </tr>
+                <tr>
+                    <td data-i18n="returns.costRemorse">Buyer's Remorse</td>
+                    <td style="color: #E74C3C;" data-i18n="returns.costBuyerPay">✗ Buyer pays</td>
+                    <td style="color: #E74C3C;" data-i18n="returns.costBuyerPay">✗ Buyer pays</td>
+                </tr>
+                <tr>
+                    <td data-i18n="returns.costOrdering">Ordering Error</td>
+                    <td style="color: #E74C3C;" data-i18n="returns.costBuyerPay">✗ Buyer pays</td>
+                    <td style="color: #E74C3C;" data-i18n="returns.costBuyerPay">✗ Buyer pays</td>
+                </tr>
+                <tr>
+                    <td data-i18n="returns.costCustoms">Refused Customs Duties</td>
+                    <td style="color: #E74C3C;" data-i18n="returns.costBuyerFee">✗ Buyer pays + 20% fee</td>
+                    <td style="color: #E74C3C;" data-i18n="returns.costBuyerPay">✗ Buyer pays</td>
+                </tr>
+            </table>
+            
+            <h2 data-i18n="returns.exchangeTitle">Exchange Policy</h2>
+            <p data-i18n="returns.exchangeDesc">Due to the nature of B2B wholesale and custom orders, we <strong>do not offer direct exchanges</strong>.</p>
+            <p data-i18n="returns.exchangeInstruction">If you need a replacement, please:</p>
+            <ul>
+                <li data-i18n="returns.exchange1">First return the original item and receive refund following the process above</li>
+                <li data-i18n="returns.exchange2">Then place a new order for the desired item</li>
+                <li data-i18n="returns.exchange3">This ensures faster processing and accurate inventory management</li>
+            </ul>
+            
+            <h2 data-i18n="returns.cancelTitle">Order Cancellation</h2>
+            <p data-i18n="returns.cancelDesc">Orders can be cancelled if:</p>
+            <ul>
+                <li data-i18n="returns.cancel1">Once packing and shipping have started, cancellation is no longer possible</li>
+                <li data-i18n="returns.cancel2">Custom orders can be cancelled before specs are confirmed and production begins</li>
+            </ul>
+            <p><span data-i18n="returns.cancelContact">Please contact us as soon as possible</span>: <a href="mailto:kyx9320@163.com">kyx9320@163.com</a> / WhatsApp: +86 133 9765 5758</p>
+            
+            <h2 data-i18n="returns.disputeTitle">Dispute Resolution</h2>
+            <p data-i18n="returns.disputeDesc">If you are not satisfied with our resolution, you can appeal:</p>
+            <ul>
+                <li data-i18n="returns.dispute1">Appeal within <strong>7 days</strong> of receiving our resolution</li>
+                <li data-i18n="returns.dispute2">Provide new evidence or detailed explanation</li>
+                <li data-i18n="returns.dispute3">We will re-review and provide a final decision within <strong>48 hours</strong></li>
+            </ul>
+            
+            <h2 data-i18n="returns.contactTitle">Contact Us</h2>
+            <div class="contact-box">
+                <p data-i18n="returns.contactDesc">For any return/exchange questions, feel free to contact us:</p>
+                <ul>
+                    <li>📧 <span data-i18n="returns.contactEmail">Email</span>: <a href="mailto:kyx9320@163.com">kyx9320@163.com</a></li>
+                    <li> <span data-i18n="returns.contactWhatsapp">WhatsApp</span>: +86 133 9765 5758 / +86 193 1361 4241</li>
+                    <li>🕐 <span data-i18n="returns.contactHours">Working Hours</span>: <span data-i18n="returns.contactHoursValue">Monday-Friday, 9:00-18:00 (GMT+8)</span></li>
+                    <li>📍 <span data-i18n="returns.contactAddress">Return Address</span>: <span data-i18n="returns.contactAddressValue">Will be provided in RMA email</span></li>
+                </ul>
+            </div>
+            
+            <div class="highlight" style="margin-top: 30px;">
+                <p><strong data-i18n="returns.updateTitle">📌 Policy Updates:</strong> <span data-i18n="returns.updateDesc">We reserve the right to modify this policy at any time. Significant changes will be notified via email or website notice.</span></p>
+                <p><strong data-i18n="returns.effectiveDate">Effective Date:</strong> <span data-i18n="returns.effectiveDateValue">May 3, 2026</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Initialize translations for returns page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get saved language or default to English
+            const savedLang = localStorage.getItem('luxury_lang') || 'en';
+            if (typeof setLanguage === 'function') {
+                setLanguage(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>
