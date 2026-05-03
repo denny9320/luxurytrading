@@ -24,7 +24,7 @@ function formatPrice(usdPrice, currencyCode = currentCurrency) {
     if (currencyCode === 'JPY') {
         return currency.symbol + Math.round(convertedPrice).toLocaleString();
     }
-    return currency_symbol = currency.symbol + convertedPrice.toFixed(2);
+    return currency.symbol + convertedPrice.toFixed(2);
 }
 
 // Get currency selector HTML
@@ -1041,23 +1041,28 @@ async function initProductSystem() {
 function renderFeaturedProducts() {
     console.log('renderFeaturedProducts called, productData:', productData);
     
-    // Render clothing products with background images (3x4 grid)
-    const clothingGrid = document.getElementById('clothingGrid');
-    if (clothingGrid && productData?.clothing?.length > 0) {
-        console.log('Rendering', productData.clothing.length, 'clothing products');
-        clothingGrid.innerHTML = productData.clothing.map(product => 
-            createFeaturedCard(product, 'clothing')
-        ).join('');
+    const productsGrid = document.getElementById('productsGrid');
+    if (!productsGrid) {
+        console.warn('productsGrid not found');
+        return;
     }
     
-    // Render fragrance products with background images (3x4 grid)
-    const fragranceGrid = document.getElementById('fragranceGrid');
-    if (fragranceGrid && productData?.fragrance?.length > 0) {
-        console.log('Rendering', productData.fragrance.length, 'fragrance products');
-        fragranceGrid.innerHTML = productData.fragrance.map(product => 
-            createFeaturedCard(product, 'fragrance')
-        ).join('');
+    // Combine all products
+    const allProducts = [
+        ...(productData?.clothing || []),
+        ...(productData?.fragrance || [])
+    ];
+    
+    if (allProducts.length === 0) {
+        productsGrid.innerHTML = '<p style="text-align:center;color:#999;padding:40px;">暂无产品</p>';
+        return;
     }
+    
+    console.log('Rendering', allProducts.length, 'products');
+    productsGrid.innerHTML = allProducts.map(product => {
+        const type = productData.clothing.includes(product) ? 'clothing' : 'fragrance';
+        return createProductCard(product, type);
+    }).join('');
 }
 
 function createFeaturedCard(product, type) {
@@ -1082,35 +1087,34 @@ function createFeaturedCard(product, type) {
 
 function createProductCard(product, type) {
     const priceFormatted = formatPrice(product.price);
-    // Check if image is valid
     const placeholder = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTVlNWViIi8+PC9zdmc+';
     
-    // Use product images if available, otherwise use placeholder
     const images = product.images && product.images.length > 0 ? product.images : [placeholder];
     const mainImage = images[0];
     const displayName = currentLang === 'zh' ? product.name : (product.nameEn || product.name);
+    const categoryDisplay = product.category || (type === 'clothing' ? 'Clothing' : 'Fragrance');
     
     return `
-        <div class="product-card" data-id="${product.id}" data-type="${type}" onclick="openProductModal('${product.id}', '${type}')" style="cursor: pointer;">
+        <div class="product-card" data-id="${product.id}" data-type="${type}" data-category="${categoryDisplay.toLowerCase()}" onclick="openProductModal('${product.id}', '${type}')" style="cursor: pointer;">
             <div class="product-image">
-                <img src="${mainImage}" alt="${product.name}" class="product-img-simple">
+                <img src="${mainImage}" alt="${displayName}" class="product-img-simple" onerror="this.src='${placeholder}'">
             </div>
             <div class="product-info">
-                <span class="product-category">${type === 'clothing' ? '服装' : '香水'}</span>
+                <span class="product-category">${categoryDisplay}</span>
                 <h3 class="product-name">${displayName}</h3>
                 <span class="product-name-en">${product.nameEn || ''}</span>
-                <div class="product-price-display">¥${priceFormatted}</div>
+                <div class="product-price-display">${priceFormatted}</div>
             </div>
         </div>
     `;
 }
 
 /* ========================================
-   Product Filters & Search
-   ======================================== */
+    Product Filters & Search
+    ======================================== */
 function initProductFilters() {
     const searchInput = document.querySelector('.search-input');
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categoryTabs = document.querySelectorAll('.category-tab');
     
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
@@ -1118,14 +1122,15 @@ function initProductFilters() {
         });
     }
     
-    if (filterButtons.length) {
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
+    if (categoryTabs.length) {
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
                 const category = e.target.dataset.category;
                 filterByCategory(category);
                 
                 // Update active state
-                filterButtons.forEach(b => b.classList.remove('active'));
+                categoryTabs.forEach(t => t.classList.remove('active'));
                 e.target.classList.add('active');
             });
         });
@@ -1137,8 +1142,8 @@ function filterProducts(searchTerm) {
     const cards = document.querySelectorAll('.product-card');
     
     cards.forEach(card => {
-        const name = card.querySelector('.product-name').textContent.toLowerCase();
-        const category = card.querySelector('.product-category').textContent.toLowerCase();
+        const name = (card.querySelector('.product-name')?.textContent || '').toLowerCase();
+        const category = (card.querySelector('.product-category')?.textContent || '').toLowerCase();
         
         if (name.includes(term) || category.includes(term)) {
             card.style.display = '';
@@ -1149,20 +1154,31 @@ function filterProducts(searchTerm) {
 }
 
 function filterByCategory(category) {
-    const cards = document.querySelectorAll('.product-card');
+    const allProducts = [
+        ...(productData?.clothing || []),
+        ...(productData?.fragrance || [])
+    ];
     
-    cards.forEach(card => {
-        if (category === 'all') {
-            card.style.display = '';
-        } else {
-            const cardCategory = card.querySelector('.product-category').textContent;
-            if (cardCategory === category) {
-                card.style.display = '';
-            } else {
-                card.style.display = 'none';
-            }
-        }
-    });
+    const productsGrid = document.getElementById('productsGrid');
+    if (!productsGrid) return;
+    
+    let filtered = allProducts;
+    if (category !== 'all') {
+        filtered = allProducts.filter(p => {
+            const cat = (p.category || '').toLowerCase();
+            return cat === category;
+        });
+    }
+    
+    if (filtered.length === 0) {
+        productsGrid.innerHTML = '<p style="text-align:center;color:#999;padding:40px;">该分类暂无产品</p>';
+        return;
+    }
+    
+    productsGrid.innerHTML = filtered.map(product => {
+        const type = productData.clothing.includes(product) ? 'clothing' : 'fragrance';
+        return createProductCard(product, type);
+    }).join('');
 }
 
 /* ========================================
