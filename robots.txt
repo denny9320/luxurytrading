@@ -1,0 +1,24 @@
+# robots.txt for Luxury Trading
+# https://www.luxurytrading.cn/
+
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Disallow private/admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /backup/
+Disallow: /config/
+Disallow: /.git/
+Disallow: /.opencode/
+
+# Disallow duplicate content
+Disallow: /index.html$
+
+# Sitemap location
+Sitemap: https://www.luxurytrading.cn/sitemap.xml
+
+# Crawl delay (optional, be polite to servers)
+Crawl-delay: 1

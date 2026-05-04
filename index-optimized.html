@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Trading | Luxury Fashion & Fragrance</title>
+    <meta name="description" content="Discover luxury fashion and fragrance at Luxury Trading. Curated collections from top brands including Supreme, Moncler, Burberry, Nike, Chanel, Dior and more.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.luxurytrading.cn/">
+    <meta property="og:title" content="Luxury Trading | Luxury Fashion & Fragrance">
+    <meta property="og:description" content="Curating luxury from around the world. Discover our exclusive collections.">
+    <meta property="og:image" content="https://www.luxurytrading.cn/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.luxurytrading.cn/">
+    <meta property="twitter:title" content="Luxury Trading | Luxury Fashion & Fragrance">
+    <meta property="twitter:description" content="Curating luxury from around the world. Discover our exclusive collections.">
+    <meta property="twitter:image" content="https://www.luxurytrading.cn/images/og-image.jpg">
+    
+    <link rel="icon" type="image/jpeg" href="favicon.ico">
+    <link rel="canonical" href="https://www.luxurytrading.cn/">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.gstatic.com">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "Luxury Trading",
+        "description": "Curating luxury fashion and fragrance from around the world",
+        "url": "https://www.luxurytrading.cn",
+        "logo": "https://www.luxurytrading.cn/images/logo.png",
+        "image": "https://www.luxurytrading.cn/images/og-image.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CN"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "kyx9320@163.com",
+            "contactType": "customer service"
+        },
+        "sameAs": [
+            "https://instagram.com/luxurytrading",
+            "https://twitter.com/luxurytrading",
+            "https://facebook.com/luxurytrading"
+        ]
+    }
+    </script>
+    
+    <style>
+        .notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            padding: 16px 32px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 4px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+        
+        .notification.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+        
+        .notification-success { background-color: #2ecc71; }
+        .notification-error { background-color: #e74c3c; }
+        .notification-info { background-color: #3498db; }
+        
+        /* Visually hidden class for accessibility */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader hidden" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">LUXURY TRADING</div>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Mouse Follow Glow -->
+    <div class="mouse-glow" id="mouseGlow"></div>
+
+    <!-- Header -->
+    <header class="header scrolled" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo" aria-label="Luxury Trading Home">
+                <img src="images/logo.png" alt="Luxury Trading" class="logo-image">
+            </a>
+            
+            <nav class="nav" id="nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="user-account-menu" id="userAccountMenu" style="display:none;">
+                    <div class="user-account-trigger" onclick="toggleUserDropdown(event)" aria-haspopup="true" aria-expanded="false">
+                        <span class="user-email-text" id="headerUserEmail"></span>
+                        <svg class="user-account-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="user-account-dropdown" id="userDropdown" role="menu">
+                        <a href="profile.html" class="user-account-item" role="menuitem" onclick="closeUserDropdown()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span data-i18n="nav.profile">My Profile</span>
+                        </a>
+                        <a href="addresses.html" class="user-account-item" role="menuitem" onclick="closeUserDropdown()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M21 10c0 6.4-10 12-10 12s-10-5.6-10-12a10 10 0 0110-10z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span data-i18n="nav.addresses">Addresses</span>
+                        </a>
+                        <a href="orders.html" class="user-account-item" role="menuitem" onclick="closeUserDropdown()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 01-8 0"></path>
+                            </svg>
+                            <span data-i18n="nav.myOrders">My Orders</span>
+                        </a>
+                        <a href="profile.html?tab=settings" class="user-account-item" role="menuitem" onclick="closeUserDropdown()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.7 1.7 0 00-.3.6V18a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2h2.5a2 2 0 001-1.4"></path>
+                            </svg>
+                            <span data-i18n="nav.accountSettings">Account Settings</span>
+                        </a>
+                        <div class="user-account-divider"></div>
+                        <a href="#" class="user-account-item user-account-logout" role="menuitem" onclick="signOut(); closeUserDropdown(); return false;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            <span data-i18n="nav.signOut">Sign Out</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="user-login-btn" id="loginBtn" style="display: flex;">
+                    <button class="icon-btn" aria-label="Login" onclick="showLoginModal()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                </div>
+                <button class="icon-btn search-btn" aria-label="Search" id="searchBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Shopping Cart" onclick="toggleCart()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 01-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                
+                <div class="lang-switcher">
+                    <button class="lang-current" id="langCurrent" aria-haspopup="true" aria-expanded="false">
+                        <span class="lang-flag">🇬🇧</span>
+                        <span class="lang-code">EN</span>
+                        <svg class="lang-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown" role="menu">
+                        <button class="lang-option active" data-lang="en" role="menuitem">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-name">English</span>
+                        </button>
+                        <button class="lang-option" data-lang="zh" role="menuitem">
+                            <span class="lang-flag">🇨🇳</span>
+                            <span class="lang-name">中文</span>
+                        </button>
+                        <button class="lang-option" data-lang="de" role="menuitem">
+                            <span class="lang-flag">🇩🇪</span>
+                            <span class="lang-name">Deutsch</span>
+                        </button>
+                        <button class="lang-option" data-lang="fr" role="menuitem">
+                            <span class="lang-flag">🇫🇷</span>
+                            <span class="lang-name">Français</span>
+                        </button>
+                        <button class="lang-option" data-lang="es" role="menuitem">
+                            <span class="lang-flag">🇪🇸</span>
+                            <span class="lang-name">Español</span>
+                        </button>
+                        <button class="lang-option" data-lang="ar" role="menuitem">
+                            <span class="lang-flag">🇸🇦</span>
+                            <span class="lang-name">العربية</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <select id="currencySelector" class="currency-select" onchange="changeCurrency(this.value)" aria-label="Select Currency">
+                    <option value="USD">USD $</option>
+                    <option value="CNY">¥CNY</option>
+                    <option value="EUR">€EUR</option>
+                    <option value="GBP">£GBP</option>
+                </select>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home" aria-label="Luxury Collections">
+        <div class="hero-bg"></div>
+        <div class="hero-particles" aria-hidden="true">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="hero-line-left" aria-hidden="true"></div>
+        <div class="hero-line-right" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-subtitle" data-i18n="hero.subtitle">Luxury Trading</span>
+            <h1 class="hero-title" data-i18n="hero.title">Luxury Collections</h1>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Products by Category -->
+    <section class="products-section reveal" id="products" aria-label="Featured Products">
+        <div class="categories-nav-wrapper">
+            <nav class="categories-nav" id="categoriesNav" aria-label="Product Categories">
+                <a href="#" class="category-tab active" data-category="all" data-i18n="category.all">All</a>
+                <a href="#" class="category-tab" data-category="shoes" data-i18n="category.shoes">Shoes</a>
+                <a href="#" class="category-tab" data-category="bags" data-i18n="category.bags">Bags</a>
+                <a href="#" class="category-tab" data-category="perfume" data-i18n="category.perfume">Perfume</a>
+                <a href="#" class="category-tab" data-category="sunglasses" data-i18n="category.sunglasses">Sunglasses</a>
+                <a href="#" class="category-tab" data-category="watches" data-i18n="category.watches">Watches</a>
+            </nav>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded dynamically -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section reveal" id="about" aria-label="About Luxury Trading">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/products/about-bg.svg" alt="Luxury Trading - Our Story" loading="lazy">
+                    <div class="about-image-accent" aria-hidden="true"></div>
+                </div>
+                <div class="about-content">
+                    <span class="section-subtitle" data-i18n="about.subtitle">Our Story</span>
+                    <h2 class="section-title" data-i18n="about.title">About Luxury Trading</h2>
+                    <p class="about-text" data-i18n="about.text1">Luxury Trading curates the finest products.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="feature-number">10+</span>
+                            <span class="feature-label" data-i18n="about.years">Years Experience</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-number">500+</span>
+                            <span class="feature-label" data-i18n="about.brands">Brand Partnerships</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-number">50k+</span>
+                            <span class="feature-label" data-i18n="about.customers">Customers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter section reveal" aria-label="Subscribe to Newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title" data-i18n="newsletter.title">Subscribe</h2>
+                <p class="newsletter-desc" data-i18n="newsletter.desc">Get latest updates</p>
+                <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)" aria-label="Newsletter Subscription">
+                    <div class="form-group">
+                        <label for="newsletter-email" class="visually-hidden">Email Address</label>
+                        <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your email" data-i18n-placeholder="newsletter.placeholder" required aria-required="true">
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-i18n="newsletter.button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo" aria-label="Luxury Trading Home">
+                        <img src="images/logo.png" alt="Luxury Trading" class="logo-image" style="height:40px;">
+                    </a>
+                    <p class="footer-desc" data-i18n="footer.desc">Curating luxury from around the world.</p>
+                    <div class="social-links" aria-label="Social Media Links">
+                        <a href="https://instagram.com/luxurytrading" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/luxurytrading" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/luxurytrading" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#clothing" data-i18n="nav.clothing">Clothing</a></li>
+                        <li><a href="#fragrance" data-i18n="nav.fragrance">Fragrance</a></li>
+                        <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="admin.html" target="_blank">Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.service">Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shipping" data-i18n="footer.shipping">Shipping</a></li>
+                        <li><a href="returns.html" data-i18n="footer.returns">Returns</a></li>
+                        <li><a href="#privacy" data-i18n="footer.privacy">Privacy</a></li>
+                        <li><a href="#contact" data-i18n="footer.contactUs">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.contact">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span data-i18n="footer.globalSourcing">Global Sourcing</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span data-i18n="footer.email">kyx9320@163.com</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+                            </svg>
+                            <span data-i18n="footer.whatsapp1">WhatsApp: +86 13397655758</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+                            </svg>
+                            <span data-i18n="footer.whatsapp2">WhatsApp: +86 19313614241</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Luxury Trading. <span data-i18n="footer.copyright">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- Luxury Effects Script -->
+    <script>
+        // Page Loader
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('pageLoader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                }, 800);
+            }
+        });
+
+        // Mouse Follow Glow Effect
+        const mouseGlow = document.getElementById('mouseGlow');
+        if (mouseGlow) {
+            let mouseX = 0, mouseY = 0;
+            let glowX = 0, glowY = 0;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+            
+            function animateGlow() {
+                glowX += (mouseX - glowX) * 0.1;
+                glowY += (mouseY - glowY) * 0.1;
+                mouseGlow.style.left = glowX + 'px';
+                mouseGlow.style.top = glowY + 'px';
+                requestAnimationFrame(animateGlow);
+            }
+            animateGlow();
+        }
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Newsletter form handler
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
+                showNotification('Thank you for subscribing!', 'success');
+                document.getElementById('newsletter-email').value = '';
+            }
+            return false;
+        }
+        
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.classList.add('show'), 10);
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+    </script>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay" role="dialog" aria-label="Search Products">
+        <div class="search-container">
+            <button class="search-close" id="searchClose" aria-label="Close Search">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <input type="text" class="search-input" placeholder="Search products..." data-i18n-placeholder="search.placeholder" id="searchInput" aria-label="Search">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+    
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Shopping Cart">
+        <div class="cart-header">
+            <h3 data-i18n="cart.title">Shopping Cart</h3>
+            <button class="cart-close" id="cartClose" aria-label="Close Cart">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty" data-i18n="cart.empty">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-i18n="cart.total">Total</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" onclick="goToCheckout()">Checkout</button>
+        </div>
+    </div>
+    
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal" role="dialog" aria-label="Product Details">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close Product Details">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details loaded dynamically -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Login Modal -->
+    <div class="product-modal" id="loginModal" style="display:none;" role="dialog" aria-label="Login or Register">
+        <div class="modal-content" style="max-width:400px">
+            <button class="modal-close" onclick="closeLoginModal()" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" style="padding:40px">
+                <h2 style="text-align:center;margin-bottom:30px;font-family:'Playfair Display',serif">Login</h2>
+                
+                <!-- Login Form -->
+                <div id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail" style="display:block;margin-bottom:8px;color:#666" data-i18n="login.email">Email</label>
+                        <input type="email" id="loginEmail" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:5px" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword" style="display:block;margin-bottom:8px;color:#666" data-i18n="login.password">Password</label>
+                        <input type="password" id="loginPassword" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:5px" required aria-required="true">
+                    </div>
+                    <button onclick="doLogin()" style="width:100%;padding:14px;background:#1A1A1A;color:white;border:none;border-radius:5px;cursor:pointer" data-i18n="login.submit">Login</button>
+                </div>
+                
+                <!-- Register Form -->
+                <div id="registerForm" style="display:none">
+                    <div class="form-group">
+                        <label for="regName" style="display:block;margin-bottom:8px;color:#666" data-i18n="register.name">Name</label>
+                        <input type="text" id="regName" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:5px" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail" style="display:block;margin-bottom:8px;color:#666" data-i18n="register.email">Email</label>
+                        <input type="email" id="regEmail" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:5px" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword" style="display:block;margin-bottom:8px;color:#666" data-i18n="register.password">Password</label>
+                        <input type="password" id="regPassword" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:5px" required aria-required="true">
+                    </div>
+                    <button onclick="doRegister()" style="width:100%;padding:14px;background:#27ae60;color:white;border:none;border-radius:5px;cursor:pointer" data-i18n="register.submit">Register</button>
+                </div>
+                
+                <p style="text-align:center;margin-top:20px">
+                    <a href="#" onclick="toggleLoginRegister(); return false;" id="toggleLoginText" style="color:#C9A962;text-decoration:none" data-i18n="login.toggleToRegister">Don't have an account? Register</a>
+                </p>
+                <p id="loginError" style="color:red;text-align:center;margin-top:15px;font-size:14px" role="alert"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Configuration - Fixed -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut as firebaseSignOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC5SZrLBFQoTPGiDfqe0XYwgT2I0caeBvQ",
+            authDomain: "luxurytrading.firebaseapp.com",
+            projectId: "luxurytrading",
+            storageBucket: "luxurytrading.firebasestorage.app",
+            messagingSenderId: "248437210641",
+            appId: "1:248437210641:web:d542acc355793e7ecd3bb0"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let currentUser = null;
+
+        onAuthStateChanged(auth, (user) => {
+            currentUser = user;
+            window.currentUser = user;
+            window.isLoggedIn = !!user;
+            if (user) {
+                document.getElementById('loginBtn').style.display = 'none';
+                document.getElementById('userAccountMenu').style.display = 'block';
+                
+                let savedName = localStorage.getItem('tapingUserName');
+                if (!savedName || savedName.length < 2 || /^\d+$/.test(savedName)) {
+                    savedName = 'User';
+                }
+                document.getElementById('headerUserEmail').textContent = savedName;
+            } else {
+                document.getElementById('loginBtn').style.display = 'flex';
+                document.getElementById('userAccountMenu').style.display = 'none';
+            }
+            window.updateUserDropdownState && window.updateUserDropdownState();
+        });
+
+        window.showLoginModal = function() {
+            const modal = document.getElementById('loginModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                modal.classList.add('active');
+            }
+        };
+
+        window.closeLoginModal = function() {
+            const modal = document.getElementById('loginModal');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.remove('active');
+            }
+        };
+
+        window.toggleLoginRegister = function() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const toggleText = document.getElementById('toggleLoginText');
+            
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                toggleText.textContent = "Don't have an account? Register";
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                toggleText.textContent = 'Already have an account? Login';
+            }
+        };
+
+        window.doLogin = async function() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const errorEl = document.getElementById('loginError');
+            
+            if (!email || !password) {
+                errorEl.textContent = 'Please enter email and password';
+                return;
+            }
+            
+            try {
+                errorEl.textContent = 'Logging in...';
+                await signInWithEmailAndPassword(auth, email, password);
+                
+                const savedName = localStorage.getItem('tapingUserName');
+                const displayName = (!savedName || savedName.length < 2 || /^\d+$/.test(savedName)) ? 'User' : savedName;
+                
+                document.getElementById('loginBtn').style.display = 'none';
+                document.getElementById('userAccountMenu').style.display = 'block';
+                document.getElementById('headerUserEmail').textContent = savedName;
+                
+                closeLoginModal();
+                showNotification('Login successful!', 'success');
+            } catch (e) {
+                errorEl.textContent = 'Login failed: ' + e.message;
+            }
+        };
+
+        window.doRegister = async function() {
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const errorEl = document.getElementById('loginError');
+            
+            if (!name || !email || !password) {
+                errorEl.textContent = 'Please fill in all fields';
+                return;
+            }
+            
+            try {
+                errorEl.textContent = 'Registering...';
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                
+                if (name && name.length >= 2 && !/^\d+$/.test(name)) {
+                    localStorage.setItem('tapingUserName', name);
+                }
+                
+                const headerEl = document.getElementById('headerUserEmail');
+                if (headerEl) {
+                    headerEl.textContent = name;
+                }
+                
+                if (db && userCredential.user) {
+                    await addDoc(collection(db, 'users'), {
+                        uid: userCredential.user.uid,
+                        email: email,
+                        name: name,
+                        createdAt: new Date()
+                    });
+                }
+                
+                closeLoginModal();
+                showNotification('Registration successful!', 'success');
+            } catch (e) {
+                errorEl.textContent = 'Registration failed: ' + e.message;
+            }
+        };
+
+        window.saveUserName = function(name) {
+            localStorage.setItem('tapingUserName', name);
+            document.getElementById('headerUserEmail').textContent = name;
+        };
+
+        window.signOut = async function() {
+            try {
+                await firebaseSignOut(auth);
+                localStorage.removeItem('tapingUserName');
+                document.getElementById('loginBtn').style.display = 'flex';
+                document.getElementById('userAccountMenu').style.display = 'none';
+                showNotification('Signed out successfully', 'info');
+            } catch (e) {
+                console.error('Sign out error:', e);
+            }
+        };
+
+        window.toggleUserDropdown = function(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('userAccountMenu');
+            if (menu) {
+                menu.classList.toggle('open');
+                const trigger = menu.querySelector('.user-account-trigger');
+                if (trigger) {
+                    trigger.setAttribute('aria-expanded', menu.classList.contains('open'));
+                }
+            }
+        };
+
+        window.closeUserDropdown = function() {
+            const menu = document.getElementById('userAccountMenu');
+            if (menu) {
+                menu.classList.remove('open');
+                const trigger = menu.querySelector('.user-account-trigger');
+                if (trigger) {
+                    trigger.setAttribute('aria-expanded', false);
+                }
+            }
+        };
+
+        window.updateUserDropdownState = function() {
+            const notLoggedIn = document.getElementById('userDropdownNotLoggedIn');
+            const loggedIn = document.getElementById('userDropdownLoggedIn');
+            const userEmailEl = document.getElementById('userDropdownEmail');
+            const isLoggedIn = window.isLoggedIn && window.currentUser;
+            
+            if (notLoggedIn && loggedIn) {
+                notLoggedIn.style.display = isLoggedIn ? 'none' : 'block';
+                loggedIn.style.display = isLoggedIn ? 'block' : 'none';
+            }
+            
+            if (isLoggedIn && userEmailEl && window.currentUser) {
+                userEmailEl.textContent = window.currentUser.email || '';
+            }
+        };
+
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('userAccountMenu');
+            if (menu && !menu.contains(event.target)) {
+                menu.classList.remove('open');
+            }
+        });
+
+        window.goToCheckout = function() {
+            window.location.href = 'checkout.html';
+        };
+        
+        window.toggleCart = function() {
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('cartOverlay');
+            if (sidebar && overlay) {
+                sidebar.classList.toggle('open');
+                overlay.classList.toggle('open');
+            }
+        };
+    </script>
+</body>
+</html>
